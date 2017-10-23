@@ -1,0 +1,20 @@
+
+Calculate pOldLibVersion as replaceall(pOldLibVersion,'.','-')
+Do $root.$libs.[pLibName].$objects.oUpdates.$methods.$makelist($ref.$name) Returns list
+Do list.$search(mid($ref.C1,1,8)='$Updates',kTrue,kFalse,kTrue,kTrue)
+Do list.$remove(kListKeepSelected)
+Do list.$search($ref.C1>con('$Updates',pOldLibVersion),kTrue,kFalse,kTrue,kTrue)
+Do list.$remove(kListKeepSelected)
+Do list.$sort($ref.C1)
+
+If list.$linecount
+	Do [pLibName].$objects.oUpdates.$new() Returns oUpdates
+	For list.$line from 1 to list.$linecount() step 1
+		Do oUpdates.[list.C1] Returns %OK
+		If not(%OK)
+			Quit method kFalse
+		End If
+	End For
+End If
+
+Quit method kTrue

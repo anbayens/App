@@ -1,0 +1,11 @@
+
+Do ivSessieRO.$newstatement('select') Returns oStat
+Do list.$define()
+Begin statement
+Sta: {SELECT COUNT(*) FROM TLIBRARIES;}
+End statement
+Do oStat.$execdirect() Returns %OK
+Do oStat.$fetch(row)
+Calculate row.C1 as pick(isnull(row.C1),row.C1,0)
+
+Quit method row.C1

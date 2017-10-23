@@ -1,0 +1,10 @@
+
+Do ivSessieRO.$newstatement('Tables') Returns oStat
+Do oStat.$indexes(pTableName) Returns #F
+If flag true
+	Do oStat.$fetch(pList,kFetchAll,kFalse)
+Else
+	Do $ctask.tvRoutines.$Message(oStat.$nativeerrortext,0,StringTable.$gettext('STA.Sql-Error'))
+	Quit method kFalse
+End If
+Quit method kTrue

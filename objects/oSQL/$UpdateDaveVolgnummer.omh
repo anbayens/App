@@ -1,0 +1,20 @@
+
+Do ivSessieTR[pSessieNr].$newstatement('volgnummer') Returns oStat
+Do oStat.$execdirect(con("SELECT CNUMMER FROM TDAVE WHERE CINDEX ='",pIndex,"'")) Returns %OK
+If not(%OK)
+	Quit method 0
+End If
+Do oStat.$fetch(row,1)
+Calculate volgnummer as row.C1
+If volgnummer=0
+	Quit method 0
+End If
+Calculate nieuwnummer as volgnummer+pAantal     ;; +/- 1
+If nieuwnummer>0
+	Do oStat.$clear()
+	Do oStat.$execdirect(con("UPDATE TDAVE SET CNUMMER = ",nieuwnummer,",CWIJZIGGEBRUIKER=current_user",",CWIJZIGDATUM=cast(current_timestamp as timestamp) WHERE CINDEX='",pIndex,"'")) Returns %OK
+Else
+	Calculate volgnummer as 0
+End If
+
+Quit method volgnummer

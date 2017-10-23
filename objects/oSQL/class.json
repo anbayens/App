@@ -1,0 +1,194 @@
+{
+	"classtype": "kObjectclass",
+	"internalversion": 6,
+	"cvardefs": [
+
+	],
+	"ivardefs": [
+		{
+			"name": "ivDatabase",
+			"order": 23,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "ivDatabaseOptions",
+			"order": 21,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "ivLib",
+			"order": 16,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "ivListFTI",
+			"order": 24,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivLogin",
+			"order": 2,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "ivPassword",
+			"order": 4,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "ivQueryList",
+			"order": 12,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivQueryTekst",
+			"order": 14,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "ivSelectieTekst",
+			"order": 18,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "ivServer",
+			"order": 22,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "ivSessie",
+			"order": 19,
+			"type": "kObject",
+			"subtype": ".FRONTBASEDAM.FRONTBASESESS",
+			"sublen": 0
+		},
+		{
+			"name": "ivSessieRO",
+			"order": 5,
+			"type": "kObject",
+			"subtype": ".FRONTBASEDAM.FRONTBASESESS",
+			"sublen": 0
+		},
+		{
+			"name": "ivSessieRW",
+			"order": 20,
+			"type": "kObject",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivSessieTR1",
+			"order": 7,
+			"type": "kObject",
+			"subtype": ".FRONTBASEDAM.FRONTBASESESS",
+			"sublen": 0
+		},
+		{
+			"name": "ivSessieTR2",
+			"order": 8,
+			"type": "kObject",
+			"subtype": ".FRONTBASEDAM.FRONTBASESESS",
+			"sublen": 0
+		},
+		{
+			"name": "ivSessieTR3",
+			"order": 9,
+			"type": "kObject",
+			"subtype": ".FRONTBASEDAM.FRONTBASESESS",
+			"sublen": 0
+		},
+		{
+			"name": "ivSessieTR4",
+			"order": 1,
+			"type": "kObject",
+			"subtype": ".FRONTBASEDAM.FRONTBASESESS",
+			"sublen": 0
+		},
+		{
+			"name": "ivSessieTR5",
+			"order": 11,
+			"type": "kObject",
+			"subtype": ".FRONTBASEDAM.FRONTBASESESS",
+			"sublen": 0
+		},
+		{
+			"name": "ivSessieTR6",
+			"order": 6,
+			"type": "kObject",
+			"subtype": ".FRONTBASEDAM.FRONTBASESESS",
+			"sublen": 0
+		},
+		{
+			"name": "ivstatement",
+			"order": 15,
+			"type": "kObject",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivTableName",
+			"order": 17,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "ivTransInUseList",
+			"order": 10,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivTransSession",
+			"order": 13,
+			"type": "kObject",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivUser",
+			"order": 3,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		}
+	],
+	"properties": {
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2017-10-23 20:15:26",
+		"desc": "",
+		"designtaskname": "Startup_Task",
+		"editor": "",
+		"editordata": "",
+		"external": true,
+		"issupercomponent": false,
+		"moddate": "2017-10-23 20:37:10",
+		"selfcontained": false,
+		"showascheckedout": false,
+		"userinfo": "",
+		"version": "1"
+	}
+}

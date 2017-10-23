@@ -1,0 +1,11 @@
+
+Do ivSessie.$connect(pHostname) Returns %OK
+If not(%OK)
+	Quit method 0
+End If
+If $cinst.ivSessie.$databaseport.$cando()
+	Do ivSessie.$databaseport(pDatabasename) Returns port
+End If
+Do ivSessie.$disconnect()
+
+Quit method port

@@ -1,0 +1,25 @@
+If $ctask.tvReadOnly&not(pNoTest)     ;; Geen toegang. Enkel ReadOnly
+	Do $ctask.tvRoutines.$Message(StringTable.$gettext('STA.WijzigenNietMogelijk'))
+	Quit method
+End If
+Do ivTransInUseList.$search($ref.C1=kFalse,kTrue,kFalse,kFalse,kFalse) Returns lijn
+If lijn
+	Do ivTransInUseList.[lijn].C1.$assign(kTrue)
+	Calculate pSessienr as lijn
+	Calculate ivTransSession as ivSessieTR[lijn]
+	Quit method ivSessieTR[lijn]
+Else
+	Do method AddSession (lijn,kTrue) Returns #F
+	If flag true
+		Calculate pSessienr as lijn
+		Calculate ivTransSession as ivSessieTR[lijn]
+		Quit method ivSessieTR[lijn]
+	Else
+		Quit method
+	End If
+End If
+
+;  *** ivTransSession***
+;  Sessie binnen object - Wordt gebruikt in o.a. $InsertRecord, $DeleteRecord, $SimpleSQLTR
+;  Wordt gebruikt waar Begin en End transactie niet door de gebruiker kan onderbroken worden.
+;  Dus niet bij het wijzigen van gegevens via het scherm

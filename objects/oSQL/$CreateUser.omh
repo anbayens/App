@@ -1,0 +1,21 @@
+
+Do ivSessieTR[pSessieNr].$newstatement('CREATEUSER') Returns oStat
+Do oStat.$execdirect(con('create user "',pUser,'";')) Returns %OK
+If not(%OK)
+	OK message  {[oStat.$errortext]//[oStat.$nativeerrortext]}
+	Quit method kFalse
+End If
+Do oStat.$clear()
+Calculate sta as con('alter user "',pUser,'" set passwd '''';')
+Do oStat.$execdirect(sta) Returns %OK
+If not(%OK)
+	Quit method kFalse
+End If
+Do oStat.$execdirect(con('set default schema "_SYSTEM" for user "',pUser,'";')) Returns %OK
+If not(%OK)
+	Quit method kFalse
+End If
+
+;  Do method $GrantUser ('_PUBLIC',pSessieNr) Returns %OK     ;; 2.61
+
+Quit method kTrue

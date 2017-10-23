@@ -1,0 +1,5 @@
+
+Do ivSessieRO.$newstatement('servertime') Returns oStat
+Do oStat.$execdirect("values (current_date)")
+Do oStat.$fetch(row)
+Quit method row.c1

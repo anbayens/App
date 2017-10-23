@@ -1,0 +1,10 @@
+
+Do ivSessie.$connect(pHostname) Returns %OK
+If not(%OK)
+	Quit method kFalse
+End If
+
+Do ivSessie.$startdatabase(pDatabasename,pOptions) Returns %OK
+Do ivSessie.$disconnect()
+
+Quit method %OK

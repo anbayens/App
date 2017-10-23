@@ -1,0 +1,5 @@
+If ivUser="_SYSTEM"     ;; FrontBase
+	Quit method kTrue
+Else
+	Quit method kFalse
+End If

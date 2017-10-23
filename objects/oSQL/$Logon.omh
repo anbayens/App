@@ -1,0 +1,68 @@
+
+Calculate ivServer as pServer
+Calculate ivDatabase as pDatabase
+Calculate ivLogin as pLogin
+Calculate ivDatabaseOptions as ''
+Do ivTransInUseList.$clear()
+;  STATUS
+;  Do $ctask.tvPrefs.$GetPref("AutoStartDatabase") Returns autostart
+;  If autostart
+;  Do method $LogonAutostart
+;  End If
+;  Inloggen als READ ONLY -AUTOCOMMIT
+Do ivSessieRO.$databasepassword.$assign('')
+Do ivSessieRO.$databasename.$assign('')
+Do ivSessieRO.$logon(ivLogin,pUser,pPassword,'SessieRO-JS') Returns %OK
+
+;  If ivSessieRO.$state<>kSessionStateLoggedOn
+;  If pUser='_SYSTEM'&ivSessieRO.$nativeerrorcode=1000     ;; _SYSTEM Incorrect database password
+;  Calculate prompt as "Database password"
+;  Calculate databasepassword as ''
+;  Prompt for input [prompt] Returns databasepassword (Password entry)
+;  If len(databasepassword)
+;  Calculate ivLogin as con(ivLogin,'/',databasepassword)
+;  Do ivSessieRO.$logon(ivLogin,pUser,pPassword,'SessieRO') Returns %OK
+;  End If
+;  End If
+;  End If
+
+If ivSessieRO.$state<>kSessionStateLoggedOn
+	Do method $GetNativeErrorText (ivSessieRO.$nativeerrorcode) Returns msg
+	Do $ctask.tvRoutines.$Message(pick(len(msg)>0,ivSessieRO.$nativeerrortext(),msg),0,StringTable.$gettext('STA.InloggenMislukt'))
+	Quit method kFalse
+End If
+;  FrontBase 5 and up
+Calculate temp as ivSessieRO.$serverversion
+Calculate tempint as strtok('temp','.')
+If tempint<5
+	Calculate msg as StringTable.$gettext('STA.Frontbase5OfHogerIsVereist')
+	Do $ctask.tvRoutines.$Message(msg)
+	Do ivSessieRO.$logoff()
+	Quit method kFalse
+End If
+
+Do ivSessieRO.$newstatement('transaction') Returns oStat
+Do oStat.$execdirect('set transaction read only, isolation level read committed;') Returns #F
+Do $ctask.tvPrefs.$GetPref("Timezone") Returns timezone
+If len(timezone)
+	Do oStat.$execdirect(con("set time zone '",timezone,"';")) Returns #F
+Else
+	Do oStat.$execdirect("set time zone 'Europe/Brussels';") Returns #F
+End If
+Do ivSessieRO.$transactionmode.$assign(kSessionTranAutomatic) Returns #F
+Do ivSessieRO.$maxcharacterlen.$assign(1000000) Returns #F
+Do method $GetDatabaseOptions
+
+;  Inloggen als READ WRITE -COMMIT MANUAL - SPECIAAL VOOR TRANSACTIES
+Calculate ivUser as pUser
+Calculate ivPassword as pPassword
+Do method AddSession (sessienr,kFalse) Returns %OK
+
+;  LookSee 2.61
+Do method $ExtractLicense Returns list
+Do list.$search(list.C1='LICENSED OPTIONS',kTrue,kFalse,kFalse,kFalse)
+Calculate fulltextenabled as pos('Full Text Search',list.C2)
+If fulltextenabled
+	Do method $BuildListFTI
+End If
+Quit method %OK

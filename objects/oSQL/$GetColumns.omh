@@ -1,0 +1,14 @@
+Do ivSessieRO.$newstatement('Columns') Returns oStat
+Do oStat.$columns(pTabelname) Returns #F
+If flag true
+	Do oStat.$fetch(pColsList,kFetchAll,kFalse) Returns Result
+	If Result=kFetchError
+		Calculate errortext as con(oStat.$errortext,kCr,kCr,StringTable.$gettext('STA.GelieveTerugAanTeMelden'))
+		Do $ctask.tvRoutines.$Message(errortext,0,StringTable.$gettext('STA.Dam-Error'))
+		Quit method kFalse
+	End If
+Else
+	Do $ctask.tvRoutines.$Message(oStat.$nativeerrortext,0,StringTable.$gettext('STA.Sql-Error'))
+	Quit method kFalse
+End If
+Quit method kTrue

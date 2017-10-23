@@ -1,0 +1,5 @@
+
+Do ivSessieTR[pSessieNr].$newstatement('select PrimKey') Returns oStat
+Do oStat.$execdirect(con("select unique from ",pTable))
+Do oStat.$fetch(row)
+Quit method row.c1

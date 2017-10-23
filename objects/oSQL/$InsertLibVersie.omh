@@ -1,0 +1,5 @@
+
+Do [pLibName].$objects.oUpdates.$new() Returns oUpdate
+Calculate methodname as "$Updates1-0"
+Do oUpdate.[methodname] Returns %OK
+Quit method %OK

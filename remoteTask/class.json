@@ -1,0 +1,59 @@
+{
+	"classtype": "kRemoteTask",
+	"internalversion": 12,
+	"nextident": 1,
+	"tvardefs": [
+		{
+			"name": "tvFirmaMedewerkerList",
+			"order": 3,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "tvRoutines",
+			"order": 2,
+			"type": "kObject",
+			"subtype": "CPT.oRoutines",
+			"sublen": 0
+		},
+		{
+			"name": "tvSqlObj",
+			"order": 1,
+			"type": "kObject",
+			"subtype": "oSQL",
+			"sublen": 0
+		}
+	],
+	"cvardefs": [
+
+	],
+	"ivardefs": [
+
+	],
+	"properties": {
+		"basehttpresponseheaders": "",
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2017-10-23 19:48:04",
+		"desc": "",
+		"editor": "",
+		"editordata": "",
+		"external": true,
+		"issupercomponent": false,
+		"localtestdata": "",
+		"localtime": false,
+		"maxtime": 0,
+		"maxusers": 0,
+		"moddate": "2017-10-23 22:45:59",
+		"restful": false,
+		"restfulapiname": "",
+		"showascheckedout": true,
+		"stringtable": "",
+		"timeout": 0,
+		"userinfo": "",
+		"version": "",
+		"webservice": ""
+	}
+}

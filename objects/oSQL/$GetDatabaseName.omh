@@ -1,0 +1,5 @@
+
+Calculate databasename as ivSessieRO.$databasename()
+Calculate databasename as pick(databasename='20300',databasename,'DaveDB')
+
+Quit method databasename

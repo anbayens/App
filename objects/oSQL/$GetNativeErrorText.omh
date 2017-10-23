@@ -1,0 +1,25 @@
+
+Switch pCode
+	Case 326
+		Calculate msg as StringTable.$gettext('STA.PaswoordIsNietJuist')     ;; CONNECT failed - wrong password
+	Case 357
+		Calculate msg as StringTable.$gettext('STA.SommigeVerplichteVeldenZijnNietIngevuld')     ;; Integrity constraint violation CHECK
+	Case 358
+		Calculate msg as StringTable.$gettext('STA.GegevenKanNietToegevoegdWorden')     ;; Integrity constraint violation Primary key
+	Case 360
+		Calculate msg as StringTable.$gettext('STA.GegevensKunnenNietBewaardWordenOmdatErVeldenDieUniekMoetenZijnReedsBestaan')     ;; Integrity constraint violation UNIQUE
+	Case 361
+		Calculate msg as StringTable.$gettext('STA.GegevenKanNietToegevoegdGewijzigdOfVerwijderdWordenReden:IntegriteitVanDeDatabase')     ;; Integrity constraint violation on foreign key
+	Case 376
+		Calculate msg as StringTable.$gettext('STA.GebruikerIsNietGekend')     ;; No such user
+	Case 379
+		Calculate msg as StringTable.$gettext('STA.ProbleemMetGelijktijdigWijzigenVanEenzelfdeGegeven')     ;; Optimistic locking: multiple transaction conflict detected
+	Case 380
+		Calculate msg as StringTable.$gettext('STA.ProbleemMetGelijktijdigWijzigenVanEenzelfdeGegeven')     ;; Pessimistic locking: multiple transaction conflict detected (deadlock)
+	Case 1001
+		Calculate msg as StringTable.$gettext('STA.DatabaseIsNietOpgestart')     ;; Database is not running
+	Default
+		Calculate msg as ''
+End Switch
+
+Quit method msg

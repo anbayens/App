@@ -1,0 +1,43 @@
+
+Do method $ExtractUsage Returns listusage     ;; frontbase sessions
+;  TCPGetMyAddr  Returns tcpipadress
+;  Do listusage.$search(listusage.CIP=tcpipadress&listusage.USER=ivSessieRO.$username,kTrue,kFalse,kTrue,kTrue)
+Do listusage.$search(listusage.USER=ivSessieRO.$username,kTrue,kFalse,kTrue,kTrue)
+Do listusage.$remove(kListDeleteSelected)
+Do listusage.$search(listusage.INFO_ACCESS='READ ONLY'&listusage.SYSTEM_USER='FB_DAM',kTrue,kFalse,kTrue,kTrue)
+Do listusage.$remove(kListKeepSelected)
+
+Do list.$definefromsqlclass(CPT.$tables.tTSESSIES)     ;; dave sessions
+Do list.$sessionobject.$assign(ivSessieRO)
+Do list.$select()
+Do list.$fetch(kFetchAll)
+Do list.$sort(list.CSESSIES_PK,kTrue)
+Do list.$cols.$add('CACTIEF',kBoolean)
+
+For listusage.$line from 1 to listusage.$linecount step 1     ;; select obsolete sessions
+	Do list.$search(kFalse)
+	Do list.$search(list.CMEDEWERKER=listusage.USER&list.CMODULE='CPT'&list.CACTIEF=kFalse,kTrue,kFalse,kFalse,kFalse) Returns lijn
+	If lijn
+		Calculate pk as list.[lijn].CSESSIES_PK
+		Do list.[lijn].CACTIEF.$assign(kTrue)
+	End If
+	Do list.$search(kFalse)
+	Do list.$search(list.CTICKET_FK=pk,kTrue,kFalse,kTrue,kTrue)
+	Do list.$sendall(list.CACTIEF.$assign(kTrue),$ref.$selected())
+End For
+Do list.$search(list.CACTIEF,kTrue,kFalse,kTrue,kTrue)
+Do list.$remove(kListDeleteSelected)
+
+Do method $BeginTransaction (sessienr,kTrue) Returns sessierw     ;; delete obsolete sessions
+Do sessierw.$newstatement('deletesessie') Returns oStat
+Do oStat.$warningsaserrors.$assign(kFalse)
+Begin statement
+Sta: {DELETE FROM TSESSIES WHERE CSESSIES_PK=@[list.CSESSIES_PK]}
+End statement
+Do oStat.$prepare()
+For list.$line from 1 to list.$linecount() step 1
+	Do oStat.$execute() Returns %OK
+End For
+Do method $EndTransaction (sessienr,%OK) Returns %OK
+
+Quit method %OK

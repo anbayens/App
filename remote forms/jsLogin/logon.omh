@@ -1,0 +1,47 @@
+;  Calculate $ctask.tvReadOnly as kFalse
+Calculate ivLogin as con(ivServer,'/',pick(upp(ivDatabase)='DAVEDB',ivDatabase,20300))
+Do $ctask.tvSqlObj.$Logon(ivServer,ivDatabase,ivLogin,ivGebruiker,ivPaswoord) Returns #F
+If flag false
+	Quit event handler (Discard event)
+Else
+	Do $cwind.$objs.subform.$classname.$assign('jsDashboard')
+End If
+
+Do $ctask.tvSqlObj.$GetSessionRO Returns ivSessieRO
+;  Do method CheckMedewerker Returns %OK     ;; medewerker gebruiker
+;  If not(%OK)
+;  Quit event handler (Discard event)
+;  End If
+;  Do method CheckLicentie Returns %OK     ;; licentie
+;  If not(%OK)
+;  Quit event handler (Discard event)
+;  End If
+;
+;  Do method GetModules     ;; .lbs
+;  Do $ctask.tvSQLObj.$BuildListModules Returns ivListModules     ;; in database
+;  Do method CheckVersies Returns %OK     ;; versies
+;  If not(%OK)
+;  Do $ctask.tvRoutines.$Uitloggen()
+;  Quit event handler (Discard event)
+;  End If
+;  Do method CheckSessie Returns %OK     ;; sessie
+;  If not(%OK)
+;  Do $ctask.tvRoutines.$Uitloggen()
+;  Quit event handler (Discard event)
+;  End If
+;  If ivRowMedewerkers.CISBEHEERDER     ;; meldingen voor de beheerder(s)
+;  Do method CheckBackup
+;  End If
+;
+;  Do method SetPrefs (ivRowMedewerkers.CAUTOWIJZIG,ivRowMedewerkers.CAUTOSELECTIE,ivRowMedewerkers.CREPINGAVE,ivRowMedewerkers.CTAAL)
+;  Do method EnableArchief (kTrue)
+;  Do method InstallMenuBestanden
+;
+Do method ZoekFirmas Returns %OK
+;  If not(%OK)
+;  Do $ctask.tvRoutines.$Uitloggen()
+;  Quit event handler (Discard event)
+;  End If
+;  Do method $DisableMenulinesBestanden
+;
+;  Do method TestToegangModules

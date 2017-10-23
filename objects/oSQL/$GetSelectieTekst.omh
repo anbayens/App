@@ -1,0 +1,2 @@
+Calculate ivSelectieTekst as mid(ivSelectieTekst,1,len(ivSelectieTekst)-1)
+Quit method ivSelectieTekst

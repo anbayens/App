@@ -1,0 +1,4 @@
+
+Calculate i as #CT+(pSec*60)
+Repeat
+Until #CT>i

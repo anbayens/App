@@ -1,0 +1,6 @@
+
+Do ivSessieRO.$newstatement('usage') Returns oStat
+Do oStat.$execdirect("extract database")
+Do oStat.$fetch(row)
+Calculate msg as row.C1
+Quit method msg

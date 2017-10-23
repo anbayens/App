@@ -1,0 +1,20 @@
+;  logoff & stop database?
+Calculate msg as StringTable.$gettext('STA.DatabaseStoppen?')
+Do $ctask.tvRoutines.$Message(msg,1) Returns %OK
+If %OK
+	;  check sessies
+	Calculate msg as StringTable.$gettext('STA.OphalenDatabaseSessies')
+	Working message  {[msg]}
+	Do method $ExtractUsage Returns listusage
+	Do listusage.$search(listusage.INFO_ACCESS='READ ONLY'&listusage.SYSTEM_USER='FB_DAM',kTrue,kFalse,kTrue,kTrue)
+	Do listusage.$remove(kListKeepSelected)
+	Close working message
+	If listusage.$linecount>1
+		Calculate msg as con(StringTable.$gettext('STA.DatabaseKanNietGestoptWorden'),kCr,StringTable.$gettext('STA.ErZijnNogGebruikersAangemeld'))
+		Do $ctask.tvRoutines.$Message(msg)
+	Else
+		Quit method kTrue
+	End If
+End If
+
+Quit method kFalse

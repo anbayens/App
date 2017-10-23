@@ -1,0 +1,6 @@
+
+Do listmodules.$definefromsqlclass(CPT.$tables.tTMODULES)
+Do listmodules.$sessionobject.$assign(ivSessieRO)
+Do listmodules.$select(' ORDER BY CMODULE')
+Do listmodules.$fetch(kFetchAll)
+Quit method listmodules

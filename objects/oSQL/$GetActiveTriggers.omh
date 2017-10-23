@@ -1,0 +1,18 @@
+
+Working message  {Get list of triggers}
+Do list.$define()
+Do list.$cols.$add('name',kCharacter,kSimplechar,128)
+Do method $ExtractSchema Returns text
+
+Calculate positie as pos('TRIGGERS',text)
+If positie
+	Calculate text as mid(text,positie,len(text))
+	Calculate temp as strtok('text','(')
+	Calculate text as strtok('text',')')
+	Calculate text as replaceall(text,'"','')
+	While len(text)
+		Calculate temp as strtok('text',',')
+		Do list.$add(temp)
+	End While
+End If
+Quit method list

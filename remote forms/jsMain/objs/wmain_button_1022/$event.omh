@@ -1,0 +1,2 @@
+On evClick
+	Do ivoCPT.$OpenDocument('https://www.optimizegroup.be/support')

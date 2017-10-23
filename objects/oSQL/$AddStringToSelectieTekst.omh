@@ -1,0 +1,20 @@
+
+Calculate lib as pick(len(pLib)>0,ivLib,pLib)
+Calculate tabelkolom as pTabelKolom
+Calculate inhoud as pInhoud
+If pos('.',tabelkolom)
+	Calculate schema as mid(tabelkolom,1,pos('.',tabelkolom)-1)
+	Calculate kolom as mid(tabelkolom,pos('.',tabelkolom)+1,len(tabelkolom))
+Else
+	Calculate schema as ivTableName
+	Calculate kolom as tabelkolom
+End If
+Calculate desc as $libs.[lib].$schemas.[schema].$objs.[kolom].$desc
+Calculate desc as replaceall(desc,'[','')
+Calculate desc as replaceall(desc,']','')
+Calculate desc as replaceall(desc,'*','')
+Test for valid calculation {eval(desc)}
+If flag true
+	Calculate desc as eval(desc)
+End If
+Calculate ivSelectieTekst as con(ivSelectieTekst,desc,' ',pOperator,' ',inhoud,',')

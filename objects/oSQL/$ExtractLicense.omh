@@ -1,0 +1,21 @@
+
+Do ivSessieRO.$newstatement('usage') Returns oStat
+Do oStat.$execdirect("extract license")
+Do oStat.$fetch(row)
+Calculate msg as row.C1
+
+Do list.$define()
+Do list.$cols.$add("license",kCharacter,kSimplechar,32)
+Do list.$cols.$add("value",kCharacter,kSimplechar,512)
+
+Calculate msg as replaceall(msg,'"','')
+Calculate msg as replaceall(msg,'{','')
+Calculate msg as replaceall(msg,'}','')
+While len(msg)
+	Do list.$add() Returns ref
+	Calculate temp as trim(strtok('msg',";"))
+	Calculate ref.C1 as trim(strtok('temp','='))
+	Calculate ref.C2 as trim(temp)
+End While
+
+Quit method list

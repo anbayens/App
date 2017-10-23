@@ -1,0 +1,72 @@
+
+Do ivSessieRO.$newstatement('usage') Returns oStat
+Do oStat.$execdirect("extract usage with dns lookup false")
+Do oStat.$fetch(row)
+Calculate message as row.C1
+Do list.$definefromsqlclass(CPT.$schemas.sUsage)
+
+Repeat
+	Do list.$add()
+	Calculate line as line+1
+	Calculate text as strtok('message',"{")
+	Calculate text as strtok('message',";")     ;; ACID
+	Calculate text as strtok('message',";")     ;; CIP
+	Calculate textvalue as replaceall(text,' CIP = ','')
+	Calculate textvalue as replaceall(textvalue,'"','')
+	Calculate list.[line].CIP as textvalue
+	Calculate text as strtok('message',";")     ;; HOST
+	Calculate textvalue as replaceall(text,' HOST = ','')
+	Calculate textvalue as replaceall(textvalue,'"','')
+	Calculate list.[line].HOST as textvalue
+	Calculate text as strtok('message',";")     ;; SECURE
+	Calculate text as strtok('message',";")     ;; TCOUNT
+	Calculate text as strtok('message',";")     ;; ATIME in seconds
+	Calculate textvalue as replaceall(text,' ATIME = ','')
+	Calculate textvalue as replaceall(textvalue,'"','')
+	Calculate list.[line].ATIME as strtok('textvalue','.')
+	Calculate text as strtok('message',";")     ;; HAST
+	Calculate textvalue as replaceall(text,' HAST = ','')
+	Calculate textvalue as replaceall(textvalue,'"','')
+	Calculate list.[line].HAST as textvalue
+	If textvalue='YES'
+		Calculate text as strtok('message',";")     ;; TTIME
+	End If
+	Calculate text as strtok('message',";")     ;; USER
+	Calculate textvalue as replaceall(text,' USER = ','')
+	Calculate textvalue as replaceall(textvalue,'"','')
+	Calculate list.[line].USER as textvalue
+	Calculate text as strtok('message',";")     ;; SYSTEM_USER
+	Calculate textvalue as replaceall(text,' SYSTEM_USER = ','')
+	Calculate textvalue as replaceall(textvalue,'"','')
+	Calculate list.[line].SYSTEM_USER as textvalue
+	Calculate text as strtok('message',";")     ;; SESSION
+	Calculate textvalue as replaceall(text,' SESSION = ','')
+	Calculate textvalue as replaceall(textvalue,'"','')
+	Calculate list.[line].SESSION as textvalue
+	Calculate text as strtok('message',";")     ;; BUSY
+	Calculate text as strtok('message',";")     ;; CALLS
+	Calculate text as strtok('message',";")     ;; AUTOC
+	Calculate text as strtok('message',"{")
+	Calculate text as strtok('message',";")     ;; INFO_HAST
+	Calculate text as strtok('message',";")     ;; INFO_ISOLATION
+	Calculate textvalue as replaceall(text,' ISOLATION = ','')
+	Calculate textvalue as replaceall(textvalue,'"','')
+	Calculate list.[line].INFO_ISOLATION as textvalue
+	Calculate text as strtok('message',";")     ;; INFO_ACCESS
+	Calculate textvalue as replaceall(text,' ACCESS = ','')
+	Calculate textvalue as replaceall(textvalue,'"','')
+	Calculate list.[line].INFO_ACCESS as textvalue
+	Calculate text as strtok('message',";")     ;; INFO_LOCKING
+	Calculate textvalue as replaceall(text,' LOCKING = ','')
+	Calculate textvalue as replaceall(textvalue,'"','')
+	Calculate list.[line].INFO_LOCKING as textvalue
+	Calculate text as strtok('message',";")     ;; INFO_USER
+	Calculate text as strtok('message',";")     ;; INFO_SCHEMA
+	Calculate text as strtok('message',";")     ;; INFO_AUTOCOMMIT
+	Calculate text as strtok('message',";")     ;; INFO_SQLINUSAGE
+	Calculate text as strtok('message',";")     ;; INFO_LOGSQL
+	Calculate text as strtok('message',";")     ;; INFO_SHOWPLAN
+	Calculate text as strtok('message',";")     ;; INFO_SECURE
+	Calculate text as strtok('message',",")
+Until message=''
+Quit method list

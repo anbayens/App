@@ -1,0 +1,20 @@
+Do ivSessie.$connect(pHostname) Returns %OK
+If not(%OK)
+	Quit method kFalse
+End If
+Repeat
+	Do $libs.CPT.$windows.wSelStopDatabase.$openmodal('wSelStopDatabase',kWindowCenter,flag,systempassword,databasepassword) Returns ref
+	Do ref.$close()
+	If flag
+		Do ivSessie.$stopdatabase(pDatabasename,databasepassword,systempassword) Returns %OK
+		If %OK
+			OK message [pDatabasename] {Database stopped.}
+		Else
+			OK message [pDatabasename] {Database NOT stopped or already stopped!}
+		End If
+	Else
+		Calculate %OK as kTrue
+	End If
+Until %OK
+Do ivSessie.$disconnect()
+Quit method %OK

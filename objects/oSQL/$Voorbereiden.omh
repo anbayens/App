@@ -1,0 +1,7 @@
+Do ivTransSession.$newstatement('execdirect') Returns ivstatement
+Do ivstatement.$prepare() Returns #F
+If flag false
+	Do $ctask.tvRoutines.$Message(ivstatement.$nativeerrortext,0,StringTable.$gettext('STA.Sql-Error'))
+	Quit method kFalse
+End If
+Quit method kTrue

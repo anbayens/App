@@ -1,0 +1,13 @@
+;  Enter your initialization code here
+;  pRow opvangen voor breakpointLayout     ;; change colomun width
+Do iSubList.$define(iTextCol1,iTextCol2,iAccessoryType,iAccessoryContent,iAccessoryValueCol,iImagePath,iFormName)
+
+;  add new forms here
+Do iSubList.$add('Dashboard',,,,,'images/Dave/todolist.png','jsDashboard')
+Do iSubList.$add('Clients',,,,,'images/Dave/client.png','jsClients')
+Do iSubList.$add('Suppliers',,,,,'images/Dave/supplier.png','jsSuppliers')
+Do iSubList.$add('Articles',,,,,'images/Dave/minion.png','jsArticles')
+Do iSubList.$add('Tasks',,,,,'images/Dave/taken.png','jsTaken')
+Do iSubList.$add('Supportcalls',,,,,'images/Dave/support.png','jsSupportCalls')
+Do iSubList.$add('Agenda',,,,,'images/Dave/agenda.png','jsAgenda')
+Do iSubList.$add('Oportunities',,,,,'images/Dave/verkoopkans.png','jsVerkoopkansen')

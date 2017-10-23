@@ -1,0 +1,57 @@
+Calculate ivDatumVan as #D
+Calculate ivDatumTot as dadd(kDay,31,ivDatumVan)
+Calculate ivDatumOverMorgen as dadd(kDay,3,ivDatumVan)
+
+Do ivListAgenda.$define()
+Begin statement
+Sta: {SELECT cast( '' as varchar(30)) AS DAG,CPLANDATUMVAN, CPLANDATUMTOT, CAGENDALABEL, CONDERWERP, (SELECT CNAAM1 FROM TCONTACTEN WHERE CCONTACTEN_PK=CCONTACTEN_FK) AS C_CNAAM1,}
+Sta: {(SELECT COMSCHRIJVING1 FROM TDOCUMENTTYPES WHERE CDOCUMENTTYPES_PK=CDOCUMENTTYPES_FK)||' '||CNUMMER AS D_COMSCHRIJVING,}
+Sta: {CGEHELEDAG, CDOCUMENTTYPES_FK,CDOCUMENT_FK, CSTATUS, CAGENDA_PK}
+Sta: {FROM TAGENDA, TAGENDAEXTRA}
+Sta: {WHERE TAGENDAEXTRA.CMEDEWERKERS_FK=@[$ctask.tvFirmaMedewerkerList.M_CMEDEWERKERS_PK]}
+;  Sta: {WHERE TAGENDAEXTRA.CMEDEWERKER= 'AN'}
+Sta: {AND CAGENDA_PK=CAGENDA_FK}
+Sta: {AND TAGENDAEXTRA.CVERWIJDERD=FALSE}
+Sta: {AND TAGENDA.CPLANDATUMTOT>=@[ivDatumVan]}
+Sta: {AND TAGENDA.CPLANDATUMVAN<=@[ivDatumTot]}
+Sta: {ORDER BY CPLANDATUMVAN}
+End statement
+Do $ctask.tvSqlObj.$SelectList(ivListAgenda)
+;  Afspraken langer dan een dag meerdere dagen tonen
+Do row.$copydefinition(ivListAgenda)
+Do ivListAgenda.$search($ref.CGEHELEDAG&$ref.CPLANDATUMTOT>$ref.CPLANDATUMVAN)
+Do ivListAgenda.$first(kTrue) Returns ref
+While ref
+	If ref.CPLANDATUMVAN<ivDatumVan
+		Calculate ref.CPLANDATUMVAN as ivDatumVan
+	End If
+	Calculate datumdag as dadd(kDay,1,ref.CPLANDATUMVAN)
+	While (datumdag<=ref.CPLANDATUMTOT)&(datumdag<=ivDatumTot)
+		Do row.$assignrow(ref)
+		Do ivListAgenda.$add() Returns reflijn
+		Do reflijn.$assignrow(row)
+		Calculate reflijn.CPLANDATUMVAN as datumdag
+		Calculate datumdag as dadd(kDay,1,datumdag)
+	End While
+	Do ivListAgenda.$next(ref,kTrue) Returns ref
+End While
+Do ivListAgenda.$search(kFalse)
+Do ivListAgenda.$sort($ref.CPLANDATUMVAN)
+
+Do ivListAgenda.$first() Returns ref
+While ref
+	If ref.CSTATUS>=2
+		Calculate ref.CONDERWERP as con(ref.CONDERWERP,' (')
+		Calculate ref.CONDERWERP as con(ref.CONDERWERP,pick(ref.CSTATUS,'','',StringTable.$gettext('STA.Geannuleerd'),StringTable.$gettext('STA.Uitgesteld')))
+		Calculate ref.CONDERWERP as con(ref.CONDERWERP,')')
+	End If
+	Calculate ref.DAG as pick(ref.CPLANDATUMVAN>=ivDatumOverMorgen,pick(ddiff(kDay,ivDatumVan,ref.CPLANDATUMVAN)*(ddiff(kDay,ivDatumVan,ref.CPLANDATUMVAN)>0),ivLabelVandaag,ivLabelMorgen,ivLabelOvermorgen),jst(ref.CPLANDATUMVAN,'D:V D-M-y'))
+	If ref.CDOCUMENTTYPES_FK=99
+		If ref.CDOCUMENT_FK
+			Do ivListTaken.$search(ivListTaken.CCRMTAKEN_PK=ref.CDOCUMENT_FK,kTrue,kFalse,kTrue,kTrue) Returns lijn
+			Do ivListTaken.$remove(kListDeleteSelected)
+		End If
+	End If
+	Do ivListAgenda.$next(ref) Returns ref
+End While
+Do ivListAgenda.$line.$assign(0)

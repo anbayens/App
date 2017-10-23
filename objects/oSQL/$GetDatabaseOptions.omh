@@ -1,0 +1,21 @@
+
+If len(ivDatabaseOptions)=0
+	If len(pHostname)
+		Calculate hostname as pHostname
+	Else
+		Calculate hostname as ivSessieRO.$hostname()
+		Calculate hostname as strtok('hostname','/')
+	End If
+	If len(pDatabasename)
+		Calculate databasename as pDatabasename
+	Else
+		Calculate databasename as ivSessieRO.$databasename()
+	End If
+	If databasename='20300'
+		Calculate databasename as 'DaveDB'
+	End If
+	Do ivSessie.$connect(hostname) Returns %OK
+	Do ivSessie.$databaseoptions(databasename) Returns ivDatabaseOptions
+	Do ivSessie.$disconnect(hostname) Returns %OK
+End If
+Quit method ivDatabaseOptions

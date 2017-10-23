@@ -1,0 +1,4 @@
+Do ivQueryList.$define(ivQueryTekst)
+Calculate ivLib as pLib
+Calculate ivTableName as pTableName
+Calculate ivSelectieTekst as ''

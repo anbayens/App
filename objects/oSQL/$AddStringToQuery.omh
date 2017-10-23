@@ -1,0 +1,4 @@
+Do ivQueryList.$add(pString)
+If len(pSelectieTekst)
+	Calculate ivSelectieTekst as con(ivSelectieTekst,pSelectieTekst,",")
+End If

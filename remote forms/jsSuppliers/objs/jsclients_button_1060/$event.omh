@@ -1,0 +1,9 @@
+On evClick
+	;  googlemaps
+	;  Do ivoCPT.$GetLandGooglemaps Returns land
+	Calculate land as 'be'
+	Calculate url as con("http://maps.google.",land)
+	Calculate url as con(url,'/maps?q=',replaceall(iSqlRow.CADRES1,' ','+'),',',iSqlRow.CPOSTCODE,',',iSqlRow.CGEMEENTE)
+	Do ivoCPT.$OpenDocument(url)
+	
+	Quit method

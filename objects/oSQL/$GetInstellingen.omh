@@ -1,0 +1,33 @@
+;  ophalen instellingen voor gekozen firma en vestiging
+
+Do $ctask.tvInstellingen.$define()
+Begin statement
+Sta: {SELECT CINDEX,CWAARDE FROM TINSTELLINGEN}
+Sta: {WHERE CINTERNEFIRMAS_FK=@[$ctask.tvFirmaMedewerkerList.F_CINTERNEFIRMAS_PK]}
+Sta: {AND CINTERNEFIRMAVESTIGINGEN_FK IS NULL}
+Sta: {UNION}
+Sta: {SELECT CINDEX,CWAARDE FROM TINSTELLINGEN}
+Sta: {WHERE CINTERNEFIRMAS_FK=@[$ctask.tvFirmaMedewerkerList.F_CINTERNEFIRMAS_PK]}
+Sta: {AND CINTERNEFIRMAVESTIGINGEN_FK =@[$ctask.tvFirmaMedewerkerList.V_CINTERNEFIRMAVESTIGINGEN_PK]}
+Sta: {ORDER BY CINDEX}
+End statement
+Do method $SelectList ($ctask.tvInstellingen)
+
+Do $ctask.tvInstellingen.$search($ctask.tvInstellingen.CINDEX='algbtwpercentage',kTrue,kFalse,kFalse,kFalse) Returns lijn
+If lijn     ;; testen op decimaal teken
+	Calculate decimal as left($root.$prefs.$separators(),1)
+	If not(pos(decimal,$ctask.tvInstellingen.CWAARDE))
+		Calculate thousand as mid($root.$prefs.$separators(),2,1)
+		Calculate $ctask.tvInstellingen.CWAARDE as replaceall($ctask.tvInstellingen.CWAARDE,thousand,decimal)
+	End If
+End If
+
+Do $ctask.tvInstellingen.$search($ctask.tvInstellingen.CINDEX='refmunt',kTrue,kFalse,kFalse,kFalse)
+Do $ctask.tvRowMunt.$definefromsqlclass(CPT.$tables.tTMUNTEN)
+Do $ctask.tvRowMunt.$sessionobject.$assign(ivSessieRO)
+Do $ctask.tvRowMunt.$select(con(" WHERE CMUNT = '",$ctask.tvInstellingen.CWAARDE,"'"))
+Do $ctask.tvRowMunt.$fetch(1)
+
+Do $ctask.tvoCPTLists.$BuildListTalen() Returns list     ;; taal
+Do list.$search(list.CTAAL=$ctask.tvFirmaMedewerkerList.M_CTAAL,kTrue,kFalse,kFalse,kFalse) Returns $ctask.tvTaalnrMedewerker
+Quit method kTrue

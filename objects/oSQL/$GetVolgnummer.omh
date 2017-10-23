@@ -1,0 +1,15 @@
+
+Do ivSessieRO.$newstatement('volgnummer') Returns oStat
+Calculate whereclause as con(" WHERE CINTERNEFIRMA = '",pFirma,"'")
+If len(pVestiging)
+	Calculate whereclause as con(whereclause," AND CINTERNEFIRMAVESTIGING = '",pVestiging,"'")
+End If
+Calculate whereclause as con(whereclause," AND CINDEX = '",pIndex,"'")
+Do oStat.$execdirect(con("SELECT CWAARDE FROM TINSTELLINGEN ",whereclause)) Returns %OK
+If not(%OK)
+	Quit method 0
+End If
+Do oStat.$fetch(row,1)
+Calculate volgnummer as row.C1
+
+Quit method volgnummer

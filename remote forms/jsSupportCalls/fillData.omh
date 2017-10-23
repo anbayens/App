@@ -1,0 +1,13 @@
+Calculate lSessionName as 'SESSIERO'
+Do iSqlList.$definefromsqlclass($libs.CRM.$schemas.TCRMSUPPORTCALLS)
+Do iSqlList.$sessionobject.$assign($root.$sessions.[lSessionName].$sessionobject) Returns #F
+Calculate where as "WHERE CAFGESLOTEN = FALSE AND CMEDEWERKER = 'AN' "
+Do iSqlList.$select(where) Returns #F
+If flag true
+	Do iSqlList.$fetch(kFetchAll)
+Else
+	Do $cinst.$showmessage(con(iSqlList.$statementobject.$nativeerrorcode,' - ',iSqlList.$statementobject.$nativeerrortext),'SQL Error')
+End If
+Else
+Do $cinst.$showmessage(con('Session ',chr(39),lSessionName,chr(39),' does not exist.'),'SQL Error')
+End If

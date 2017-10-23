@@ -1,0 +1,17 @@
+;  Do $ctask.tvSQLObj.$GetServerDate() Returns ivDatumVan     ;; vandaag
+Calculate ivDatumVan as #D
+Calculate ivDatumTijdVan as dadd(kHour,23,ivDatumVan)
+Calculate ivDatumTijdVan as dadd(kMinute,59,ivDatumTijdVan)
+Calculate ivLabelVandaag as StringTable.$gettext('STA.Vandaag')
+Calculate ivLabelMorgen as StringTable.$gettext('STA.Morgen')
+Calculate ivLabelOvermorgen as StringTable.$gettext('STA.Overmorgen')
+
+;  If ivMetTaken
+Do method $BuildListTaken
+;  End If
+;  If ivMetAgenda
+Do method $BuildListAgenda
+;  End If
+;  If ivMetSupportCalls
+Do method $BuildListSupportCalls
+;  End If

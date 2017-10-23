@@ -1,0 +1,18 @@
+;  list of LookSee indexes available
+Do ivListFTI.$clear()
+
+Do method $ExtractTable ('TCONTACTEN',listcolumns,listcheck,listforeignkeys,listindexes,listunique,rowcount)
+Do listindexes.$search(pos('FTI_',listindexes.NAME),kTrue,kFalse,kTrue,kTrue) Returns lijn
+Do ivListFTI.$merge(listindexes,kTrue,kTrue)
+Do method $ExtractTable ('TCONTACTPERSONEN',listcolumns,listcheck,listforeignkeys,listindexes,listunique,rowcount)
+Do listindexes.$search(pos('FTI_',listindexes.NAME),kTrue,kFalse,kTrue,kTrue) Returns lijn
+Do ivListFTI.$merge(listindexes,kTrue,kTrue)
+Do method $ExtractTable ('TARTIKELS',listcolumns,listcheck,listforeignkeys,listindexes,listunique,rowcount)
+Do listindexes.$search(pos('FTI_',listindexes.NAME),kTrue,kFalse,kTrue,kTrue) Returns lijn
+Do ivListFTI.$merge(listindexes,kTrue,kTrue)
+Do method $ExtractTable ('TCRMCOMMUNICATIES',listcolumns,listcheck,listforeignkeys,listindexes,listunique,rowcount)
+Do listindexes.$search(pos('FTI_',listindexes.NAME),kTrue,kFalse,kTrue,kTrue) Returns lijn
+Do ivListFTI.$merge(listindexes,kTrue,kTrue)
+Do method $ExtractTable ('TCRMSUPPORTCALLS',listcolumns,listcheck,listforeignkeys,listindexes,listunique,rowcount)
+Do listindexes.$search(pos('FTI_',listindexes.NAME),kTrue,kFalse,kTrue,kTrue) Returns lijn
+Do ivListFTI.$merge(listindexes,kTrue,kTrue)

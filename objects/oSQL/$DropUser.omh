@@ -1,0 +1,8 @@
+
+Do ivSessieTR[pSessieNr].$newstatement('DROPUSER') Returns oStat
+Do oStat.$execdirect(con('drop user "',pUser,'" cascade;')) Returns %OK
+If not(%OK)
+	OK message  {[oStat.$errortext]//[oStat.$nativeerrortext]}
+	Quit method kFalse
+End If
+Quit method kTrue

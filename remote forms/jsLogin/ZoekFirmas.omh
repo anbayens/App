@@ -1,0 +1,26 @@
+
+Do tvFirmaMedewerkerList.$definefromsqlclass($libs.CPT.$tables.tqInternefirmasmedewerker)
+Do $ctask.tvFirmaMedewerkerList.$sessionobject.$assign(ivSessieRO) Returns #F
+Calculate whereclause as ' AND TINTERNEFIRMAVESTIGINGEN.CNIETACTIEF=FALSE '
+Calculate whereclause as con(whereclause," ORDER BY TINTERNEFIRMAS.CNAAM1, TINTERNEFIRMAVESTIGINGEN.CHOOFDVESTIGING DESC ,TINTERNEFIRMAVESTIGINGEN.CINTERNEFIRMAVESTIGINGEN_PK ")
+Do tvFirmaMedewerkerList.$select(whereclause) Returns %OK
+If not(%OK)
+	Quit method kFalse
+End If
+Do tvFirmaMedewerkerList.$fetch(kFetchAll) Returns resultaat
+If resultaat=kFetchError
+	Quit method kFalse
+End If
+If tvFirmaMedewerkerList.$linecount=0
+	Do tvRoutines.$Message(StringTable.$gettext('STA.GebruikerHeeftGeenToegangTotInterneFirmas'))
+	Quit method kFalse
+End If
+Do tvFirmaMedewerkerList.$search(tvFirmaMedewerkerList.F_CHOOFDFIRMA=kTrue,kTrue,kFalse,kFalse,kFalse) Returns lijn
+If lijn=0
+	Calculate lijn as 1
+	Do tvFirmaMedewerkerList.$line.$assign(1)
+End If
+Calculate tvFirmaMedewerkerList.[lijn].$selected as 1
+;  Do $imenus.mBestanden.$RedrawMenu
+;  Set Omnis window title {Dave ([con($ctask.tvFirmaMedewerkerList.F_CNAAM1,' ',$ctask.tvFirmaMedewerkerList.CINTERNEFIRMAVESTIGING)])}     ;; Windows
+Quit method kTrue

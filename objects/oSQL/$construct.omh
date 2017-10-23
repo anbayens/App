@@ -1,0 +1,4 @@
+Do ivTransInUseList.$cols.$add('SessieInUse',kBoolean)     ;; Per Transactie-sessie een lijn toevoegen
+
+Do ivListFTI.$define()
+Do ivListFTI.$cols.$add('NAME',kCharacter,kSimplechar,1000000)

@@ -1,0 +1,12 @@
+
+If len(pHostname)
+	Calculate hostname as pHostname
+Else
+	Calculate hostname as ivSessieRO.$hostname()
+	Calculate hostname as strtok('hostname','/')
+End If
+Do list.$define()
+Do ivSessieRO.$connect(hostname)
+Do ivSessieRO.$availabledatabases(list)
+Do ivSessieRO.$disconnect(hostname)
+Quit method list

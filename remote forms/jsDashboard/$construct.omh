@@ -1,0 +1,5 @@
+;  Enter your initialization code here
+Calculate ivSessieRO as $root.$sessions.SESSIERO.$sessionobject
+Do ivSessieRO.$newstatement('select') Returns ivoStat
+
+Do method fillData

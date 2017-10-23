@@ -1,0 +1,22 @@
+
+Calculate pUser as '_PUBLIC'
+
+Do ivSessieTR[pSessieNr].$newstatement('GRANTUSER') Returns oStat
+Do oStat.$execdirect(con("select 'GRANT ALL PRIVILEGES ON '||",'"table_name"',"||' TO ",'"',pUser,'";',"'"," FROM PRIM_KEYS ORDER BY 1;")) Returns %OK
+Do oStat.$fetch(list,kFetchAll)
+Calculate aantallijnen as list.$linecount
+
+Working message Grant to [pUser] /-1073735824,-1073735820;50;[aantallijnen];60 (Repeat count)
+For list.$line from 1 to list.$linecount() step 1
+	Working message Grant to [pUser] /-1073735824,-1073735820;50;[aantallijnen];60 (Repeat count)
+	Do oStat.$clear()
+	Calculate sta as list.C1
+	Do oStat.$execdirect(sta) Returns %OK
+	If not(%OK)
+		OK message  {[oStat.$errortext]//[oStat.$nativeerrortext]}
+		Quit method kFalse
+	End If
+End For
+Close working message
+
+Quit method kTrue

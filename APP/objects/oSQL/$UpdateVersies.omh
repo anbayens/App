@@ -1,0 +1,36 @@
+
+Do method $BuildListModules Returns listmodules     ;; modules in database
+Calculate pDidInsertLib as kFalse
+
+Do $clib.$objects.oLibInfo.$new().$GetLibInfo(iconid,icontekst,libname,libversion)     ;; CPT
+Do listmodules.$search(listmodules.CMODULE='CPT',kTrue,kFalse,kFalse,kFalse)
+If libversion>listmodules.CVERSIE
+	Do method $UpdateLibVersie (libname,listmodules.CVERSIE) Returns controle
+End If
+If not(controle)
+	Quit method kFalse
+End If
+
+For $ctask.tvModulesList.$line from 1 to $ctask.tvModulesList.$linecount step 1     ;; $DAVEHOME/Modules
+	If pos($ctask.tvModulesList.LibName,'DEV-MIG-Licentie')
+		Jump to start of loop
+	End If
+	Do listmodules.$search(kFalse)
+	Do listmodules.$search(upp(listmodules.CMODULE)=upp($ctask.tvModulesList.LibName),kTrue,kFalse,kFalse,kFalse) Returns lijn
+	If lijn
+		If $ctask.tvModulesList.LibVersion>listmodules.CVERSIE
+			Do method $UpdateLibVersie ($ctask.tvModulesList.LibName,listmodules.CVERSIE) Returns %OK
+			If not(%OK)
+				Quit method kFalse
+			End If
+		End If
+	Else     ;; newlib 1.0
+		Do method $InsertLibVersie ($ctask.tvModulesList.LibName) Returns %OK
+		If not(%OK)
+			Quit method kFalse
+		End If
+		Calculate pDidInsertLib as kTrue
+	End If
+End For
+
+Quit method kTrue

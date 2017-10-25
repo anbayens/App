@@ -1,0 +1,26 @@
+If not(pSessieNr)
+	Quit method kFalse
+End If
+Calculate %OK as pFlag
+If %OK
+	Do ivSessieTR[pSessieNr].$commit() Returns %OK
+	If not(%OK)
+		Do method $GetNativeErrorText (ivSessieTR[pSessieNr].$nativeerrorcode) Returns message
+		If len(message)
+			Calculate message2 as con(ivSessieTR[pSessieNr].$nativeerrorcode,kCr,ivSessieTR[pSessieNr].$nativeerrortext)
+		Else
+			Calculate message as con(ivSessieTR[pSessieNr].$nativeerrorcode,kCr,ivSessieTR[pSessieNr].$nativeerrortext)
+		End If
+		If pNoMessage
+			Calculate pErrorText as con(message,kCr,message2)
+		Else
+			Calculate title as StringTable.$gettext('STA.Sql-Error')
+			Do $ctask.tvRoutines.$MessageMore(message,title,message2)
+		End If
+	End If
+Else
+	Do ivSessieTR[pSessieNr].$rollback() Returns #F
+End If
+Do ivTransInUseList.[pSessieNr].C1.$assign(kFalse)
+Calculate pSessieNr as 0
+Quit method %OK

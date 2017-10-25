@@ -1,0 +1,17 @@
+
+Calculate msg as StringTable.$gettext('STA.OphalenDatabaseSessies')
+Working message  {[msg]}
+Do method $ExtractUsage Returns listusage
+Do listusage.$search(listusage.SYSTEM_USER=pSystemUser,kTrue,kFalse,kTrue,kTrue)
+Do listusage.$remove(kListKeepSelected)
+Do listusage.$search(listusage.SYSTEM_USER=pSystemUser&listusage.USER='_SYSTEM',kTrue,kFalse,kTrue,kTrue)
+Do listusage.$remove(kListDeleteSelected)
+Close working message
+
+If listusage.$linecount>1
+	Calculate msg as con(StringTable.$gettext('STA.WijzigingKanNietUitgevoerdWorden'),kCr,StringTable.$gettext('STA.ErZijnNogGebruikersAangemeld'))
+	Do $ctask.tvRoutines.$Message(msg)
+	Quit method kFalse
+End If
+
+Quit method kTrue

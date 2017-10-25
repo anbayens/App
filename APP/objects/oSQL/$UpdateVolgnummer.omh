@@ -1,0 +1,29 @@
+
+;  Calculate #1 as #CT     ;; tuning
+Do ivSessieTR[pSessieNr].$newstatement('volgnummer') Returns oStat
+Calculate whereclause as con(" WHERE CINTERNEFIRMA = '",pFirma,"'")
+If len(pVestiging)
+	Calculate whereclause as con(whereclause," AND CINTERNEFIRMAVESTIGING = '",pVestiging,"'")
+End If
+Calculate whereclause as con(whereclause," AND CINDEX = '",pIndex,"'")
+Do oStat.$execdirect(con("SELECT CWAARDE FROM TINSTELLINGEN ",whereclause)) Returns %OK
+If not(%OK)
+	Quit method 0
+End If
+Do oStat.$fetch(row,1)
+Calculate volgnummer as row.C1
+If volgnummer=0
+	Quit method 0
+End If
+Calculate nieuwnummer as volgnummer+pAantal     ;; +/- 1
+If nieuwnummer>0
+	Do oStat.$clear()
+	Do oStat.$execdirect(con("UPDATE TINSTELLINGEN SET CWAARDE = '",nieuwnummer,"'",",CWIJZIGGEBRUIKER=current_user",",CWIJZIGDATUM=cast(current_timestamp as timestamp)",whereclause)) Returns %OK
+Else
+	Calculate volgnummer as 0
+End If
+
+;  Calculate #2 as #CT     ;; tuning
+;  Calculate #13 as #13+(#2-#1)     ;; tuning simpleexectrx
+
+Quit method volgnummer

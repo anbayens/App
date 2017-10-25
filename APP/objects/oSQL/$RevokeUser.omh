@@ -1,0 +1,17 @@
+
+Do ivSessieTR[pSessieNr].$newstatement('REVOKEUSER') Returns oStat
+Do oStat.$execdirect('SELECT "TABLE_NAME" FROM PRIM_KEYS ORDER BY 1 ;')
+Do oStat.$fetch(list,kFetchAll)
+Calculate aantallijnen as list.$linecount
+
+Working message Working/-1073735824,-1073735820;50;[aantallijnen];60 (Repeat count) {[sta]}
+For list.$line from 1 to list.$linecount() step 1
+	Working message Working/-1073735824,-1073735820;50;[aantallijnen];60 (Repeat count) {[sta]}
+	Redraw working message
+	Do oStat.$clear()
+	Calculate sta as con('REVOKE ALL PRIVILEGES ON "_SYSTEM"."',list.C1,'" FROM "',pUser,'" restrict;')
+	Do oStat.$execdirect(sta) Returns %OK
+End For
+Close working message
+
+Quit method kTrue

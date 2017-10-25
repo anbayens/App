@@ -1,0 +1,15 @@
+
+Do ivSessieRO.$newstatement('execdirect') Returns oStat
+Do oStat.$execdirect() Returns #F
+If flag false
+	Do method $GetNativeErrorText (oStat.$nativeerrorcode) Returns msg
+	If len(msg)
+		Calculate message2 as con(oStat.$nativeerrorcode,kCr,oStat.$nativeerrortext)
+	Else
+		Calculate msg as con(oStat.$nativeerrorcode,kCr,oStat.$nativeerrortext)
+	End If
+	Calculate title as StringTable.$gettext('STA.Sql-Error')
+	Do $ctask.tvRoutines.$MessageMore(msg,title,message2)
+	Quit method kFalse
+End If
+Quit method kTrue

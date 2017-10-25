@@ -1,0 +1,9 @@
+Do ivSelectRow.$definefromsqlclass($libs.CRM.$tables.tTCRMTAKEN)
+Do ivRowContacten.$definefromsqlclass(CPT.$tables.tTCONTACTEN)
+
+Do ivoCPTLists.$BuildListMedewerkers() Returns ivListMedewerkers
+
+Begin statement
+Sta: {SELECT CNAAM1, CCONTACTEN_PK, CCONTACT FROM TCONTACTEN WHERE CNIETACTIEF = FALSE ORDER BY CNAAM1}
+End statement
+Do $ctask.tvSqlObj.$SelectList(ivListContacten)

@@ -1,0 +1,17 @@
+
+Do ivSessie.$connect(pHostname) Returns %OK
+If not(%OK)
+	Quit method kFalse
+End If
+
+If len(pDatabasename)=0
+	Calculate pDatabasename as 'DaveDB'
+End If
+Do ivSessie.$createdatabase(pDatabasename,pOptions) Returns %OK
+If not(%OK)
+	Quit method kFalse
+End If
+
+Do ivSessie.$disconnect()
+
+Quit method kTrue

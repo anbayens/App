@@ -1,0 +1,16 @@
+
+Do method $StatusDatabase (ivServer,ivDatabase) Returns status
+If status<>'running'
+	Do method $StartDatabase (ivServer,ivDatabase)
+	Calculate msg as StringTable.$gettext('STA.DatabaseWordtGestart')
+	Working message  {[msg]}
+	While status<>'running'
+		Do method Waitsecs (1)
+		Do method $StatusDatabase (ivServer,ivDatabase) Returns status
+		Calculate i as i+1
+		If i>=10
+			Calculate status as 'running'     ;; running / unknown
+		End If
+	End While
+End If
+Close working message

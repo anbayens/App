@@ -1,0 +1,6 @@
+If isnull(ivSelectRow.CMEDEWERKERSVOOR_FK)
+	Do ivListMedewerkers.$search(ivListMedewerkers.CMEDEWERKERS_PK=$ctask.tvFirmaMedewerkerList.M_CMEDEWERKERS_PK)
+	Calculate ivListMedewerkers.CMEDEWERKERVOOR as $ctask.tvFirmaMedewerkerList.M_CMEDEWERKER
+	Calculate ivSelectRow.CMEDEWERKERSVOOR_FK as $ctask.tvFirmaMedewerkerList.M_CMEDEWERKERS_PK
+End If
+Do method $SetDefaultsOpen

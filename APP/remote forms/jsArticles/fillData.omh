@@ -1,0 +1,12 @@
+;  Enter your initialization code here
+Do $ctask.tvSqlObj.$GetSessionRO() Returns ivSessieRo
+
+Do iSqlList.$definefromsqlclass($libs.ORDER.$queries.qArtikelsPopup)
+Do iSqlList.$sessionobject.$assign(ivSessieRo)
+Calculate where as 'WHERE CNIETACTIEF = FALSE'
+Do iSqlList.$select(where) Returns #F
+If flag true
+	Do iSqlList.$fetch(kFetchAll)
+Else
+	Do $cinst.$showmessage(con(iSqlList.$statementobject.$nativeerrorcode,' - ',iSqlList.$statementobject.$nativeerrortext),'SQL Error')
+End If

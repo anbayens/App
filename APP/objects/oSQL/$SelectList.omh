@@ -1,0 +1,20 @@
+
+Calculate #1 as #CT     ;; tuning
+
+Do ivSessieRO.$newstatement('select') Returns oStat
+Do oStat.$execdirect() Returns #F
+Calculate sta as oStat.$nativesqltext()
+If flag true
+	Do oStat.$fetch(pSelectList,kFetchAll,kFalse) Returns Result
+	Calculate #2 as #CT     ;; tuning
+	Calculate #14 as #14+(#2-#1)     ;; tuning select
+	If Result=kFetchError
+		Calculate errortext as con(oStat.$errortext,kCr,kCr,StringTable.$gettext('STA.GelieveTerugAanTeMelden'))
+		Do $ctask.tvRoutines.$Message(errortext,0,StringTable.$gettext('STA.Dam-Error'))
+		Quit method kFalse
+	End If
+Else
+	Do $ctask.tvRoutines.$Message(oStat.$nativeerrortext,0,StringTable.$gettext('STA.Sql-Error'))
+	Quit method kFalse
+End If
+Quit method kTrue

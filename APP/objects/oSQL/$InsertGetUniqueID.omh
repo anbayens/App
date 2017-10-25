@@ -1,0 +1,27 @@
+;  Insert + teruggave van UniqueID of Prim.Key
+Do ivTransSession.$newstatement('insert') Returns oStat
+Do oStat.$execdirect() Returns #F
+If flag false
+	Do $ctask.tvRoutines.$Message(oStat.$nativeerrortext,0,StringTable.$gettext('STA.Sql-Error'))
+	Quit method kFalse
+Else
+	If len(pTabelName)
+		Begin statement
+		Sta: {select [pPKeyName] from [pTabelName] where index = [oStat.$insertindex]}
+		End statement
+		Do oStat.$execdirect() Returns #F
+		If flag false
+			Do $ctask.tvRoutines.$Message(oStat.$nativeerrortext,0,StringTable.$gettext('STA.Sql-Error'))
+			Quit method kFalse
+		End If
+		Do Row.$define
+		Do oStat.$fetch(Row,1,kFalse) Returns Result
+		If Result=kFetchError
+			Calculate errortext as con(oStat.$errortext,kCr,kCr,StringTable.$gettext('STA.GelieveTerugAanTeMelden'))
+			Do $ctask.tvRoutines.$Message(errortext,0,StringTable.$gettext('STA.Dam-Error'))
+			Quit method kFalse
+		End If
+		Calculate pPKeyValue as Row.[pPKeyName]
+	End If
+End If
+Quit method kTrue

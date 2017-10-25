@@ -1,0 +1,26 @@
+
+If ivTransInUseList.$linecount>=6
+	Do $ctask.tvRoutines.$Message(StringTable.$gettext('STA.GeenTransactie-SessiesMeerVrij'))
+	Quit method kFalse
+End If
+Calculate lijn as ivTransInUseList.$linecount+1
+Do ivSessieTR[lijn].$databasepassword.$assign('')
+Do ivSessieTR[lijn].$databasename.$assign('')
+Do ivSessieTR[lijn].$logon(ivLogin,ivUser,ivPassword,con('SessieTR',lijn,'-JS')) Returns #F
+If ivSessieTR[lijn].$state<>kSessionStateLoggedOn
+	Do $ctask.tvRoutines.$Message(StringTable.$gettext('STA.InloggenMislukt'),0,StringTable.$gettext('STA.InloggenDatabase'))
+	Quit method kFalse
+End If
+Do ivSessieTR[lijn].$newstatement('transaction') Returns oStat
+Do oStat.$execdirect('set transaction isolation level repeatable read, locking optimistic;') Returns #F
+If len(timezone)
+	Do oStat.$execdirect(con("set time zone '",timezone,"';")) Returns #F
+Else
+	Do oStat.$execdirect("set time zone 'Europe/Brussels';") Returns #F
+End If
+Do ivSessieTR[lijn].$transactionmode.$assign(kSessionTranManual) Returns #F
+Do ivSessieTR[lijn].$emptydateisnull.$assign(kTrue) Returns #F
+Do ivSessieTR[lijn].$maxcharacterlen.$assign(1000000) Returns #F
+Calculate pNr as lijn
+Do ivTransInUseList.$add(pInUse)
+Quit method kTrue

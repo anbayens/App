@@ -1,0 +1,3 @@
+On evKeyPress
+	Calculate iKeyList as pKeyList
+	Do ivListContacten.$search(mid(low(ivListContacten.C1),1,len(ivSearchContacts))=low(ivSearchContacts))

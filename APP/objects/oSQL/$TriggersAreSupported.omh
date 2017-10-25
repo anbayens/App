@@ -1,0 +1,9 @@
+
+Do method $GetServerVersion Returns serverversion
+If serverversion>='4.2.8'
+	Calculate triggersaresupported as kTrue
+Else
+	Do method $GetDatabaseOptions Returns options
+	Calculate triggersaresupported as pick(pos('triggers=yes',options)>0,kFalse,kTrue)
+End If
+Quit method triggersaresupported

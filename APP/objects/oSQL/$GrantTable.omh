@@ -1,0 +1,15 @@
+
+Do ivSessieTR[pSessieNr].$newstatement('GRANTTABLE') Returns oStat
+Do $ctask.tvoCPTLists.$BuildListMedewerkers() Returns listmedewerkers
+Do listmedewerkers.$search(listmedewerkers.CGEBRUIKER=kTrue,kTrue,kFalse,kTrue,kTrue)
+Do listmedewerkers.$remove(kListKeepSelected)
+
+For listmedewerkers.$line from 1 to listmedewerkers.$linecount step 1
+	Do oStat.$execdirect(con('GRANT ALL PRIVILEGES ON "',pTable,'" TO "',listmedewerkers.CMEDEWERKER,'";')) Returns %OK
+	If not(%OK)
+		OK message  {[oStat.$errortext]//[oStat.$nativeerrortext]}
+		Quit method kFalse
+	End If
+End For
+
+Quit method %OK

@@ -1,0 +1,5 @@
+
+Do ivSessieRO.$newstatement('users') Returns oStat
+Do oStat.$execdirect("SELECT USER_NAME FROM INFORMATION_SCHEMA.USERS ORDER BY USER_NAME")
+Do oStat.$fetch(list,kFetchAll)
+Quit method list

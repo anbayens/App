@@ -1,0 +1,19 @@
+
+If pSessienr=0
+	Do ivSessieRO.$newstatement('servertime') Returns oStat
+	Do oStat.$execdirect("values (current_timestamp)")
+	Do oStat.$fetch(row)
+	Quit method row.c1
+End If
+
+If pSessienr=255     ;; KeepConnectionInterval
+	For lijn from 1 to ivTransInUseList.$linecount() step 1
+		Do ivSessieTR[lijn].$newstatement('servertime') Returns oStat
+		Do oStat.$execdirect("values (current_timestamp)")
+		Do oStat.$fetch(row)
+		If not(ivTransInUseList.[lijn].C1)
+			Do ivSessieTR[lijn].$commit()
+		End If
+		Quit method row
+	End For
+End If

@@ -1,0 +1,45 @@
+;  columns
+Calculate columns as pColumns
+Calculate columns as replaceall(columns,'COLUMNS = (','')
+Calculate columns as replaceall(columns,'{ ','')
+Calculate columns as replaceall(columns,'}','')
+Calculate columns as replaceall(columns,', ','')
+Calculate columns as replaceall(columns,')','')
+Calculate columns as replaceall(columns,'; ',kCr)
+Do pList.$clear()
+While len(columns)
+	Calculate text as strtok('columns',kCr)
+	Do pList.$add(text)
+End While
+For pList.$line from 1 to pList.$linecount() step 1
+	If mid(pList.CTEXT,1,4)='NAME'
+		Do pListColumns.$add() Returns ref
+		Calculate text as pList.CTEXT
+		Calculate temp as strtok('text','"')
+		Calculate temp as strtok('text','"')
+		Calculate ref.NAME as temp
+	End If
+	If mid(pList.CTEXT,1,8)='DATATYPE'
+		Calculate text as pList.CTEXT
+		Calculate ref.DATATYPE as replace(text,'DATATYPE = ','')
+	End If
+	If mid(pList.CTEXT,1,5)='WIDTH'
+		Calculate text as pList.CTEXT
+		Calculate ref.WIDTH as replace(text,'WIDTH = ','')
+	End If
+	If mid(pList.CTEXT,1,5)='SCALE'
+		Calculate text as pList.CTEXT
+		Calculate ref.SCALE as replace(text,'SCALE = ','')
+	End If
+	If mid(pList.CTEXT,1,9)='COLLATION'
+		Calculate text as pList.CTEXT
+		Calculate temp as strtok('text','"')
+		Calculate temp as strtok('text','"')
+		Calculate ref.COLLATION as temp
+	End If
+	If mid(pList.CTEXT,1,9)='NORMALIZE'
+		Calculate text as pList.CTEXT
+		Calculate text as replace(text,'NORMALIZE = ','')
+		Calculate ref.NORMALIZE as pick(text='YES',kFalse,kTrue)
+	End If
+End For

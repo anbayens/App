@@ -1,0 +1,10 @@
+
+;  Calculate ivSelectRow.CCONTACTEN_FK as #NULL
+Calculate ivSelectRow.CSTARTDATUM as #NULL
+Calculate ivDatumTot as ''
+Calculate ivSelectRow.CMEDEWERKERVAN as ''
+Calculate ivSelectRow.CMEDEWERKERSVAN_FK as #NULL
+Calculate ivSelectRow.CMETOPVOLGING as kFalse
+;  Do ivRowContacten.$clear()
+Do ivListCategorien.$line.$assign(1)
+Do ivListStatus.$line.$assign(7)

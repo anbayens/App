@@ -1,0 +1,7 @@
+On evUserChangedPage
+	If $cinst.$objs.pagedPaneContacts.$currentpage=1
+		Do $cinst.$objs.pagedPaneContacts.$currentpage.$assign(2)
+		;  Do method $showDetails
+	Else
+		Do $cinst.$objs.pagedPaneContacts.$currentpage.$assign(1)
+	End If

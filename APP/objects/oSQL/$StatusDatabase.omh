@@ -1,0 +1,10 @@
+
+Do ivSessie.$connect(pHostname) Returns %OK
+If not(%OK)
+	Quit method '0'
+End If
+;  Calculate pDatabasename as pick(pDatabasename='DaveDB',pDatabasename,'20300')
+Do ivSessie.$databasestatus(pDatabasename) Returns status
+Do ivSessie.$disconnect()
+
+Quit method status

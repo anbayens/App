@@ -1,0 +1,29 @@
+Do iSqlRow.$definefromsqlclass($libs.CPT.$tables.tTCONTACTEN)
+Do iSqlRow.$sessionobject.$assign(ivSessieRO) Returns #F
+Calculate where as con('WHERE CCONTACTEN_PK =  ',iSqlList.CCONTACTEN_PK)
+Do iSqlRow.$select(where) Returns #F
+If flag true
+	Do iSqlRow.$fetch(kFetchAll)
+Else
+	Do $cinst.$showmessage(con(iSqlRow.$statementobject.$nativeerrorcode,' - ',iSqlRow.$statementobject.$nativeerrortext),'SQL Error')
+End If
+
+Do iContactPersonsList.$definefromsqlclass($libs.CPT.$tables.tTCONTACTPERSONEN)
+Do iContactPersonsList.$sessionobject.$assign(ivSessieRO) Returns #F
+Calculate where as con('WHERE CCONTACTEN_FK = ',iSqlList.CCONTACTEN_PK)
+Do iContactPersonsList.$select(where) Returns #F
+If flag true
+	Do iContactPersonsList.$fetch(kFetchAll)
+Else
+	Do $cinst.$showmessage(con(iContactPersonsList.$statementobject.$nativeerrorcode,' - ',iContactPersonsList.$statementobject.$nativeerrortext),'SQL Error')
+End If
+
+Do iContactAdresList.$definefromsqlclass($libs.CPT.$tables.tTCONTACTADRESSEN)
+Do iContactAdresList.$sessionobject.$assign(ivSessieRO) Returns #F
+Calculate where as con('WHERE CCONTACTEN_FK = ',iSqlList.CCONTACTEN_PK)
+Do iContactAdresList.$select(where) Returns #F
+If flag true
+	Do iContactAdresList.$fetch(kFetchAll)
+Else
+	Do $cinst.$showmessage(con(iContactAdresList.$statementobject.$nativeerrorcode,' - ',iContactAdresList.$statementobject.$nativeerrortext),'SQL Error')
+End If

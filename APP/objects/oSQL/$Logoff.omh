@@ -1,0 +1,25 @@
+
+If ivSessieRO.$state=kSessionStateLoggedOn
+	If $sessions.$count()>1
+		Do $ctask.tvoWinPos.$SaveWinPos Returns #F
+	End If
+	;  auto stop database ?
+	Do $ctask.tvPrefs.$GetPref("AutoStartDatabase") Returns autostartdatabase
+	If autostartdatabase
+		Do method $LogoffAutostop Returns autostopdatabase
+	End If
+	;  logoff
+	For lijn from 1 to ivTransInUseList.$linecount() step 1
+		Do ivSessieTR[lijn].$disconnect()
+		Do ivSessieTR[lijn].$logoff()
+	End For
+	Do ivSessieRO.$disconnect()
+	Do ivSessieRO.$logoff()
+	Calculate ivDatabaseOptions as ''
+	;  auto stop database
+	If autostopdatabase
+		Do method $StopDatabase (ivServer,ivDatabase)
+	End If
+End If
+
+Quit method kTrue

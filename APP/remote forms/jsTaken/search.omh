@@ -1,0 +1,21 @@
+Do $ctask.tvSqlObj.$GetSessionRO() Returns ivSessieRO
+Do ivSqlList.$definefromsqlclass($libs.CRM.$tables.tqCRMTaken)
+Do ivSqlList.$sessionobject.$assign(ivSessieRO) Returns #F
+;  Calculate where as 'AND CNIETACTIEF = FALSE'
+
+If ivListMedewerkers.CMEDEWERKER<>''
+	Calculate where as con('WHERE CMEDEWERKERSVOOR_FK = ',ivListMedewerkers.CMEDEWERKERS_PK)
+Else
+	Calculate where as con('WHERE CMEDEWERKERSVOOR_FK = ',$ctask.tvFirmaMedewerkerList.M_CMEDEWERKERS_PK)
+End If
+
+If ivListContacten.CCONTACT<>''
+	Calculate where as con(where,' AND CCONTACTEN_FK = ',ivListContacten.CCONTACTEN_PK)
+End If
+
+Do ivSqlList.$select(where) Returns #F
+If flag true
+	Do ivSqlList.$fetch(kFetchAll)
+Else
+	Do $cinst.$showmessage(con(ivSqlList.$statementobject.$nativeerrorcode,' - ',ivSqlList.$statementobject.$nativeerrortext),'SQL Error')
+End If

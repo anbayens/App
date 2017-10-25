@@ -1,0 +1,15 @@
+
+If len(pHostname)
+	Calculate hostname as pHostname
+Else
+	Calculate hostname as ivSessieRO.$hostname()
+	Calculate hostname as strtok('hostname','/')
+End If
+If len(pDatabasename)
+	Calculate databasename as pDatabasename
+Else
+	Calculate databasename as ivSessieRO.$databasename()
+End If
+Do ivSessie.$connect(hostname)
+Do ivSessie.$setautostartoptions(databasename,pOptions)
+Do ivSessie.$disconnect(hostname)

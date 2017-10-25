@@ -1,0 +1,271 @@
+
+Do ivSessieRO.$newstatement('extracttable') Returns oStat
+Do oStat.$execdirect(con("extract table ",pTable))
+Do oStat.$fetch(row)
+Calculate msg as row.C1
+
+Do method $ExtractTableDefine (list,pListColumns,pListCheck,pListForeignkey,pListIndexes,pListUnique,pRowPrimarykey)
+
+Calculate msg as replace(msg,'COLUMNS =',con(kCr,'COLUMNS ='))
+Calculate msg as replace(msg,'); PRIVS =',con(');',kCr,'PRIVS ='))
+Calculate msg as replace(msg,'"PRIMARY KEY" =',con(kCr,'"PRIMARY KEY" ='))
+Calculate msg as replace(msg,'UNIQUE =',con(kCr,'UNIQUE ='))
+Calculate msg as replace(msg,'"FOREIGN KEY" =',con(kCr,'"FOREIGN KEY" ='))
+Calculate msg as replace(msg,'CHECK =',con(kCr,'CHECK ='))
+Calculate msg as replace(msg,'CATALOG =',con(kCr,'CATALOG ='))
+Calculate msg as replace(msg,'; SCHEMA =',con(';',kCr,'SCHEMA ='))
+Calculate msg as replace(msg,'; TABLE =',con(';',kCr,'TABLE ='))
+Calculate msg as replace(msg,'"INDEX MODE" =',con(kCr,'"INDEX MODE" ='))
+Calculate msg as replace(msg,'INDEXES =',con(kCr,'INDEXES ='))
+Calculate msg as replace(msg,'; ROW_COUNT =',con(';',kCr,'ROW_COUNT ='))
+Calculate msg as replace(msg,'"LOOK SEE" =',con(kCr,'LOOK SEE ='))
+While len(msg)
+	Calculate text as strtok('msg',kCr)
+	Do list.$add(text)
+End While
+
+For list.$line from 1 to list.$linecount() step 1
+	If mid(list.CTEXT,1,7)='COLUMNS'
+		Calculate columns as list.CTEXT
+	End If
+	If mid(list.CTEXT,1,13)='"PRIMARY KEY"'
+		Calculate primarykey as list.CTEXT
+	End If
+	If mid(list.CTEXT,1,6)='UNIQUE'
+		Calculate unique as list.CTEXT
+	End If
+	If mid(list.CTEXT,1,13)='"FOREIGN KEY"'
+		Calculate foreignkey as list.CTEXT
+	End If
+	If mid(list.CTEXT,1,5)='CHECK'
+		Calculate check as list.CTEXT
+	End If
+	If mid(list.CTEXT,1,7)='INDEXES'
+		Calculate indexes as list.CTEXT
+	End If
+	If mid(list.CTEXT,1,9)='ROW_COUNT'
+		Calculate list.CTEXT as replace(list.CTEXT,';','')
+		Calculate pRowcount as replace(list.CTEXT,'ROW_COUNT = ','')
+	End If
+	If mid(list.CTEXT,1,8)='LOOK SEE'
+		Calculate looksee as list.CTEXT
+	End If
+End For
+
+Do method $ExtractTableColumns (list,columns,pListColumns)     ;; columns
+;  primary
+Calculate primarykey as replaceall(primarykey,'"PRIMARY KEY" = { ','')     ;; 2.72
+Calculate primarykey as replaceall(primarykey,'{ ','')
+Calculate primarykey as replaceall(primarykey,'}','')
+Calculate primarykey as replaceall(primarykey,', ','')
+Calculate primarykey as replaceall(primarykey,')','')
+Calculate primarykey as replaceall(primarykey,'; ',kCr)
+Do list.$clear()
+While len(primarykey)
+	Calculate text as strtok('primarykey',kCr)
+	Do list.$add(text)
+End While
+For list.$line from 1 to list.$linecount() step 1
+	If mid(list.CTEXT,1,4)='NAME'
+		Calculate text as list.CTEXT
+		Calculate temp as strtok('text','"')
+		Calculate temp as strtok('text','"')
+		Calculate pRowPrimarykey.NAME as temp
+	End If
+	If pos('CHECK TIME',list.CTEXT)
+		Calculate text as list.CTEXT
+		Calculate text as replaceall(text,'"CHECK TIME"','CHECK TIME')
+		Calculate temp as strtok('text','"')
+		Calculate temp as strtok('text','"')
+		Calculate pRowPrimarykey.CHECKTIME as temp
+	End If
+	If mid(list.CTEXT,1,7)='COLUMNS'
+		Calculate text as list.CTEXT
+		Calculate temp as strtok('text','"')
+		;  Calculate text as replaceall(text,'\"','')
+		Calculate temp as strtok('text','"')
+		Calculate pRowPrimarykey.COLUMNS as temp
+	End If
+End For
+;  foreign keys
+Calculate foreignkey as replaceall(foreignkey,'"FOREIGN KEY" = (','')
+Calculate foreignkey as replaceall(foreignkey,'{ ','')
+Calculate foreignkey as replaceall(foreignkey,'}','')
+Calculate foreignkey as replaceall(foreignkey,', ','')
+Calculate foreignkey as replaceall(foreignkey,')','')
+Calculate foreignkey as replaceall(foreignkey,'; ',kCr)
+Do list.$clear()
+While len(foreignkey)
+	Calculate text as strtok('foreignkey',kCr)
+	Do list.$add(text)
+End While
+For list.$line from 1 to list.$linecount() step 1
+	If mid(list.CTEXT,1,4)='NAME'
+		Do pListForeignkey.$add() Returns ref
+		Calculate text as list.CTEXT
+		Calculate temp as strtok('text','"')
+		Calculate temp as strtok('text','"')
+		Calculate ref.NAME as temp
+	End If
+	If mid(list.CTEXT,1,10)='DEFERRABLE'
+		Calculate text as list.CTEXT
+		Calculate text as replace(text,'DEFERRABLE = ','')
+		Calculate ref.DEFERRABLE as pick(text='YES',kFalse,kTrue)
+	End If
+	If mid(list.CTEXT,1,12)='"CHECK TIME"'
+		Calculate text as list.CTEXT
+		Calculate text as replaceall(text,'"CHECK TIME"','CHECK TIME')
+		Calculate temp as strtok('text','"')
+		Calculate temp as strtok('text','"')
+		Calculate ref.CHECKTIME as temp
+	End If
+	If mid(list.CTEXT,1,7)='COLUMNS'
+		Calculate text as list.CTEXT
+		Calculate temp as strtok('text','"')
+		Calculate text as replaceall(text,'\"','')
+		Calculate temp as strtok('text','"')
+		Calculate ref.COLUMNS as temp
+	End If
+End For
+;  checks
+Calculate check as replaceall(check,'CHECK = (','')
+Calculate check as replaceall(check,'{ ','')
+Calculate check as replaceall(check,'}','')
+Calculate check as replaceall(check,', ','')
+Calculate check as replaceall(check,')','')
+Calculate check as replaceall(check,'; ',kCr)
+Do list.$clear()
+While len(check)
+	Calculate text as strtok('check',kCr)
+	Do list.$add(text)
+End While
+For list.$line from 1 to list.$linecount() step 1
+	If mid(list.CTEXT,1,4)='NAME'
+		Do pListCheck.$add() Returns ref
+		Calculate text as list.CTEXT
+		Calculate temp as strtok('text','"')
+		Calculate temp as strtok('text','"')
+		Calculate ref.NAME as temp
+	End If
+	If mid(list.CTEXT,1,10)='DEFERRABLE'
+		Calculate text as list.CTEXT
+		Calculate text as replace(text,'DEFERRABLE = ','')
+		Calculate ref.DEFERRABLE as pick(text='YES',kFalse,kTrue)
+	End If
+	If mid(list.CTEXT,1,12)='"CHECK TIME"'
+		Calculate text as list.CTEXT
+		Calculate text as replaceall(text,'"CHECK TIME"','CHECK TIME')
+		Calculate temp as strtok('text','"')
+		Calculate temp as strtok('text','"')
+		Calculate ref.CHECKTIME as temp
+	End If
+	If mid(list.CTEXT,1,4)='COND'
+		Calculate text as list.CTEXT
+		Calculate temp as strtok('text','"')
+		Calculate text as replaceall(text,'\"','')
+		Calculate temp as strtok('text','"')
+		Calculate ref.COND as temp
+	End If
+End For
+;  indexes
+Calculate indexes as replaceall(indexes,'INDEXES = (','')
+Calculate indexes as replaceall(indexes,'{ ','')
+Calculate indexes as replaceall(indexes,'}','')
+Calculate indexes as replaceall(indexes,', ','')
+Calculate indexes as replaceall(indexes,')','')
+Calculate indexes as replaceall(indexes,'; ',kCr)
+Do list.$clear()
+While len(indexes)
+	Calculate text as strtok('indexes',kCr)
+	Do list.$add(text)
+End While
+For list.$line from 1 to list.$linecount() step 1
+	If mid(list.CTEXT,1,4)='NAME'
+		Do pListIndexes.$add() Returns ref
+		Calculate text as list.CTEXT
+		Calculate temp as strtok('text','"')
+		Calculate temp as strtok('text','"')
+		Calculate ref.NAME as temp
+	End If
+	If mid(list.CTEXT,1,4)='TYPE'
+		Calculate text as list.CTEXT
+		Calculate text as replace(text,'TYPE = ','')
+		Calculate ref.TYPE as replaceall(text,'"','')
+	End If
+	If mid(list.CTEXT,1,7)='COLUMNS'
+		Calculate text as list.CTEXT
+		Calculate temp as strtok('text','"')
+		Calculate text as replaceall(text,'\"','')
+		Calculate temp as strtok('text','"')
+		Calculate ref.COLUMNS as temp
+	End If
+End For
+;  unique
+Calculate unique as replaceall(unique,'UNIQUE = (','')
+Calculate unique as replaceall(unique,'{ ','')
+Calculate unique as replaceall(unique,'}','')
+Calculate unique as replaceall(unique,', ','')
+Calculate unique as replaceall(unique,')','')
+Calculate unique as replaceall(unique,'; ',kCr)
+Do list.$clear()
+While len(unique)
+	Calculate text as strtok('unique',kCr)
+	Do list.$add(text)
+End While
+For list.$line from 1 to list.$linecount() step 1
+	If mid(list.CTEXT,1,4)='NAME'
+		Do pListUnique.$add() Returns ref
+		Calculate text as list.CTEXT
+		Calculate temp as strtok('text','"')
+		Calculate temp as strtok('text','"')
+		Calculate ref.NAME as temp
+	End If
+	If mid(list.CTEXT,1,10)='DEFERRABLE'
+		Calculate text as list.CTEXT
+		Calculate text as replace(text,'DEFERRABLE = ','')
+		Calculate ref.DEFERRABLE as pick(text='YES',kFalse,kTrue)
+	End If
+	If mid(list.CTEXT,1,12)='"CHECK TIME"'
+		Calculate text as list.CTEXT
+		Calculate text as replaceall(text,'"CHECK TIME"','CHECK TIME')
+		Calculate temp as strtok('text','"')
+		Calculate temp as strtok('text','"')
+		Calculate ref.CHECKTIME as temp
+	End If
+	If mid(list.CTEXT,1,7)='COLUMNS'
+		Calculate text as list.CTEXT
+		Calculate temp as strtok('text','"')
+		Calculate text as replaceall(text,'\"','')
+		Calculate temp as strtok('text','"')
+		Calculate ref.COLUMNS as temp
+	End If
+End For
+;  looksee
+Calculate looksee as replaceall(looksee,'LOOK SEE = (','')
+Calculate looksee as replaceall(looksee,'{ ','')
+Calculate looksee as replaceall(looksee,'}','')
+Calculate looksee as replaceall(looksee,', ','')
+Calculate looksee as replaceall(looksee,')','')
+Calculate looksee as replaceall(looksee,'; ',kCr)
+Do list.$clear()
+While len(looksee)
+	Calculate text as strtok('looksee',kCr)
+	Do list.$add(text)
+End While
+For list.$line from 1 to list.$linecount() step 1
+	If mid(list.CTEXT,1,4)='NAME'
+		Do pListIndexes.$add() Returns ref
+		Calculate text as list.CTEXT
+		Calculate temp as strtok('text','"')
+		Calculate temp as strtok('text','"')
+		Calculate ref.NAME as temp
+	End If
+	If mid(list.CTEXT,1,17)='"DOCUMENT COLUMN"'
+		Calculate text as list.CTEXT
+		Calculate temp as strtok('text','"')
+		Calculate temp as strtok('text','"')
+		Calculate temp as strtok('text','"')
+		Calculate temp as strtok('text','"')
+		Calculate ref.COLUMNS as temp
+	End If
+End For

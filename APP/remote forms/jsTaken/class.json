@@ -1,20 +1,13 @@
 {
 	"classtype": "kRemoteForm",
-	"internalversion": 626,
+	"internalversion": 788,
 	"designtaskname": "remoteTask",
-	"nextident": 1018,
+	"nextident": 1049,
 	"lastgroupident": 0,
 	"cvardefs": [
 
 	],
 	"ivardefs": [
-		{
-			"name": "iEditVar",
-			"order": 17,
-			"type": "kCharacter",
-			"subtype": "kSimplechar",
-			"sublen": 100000000
-		},
 		{
 			"name": "iKeyList",
 			"order": 18,
@@ -23,31 +16,17 @@
 			"sublen": 0
 		},
 		{
-			"name": "iLinkedList",
-			"order": 15,
-			"type": "kList",
+			"name": "iSqlRow",
+			"order": 4,
+			"type": "kRow",
 			"subtype": "",
 			"sublen": 0
-		},
-		{
-			"name": "iLinkedListCol",
-			"order": 16,
-			"type": "kCharacter",
-			"subtype": "kSimplechar",
-			"sublen": 100000000
 		},
 		{
 			"name": "ivDatumTot",
 			"order": 6,
 			"type": "kDate",
 			"subtype": "kDate1980",
-			"sublen": 0
-		},
-		{
-			"name": "ivListBTWRegimes",
-			"order": 14,
-			"type": "kList",
-			"subtype": "",
 			"sublen": 0
 		},
 		{
@@ -76,13 +55,6 @@
 			"order": 8,
 			"type": "kList",
 			"subtype": "",
-			"sublen": 0
-		},
-		{
-			"name": "ivoCPT",
-			"order": 4,
-			"type": "kObject",
-			"subtype": "CPT.oCPT",
 			"sublen": 0
 		},
 		{
@@ -128,6 +100,13 @@
 			"sublen": 0
 		},
 		{
+			"name": "ivStatusFilter",
+			"order": 19,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
 			"name": "where",
 			"order": 2,
 			"type": "kCharacter",
@@ -166,7 +145,7 @@
 		"layoutbreakpoints": "768,1024,1300",
 		"layouttype": "kLayoutTypeResponsive",
 		"left": 149,
-		"moddate": "2017-10-25 22:03:37",
+		"moddate": "2017-10-26 22:58:12",
 		"okkeyobject": "",
 		"serverlessclient": false,
 		"showascheckedout": false,
@@ -184,8 +163,8 @@
 		"vertscroll": false
 	},
 	"layout": {
-		"width": 1353,
-		"height": 606,
+		"width": 1701,
+		"height": 867,
 		"768": {
 			"height": 0
 		},

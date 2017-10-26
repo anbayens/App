@@ -1,0 +1,10 @@
+;  Do $ctask.tvSqlObj.$GetSessionRO() Returns ivSessieRO
+Do iSqlRow.$definefromsqlclass($libs.CRM.$tables.tTCRMTAKEN)
+Do iSqlRow.$sessionobject.$assign(ivSessieRO) Returns #F
+Calculate where as con('WHERE CCRMTAKEN_PK =  ',ivSqlList.CCRMTAKEN_PK)
+Do iSqlRow.$select(where) Returns #F
+If flag true
+	Do iSqlRow.$fetch(kFetchAll)
+Else
+	Do $cinst.$showmessage(con(iSqlRow.$statementobject.$nativeerrorcode,' - ',iSqlRow.$statementobject.$nativeerrortext),'SQL Error')
+End If

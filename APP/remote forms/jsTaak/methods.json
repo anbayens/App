@@ -24,7 +24,7 @@
 		]
 	},
 	{
-		"name": "New Method",
+		"name": "fillData",
 		"ident": 0,
 		"order": 3,
 		"clientexec": false,
@@ -33,7 +33,6 @@
 		],
 		"lvardefs": [
 
-		],
-		"empty": true
+		]
 	}
 ]

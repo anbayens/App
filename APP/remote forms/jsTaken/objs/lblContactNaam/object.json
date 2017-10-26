@@ -1,6 +1,6 @@
 {
 	"ident": 1009,
-	"order": 6,
+	"order": 7,
 	"objtype": "kComponent",
 	"componentlib": "jsLabel",
 	"componentctrl": "Label Object",
@@ -23,7 +23,7 @@
 		"font": 1,
 		"fontsize": 10,
 		"fontstyle": "kPlain",
-		"objlink": 65539,
+		"objlink": 65540,
 		"preventlayoutanimation": false,
 		"text": "Contact naam",
 		"textcolor": "kColorDefault",
@@ -46,9 +46,9 @@
 			"visible": true
 		},
 		"1024": {
-			"left": 0,
+			"left": 4,
 			"top": 38,
-			"width": 120,
+			"width": 86,
 			"height": 25,
 			"align": "kLeftJst",
 			"dragborder": false,
@@ -57,9 +57,9 @@
 			"visible": true
 		},
 		"1300": {
-			"left": 0,
-			"top": 43,
-			"width": 79,
+			"left": 4,
+			"top": 38,
+			"width": 86,
 			"height": 25,
 			"align": "kLeftJst",
 			"dragborder": false,

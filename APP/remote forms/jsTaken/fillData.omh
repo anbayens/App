@@ -3,7 +3,7 @@ Do ivSqlList.$definefromsqlclass($libs.CRM.$tables.tqCRMTaken)
 Do ivSqlList.$sessionobject.$assign(ivSessieRO) Returns #F
 
 Calculate where as con('WHERE CMEDEWERKERSVOOR_FK = ',$ctask.tvFirmaMedewerkerList.M_CMEDEWERKERS_PK)
-
+Calculate where as con(where,' AND CAFGESLOTEN = FALSE ')
 Do ivSqlList.$select(where) Returns #F
 If flag true
 	Do ivSqlList.$fetch(kFetchAll)

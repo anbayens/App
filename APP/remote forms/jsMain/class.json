@@ -1,6 +1,6 @@
 {
 	"classtype": "kRemoteForm",
-	"internalversion": 128,
+	"internalversion": 154,
 	"designtaskname": "remoteTask",
 	"nextident": 1026,
 	"lastgroupident": 0,
@@ -44,42 +44,6 @@
 			"sublen": 100000000
 		},
 		{
-			"name": "iMainList",
-			"order": 10,
-			"type": "kList",
-			"subtype": "",
-			"sublen": 0
-		},
-		{
-			"name": "iMainText",
-			"order": 9,
-			"type": "kCharacter",
-			"subtype": "kSimplechar",
-			"sublen": 100000000
-		},
-		{
-			"name": "iNavMenu",
-			"order": 1,
-			"type": "kList",
-			"subtype": "",
-			"sublen": 0
-		},
-		{
-			"name": "iNavMenu3",
-			"order": 4,
-			"type": "kList",
-			"subtype": "",
-			"sublen": 0
-		},
-		{
-			"name": "iNavObj",
-			"order": 2,
-			"type": "kObject",
-			"subtype": "oNavMenu",
-			"sublen": 0,
-			"initval": "kFalse"
-		},
-		{
 			"name": "iSubList",
 			"order": 15,
 			"type": "kList",
@@ -105,6 +69,13 @@
 			"order": 3,
 			"type": "kObject",
 			"subtype": "CPT.oCPT",
+			"sublen": 0
+		},
+		{
+			"name": "ivTakenPk",
+			"order": 1,
+			"type": "kInteger",
+			"subtype": "k32bitint",
 			"sublen": 0
 		}
 	],
@@ -139,7 +110,7 @@
 		"layoutbreakpoints": "768,1024,1300",
 		"layouttype": "kLayoutTypeResponsive",
 		"left": 135,
-		"moddate": "2017-10-24 20:27:12",
+		"moddate": "2017-10-26 22:23:39",
 		"okkeyobject": "",
 		"serverlessclient": false,
 		"showascheckedout": false,

@@ -1,5 +1,8 @@
 On evClick
-	Do $cwind.$objs.subform.$classname.$assign('jsTaak')
+	;  Calculate $cwind.$ivars.1 as ivSqlList.CCRMTAKEN_PK
+	;  Do $cwind.$objs.subform.$classname.$assign('jsTaak')
+	Do $cinst.$objs.pagedpaneTaken.$currentpage.$assign(2)
+	Do method getDetails
 On evDoubleClick
 	
 On evCellChanged

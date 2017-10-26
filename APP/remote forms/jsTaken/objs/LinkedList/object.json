@@ -1,6 +1,6 @@
 {
 	"ident": 1016,
-	"order": 10,
+	"order": 11,
 	"objtype": "kComponent",
 	"componentlib": "jsList",
 	"componentctrl": "List Control",
@@ -38,7 +38,7 @@
 		"linestyle": 1,
 		"listcolumn": 1,
 		"numberformat": "",
-		"objlink": 65539,
+		"objlink": 65540,
 		"pagesize": 0,
 		"preventlayoutanimation": false,
 		"selectedlinecolor": "kColorDefault",
@@ -63,7 +63,7 @@
 		},
 		"1024": {
 			"left": 96,
-			"top": 61,
+			"top": 63,
 			"width": 200,
 			"height": 90,
 			"dragborder": false,
@@ -73,7 +73,7 @@
 		},
 		"1300": {
 			"left": 96,
-			"top": 64,
+			"top": 63,
 			"width": 200,
 			"height": 90,
 			"dragborder": false,

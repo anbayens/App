@@ -1,6 +1,6 @@
 {
 	"ident": 1006,
-	"order": 5,
+	"order": 6,
 	"objtype": "kComponent",
 	"componentlib": "jsLabel",
 	"componentctrl": "Label Object",
@@ -23,7 +23,7 @@
 		"font": 1,
 		"fontsize": 10,
 		"fontstyle": "kPlain",
-		"objlink": 65539,
+		"objlink": 65540,
 		"preventlayoutanimation": false,
 		"text": "Medewerker",
 		"textcolor": "kColorDefault",
@@ -59,7 +59,7 @@
 		"1300": {
 			"left": 4,
 			"top": 9,
-			"width": 67,
+			"width": 120,
 			"height": 25,
 			"align": "kLeftJst",
 			"dragborder": false,

@@ -82,5 +82,17 @@
 		"lvardefs": [
 
 		]
+	},
+	{
+		"name": "getDetails",
+		"ident": 7,
+		"order": 8,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
 	}
 ]

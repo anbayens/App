@@ -1,6 +1,6 @@
 {
 	"ident": 1015,
-	"order": 9,
+	"order": 10,
 	"objtype": "kComponent",
 	"componentlib": "jsEdit",
 	"componentctrl": "Edit Control",
@@ -44,7 +44,7 @@
 		"linkedobject": "LinkedList",
 		"negallowed": true,
 		"numberformat": "",
-		"objlink": 65539,
+		"objlink": 65540,
 		"preventlayoutanimation": false,
 		"systemkeys": true,
 		"textcolor": "RGB(8,0,0)",
@@ -69,7 +69,7 @@
 		},
 		"1024": {
 			"left": 96,
-			"top": 35,
+			"top": 36,
 			"width": 200,
 			"height": 25,
 			"align": "kLeftJst",
@@ -80,7 +80,7 @@
 		},
 		"1300": {
 			"left": 96,
-			"top": 37,
+			"top": 36,
 			"width": 200,
 			"height": 25,
 			"align": "kLeftJst",

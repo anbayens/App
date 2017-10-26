@@ -13,6 +13,16 @@ If ivListContacten.CCONTACT<>''
 	Calculate where as con(where,' AND CCONTACTEN_FK = ',ivListContacten.CCONTACTEN_PK)
 End If
 
+Switch ivStatusFilter
+	Case 0
+		Calculate where as con(where,' AND CAFGESLOTEN = FALSE ')
+	Case 1
+		Calculate where as con(where,' AND CMETOPVOLGING = TRUE')
+	Case 2
+		;  Calculate where as con(where,' AND  = ')
+End Switch
+
+
 Do ivSqlList.$select(where) Returns #F
 If flag true
 	Do ivSqlList.$fetch(kFetchAll)

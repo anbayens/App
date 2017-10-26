@@ -1,6 +1,6 @@
 {
 	"ident": 1013,
-	"order": 8,
+	"order": 9,
 	"objtype": "kComponent",
 	"componentlib": "jsComboBox",
 	"componentctrl": "ComboBox",
@@ -39,7 +39,7 @@
 		"listcolumn": 2,
 		"negallowed": true,
 		"numberformat": "",
-		"objlink": 65539,
+		"objlink": 65540,
 		"preventlayoutanimation": false,
 		"selectedlinecolor": "kColorDefault",
 		"selectedlinetextcolor": "kColorDefault",
@@ -60,8 +60,8 @@
 			"visible": true
 		},
 		"1024": {
-			"left": 96,
-			"top": 5,
+			"left": 95,
+			"top": 6,
 			"width": 150,
 			"height": 25,
 			"dragborder": false,
@@ -70,8 +70,8 @@
 			"visible": true
 		},
 		"1300": {
-			"left": 96,
-			"top": 8,
+			"left": 95,
+			"top": 6,
 			"width": 150,
 			"height": 25,
 			"dragborder": false,

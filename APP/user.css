@@ -1,0 +1,211 @@
+.myEntry {
+	padding-left: 3px !important;
+	/*height: 20px !important;*/
+	/*border-radius: 5px !important;*/
+}
+
+.label {
+	padding-left:3px !important;
+	padding-top:3px !important;
+	height: 20px !important;
+}
+
+.line{
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 0.5px;
+}
+
+/* Datagrid Column Headers */
+.grid .slick-header-column {
+/*background:-moz-linear-gradient(bottom,rgb(15,46,64),white); /* Firefox */
+/*background:-webkit-gradient(linear,left top,left bottom,from(rgb(15,46,64)),to(white)); /* Chrome, Safari */
+/*filter: progid:DXImageTransform.Microsoft.gradient(start*/
+/*Colorstr='rgb(214,229,255)',endColorstr='white'); /* Internet Explorer */
+background:rgb(2, 96, 150) !important;
+color:#fff !important;
+}
+
+/* AN */	
+.grid .ctrl-dgrd-header{
+    background-color: #77de56 !important;
+    background: none !important;
+}
+
+.grid .omnis-pager-page{
+font-size:10px !important;
+padding:5px !important;
+font-family:Roboto !important;
+}
+
+/*grid .omnis-pager-numbers {
+	line-height:10px !important;
+	height:1°px !important;
+}
+*/
+.padding {
+	padding-left: 3px !important;
+}
+
+
+.btn-menu {
+	background: #0e2f41 !important;
+	color: #fdfdfd !important; 
+	box-shadow: none !important;
+	border: none !important; 
+	/*border-left: 1px solid #fafafa !important; */
+	/*font-size: 16px !important; */
+	transition: all 0.3s ease-in-out !important;
+}
+
+.btn-menu:hover { 
+	background: #333 !important; 
+	color: #fff !important;
+}
+
+.round-top  {
+	border-top-left-radius:10px !important;
+	border-top-right-radius:10px !important;
+}
+
+
+.myButton {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #BBDEFB;
+}
+
+
+/******** GRADIENTBUTTON **************/
+.gradientButton {
+	border: 1px solid #BBDEFB;
+	/* Most browsers don't support the standard linear-gradient property, and require a browser-specific version */
+	/* See https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient for more details */
+	background: #90CAF9; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#90CAF9, #FFF);
+  background: -o-linear-gradient(#90CAF9, #FFF);
+  background: -moz-linear-gradient(#90CAF9, #FFF);
+  background: linear-gradient(#90CAF9, #FFF);
+}
+
+
+/******** BUTTON2 **************/
+.button2 {
+	/* offset-x | offset-y | blur-radius | spread-radius | color */
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+	border: 1px solid grey;
+	background-color: #FFA000 !important;
+}
+
+
+.button2:focus {
+	border-width: 2px;
+}
+
+
+.button2:hover {
+	background-color: #FF6F00 !important;
+}
+
+
+.button2:active {
+	box-shadow: none; /* Hide the shadow to look like the button is being pressed */
+	background-color: #FF6F00 !important;
+}
+
+
+/****@import url("font-awesome.css"); only when FontAwesome is not implemented in main HTM file**/
+
+/***************************** menu ***********************************/
+
+/*
+.nav .jstree > ul > li > ul li a.jstree-clicked > span:before {
+	color:#00ACAC !important;
+}
+
+
+.nav .jstree-icon {
+	width:100%;
+	background:none!important;
+	position: absolute;
+	height: 28px;
+	color:#a8acb1 !important;
+}
+
+
+.nav .jstree-icon:after {
+	font-family: FontAwesome;
+	content: "\f0d7";
+		 fa-caret-down 
+	position: absolute;
+	top: 0.7em;
+	right: 1em;
+}
+
+.nav .jstree-open > .jstree-icon:after {
+	content: "\f0d8";
+		/* fa-caret-up 
+}
+
+
+.nav .jstree-leaf .jstree-icon {
+	display: none !important;
+}
+
+.nav .jstree a {
+	color:#a8acb1 !important;
+	display: block !important;
+	padding: 0.5em !important;
+}
+
+.nav .jstree span {
+	color:#a8acb1 !important;
+}
+
+.nav .jstree a:hover {
+	color:white !important;
+	background: none !important;
+	border:none !important;
+	text-decoration: none !important;
+}
+
+.nav .jstree > ul > li:hover,
+.nav .jstree > ul > li.jstree-open {
+	background-color: #E3F2FD !important;
+}
+
+.nav .jstree-closed > ul > li,
+.nav .jstree-open > ul > li{
+	margin-left:0;
+	background-color: #1A2229 !important;
+}
+
+.nav .jstree-closed > ul > li ul li a,
+.nav .jstree-open > ul > li ul li a{
+	padding-left:2em !important;
+}
+
+.nav .jstree ul li a span {
+	font-family: Roboto,Sans-serif;
+}
+
+
+.nav .jstree ul li a span:before {
+	font-family: FontAwesome!important;
+	font-size:1.2em;
+	padding-left:1em;
+	padding-right: 1em;
+}
+
+.treemenu .nativeListRow p {
+	padding-top:5px !important;
+}
+
+.treemenu .nativeListBox iOS p{
+	padding-top:5px !important;
+}
+*/

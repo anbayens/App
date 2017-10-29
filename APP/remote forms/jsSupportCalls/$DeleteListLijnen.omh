@@ -1,0 +1,20 @@
+
+Calculate msg as StringTable.$gettext('STA.Verwijderen?')
+Do $ctask.tvRoutines.$Message(msg,2) Returns %OK
+If %OK
+	Do $ctask.tvSQLObj.$BeginTransaction($cinst.ivSessieNr) Returns $cinst.ivSessieRW
+	Do ivSessieRW.$newstatement('delete') Returns ivoStatRW
+	Do ivListLijnen.$first(kTrue) Returns ref
+	While ref
+		Begin statement
+		Sta: {DELETE FROM TCRMSUPPORTCALLLIJNEN WHERE CCRMSUPPORTCALLLIJNEN_PK=@[ref.C1];}
+		End statement
+		Do ivoStatRW.$execdirect() Returns %OK
+		Do ivListLijnen.$next(ref,kTrue) Returns ref
+	End While
+	Do $ctask.tvSQLObj.$EndTransaction($cinst.ivSessieNr,%OK) Returns %OK
+	If %OK
+		Do ivListLijnen.$remove(kListDeleteSelected)
+		Redraw {ivListLijnen}
+	End If
+End If

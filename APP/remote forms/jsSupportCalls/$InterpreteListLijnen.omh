@@ -1,0 +1,26 @@
+
+For ivListLijnen.$line from 1 to ivListLijnen.$linecount step 1
+	Do ivListTypes.$search($ref.CTYPE=ivListLijnen.CTYPE,kTrue,kFalse,kFalse,kFalse)
+	Calculate ivListLijnen.CTYPEOMSCHRIJVING as ivListTypes.COMSCHRIJVING
+	Calculate ivListLijnen.CINFO as replaceall(ivListLijnen.CINFO,kTab,'   ')
+	Switch ivListTypes.CTYPE
+		Case 'DAVE'
+			Calculate ivListLijnen.CINFO as con(ivListLijnen.D_COMSCHRIJVING,' ',ivListLijnen.CNUMMER)
+		Case 'DOCUMENT','PAD'
+			Calculate ivListLijnen.CINFO as con(ivListLijnen.CDOCUMENTBLOBNAAM,ivListLijnen.CDOCUMENTPAD)
+		Case 'TEXTINTERN'
+			Calculate ivListLijnen.CMAILVERSTUURDDOOR as ivListLijnen.CCREATIEGEBRUIKER
+			Calculate ivListLijnen.CMAILVERSTUURDNAAR as ivListLijnen.CMEDEWERKER
+			Calculate ivListLijnen.CINFO as con(ivListLijnen.CONDERWERP,' ',ivListLijnen.CINFO)
+		Case 'TEXTIN'
+			Calculate ivListLijnen.CMAILVERSTUURDDOOR as ivListLijnen.CMAILVERSTUURDNAAR
+			Calculate ivListLijnen.CMAILVERSTUURDNAAR as ivListLijnen.CMEDEWERKER
+			Calculate ivListLijnen.CINFO as con(ivListLijnen.CONDERWERP,' ',ivListLijnen.CINFO)
+		Case 'TEXTOUT'
+			Calculate ivListLijnen.CINFO as con(ivListLijnen.CONDERWERP,' ',ivListLijnen.CINFO)
+	End Switch
+End For
+
+Do ivListLijnen.$line.$assign(0)
+
+Redraw {ivListLijnen}

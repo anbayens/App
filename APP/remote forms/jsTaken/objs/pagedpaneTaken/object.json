@@ -32,9 +32,9 @@
 	},
 	"layout": {
 		"768": {
-			"left": 5,
+			"left": 0,
 			"top": 32,
-			"width": 725,
+			"width": 768,
 			"height": 678,
 			"dragborder": false,
 			"edgefloat": "kEFnone",
@@ -42,9 +42,9 @@
 			"visible": true
 		},
 		"1024": {
-			"left": 5,
+			"left": 0,
 			"top": 32,
-			"width": 1016,
+			"width": 1024,
 			"height": 678,
 			"dragborder": false,
 			"edgefloat": "kEFnone",
@@ -52,9 +52,9 @@
 			"visible": true
 		},
 		"1300": {
-			"left": 5,
+			"left": 0,
 			"top": 32,
-			"width": 1294,
+			"width": 1304,
 			"height": 678,
 			"dragborder": false,
 			"edgefloat": "kEFnone",

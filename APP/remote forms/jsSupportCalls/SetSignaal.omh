@@ -1,0 +1,12 @@
+
+If ivRowMedewerkers.CISSUPPORT
+	If ivSqlRow.CMETSIGNAAL
+		Calculate ivSqlRow.CMETSIGNAAL as kFalse
+		Do $ctask.tvSqlObj.$BeginTransaction($cinst.ivSessieNr) Returns $cinst.ivSessieRW
+		Begin statement
+		Sta: {UPDATE TCRMSUPPORTCALLS SET CMETSIGNAAL=FALSE,CWIJZIGGEBRUIKER=current_user,CWIJZIGDATUM=cast(current_timestamp as timestamp) WHERE CCRMSUPPORTCALLS_PK=@[ivSqlRow.C1];}
+		End statement
+		Do $ctask.tvSqlObj.$SimpleExecTRx($cinst.ivSessieNr) Returns %OK
+		Do $ctask.tvSQLObj.$EndTransaction($cinst.ivSessieNr,%OK) Returns %OK
+	End If
+End If

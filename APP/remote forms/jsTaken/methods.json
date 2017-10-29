@@ -94,5 +94,29 @@
 		"lvardefs": [
 
 		]
+	},
+	{
+		"name": "GetContact",
+		"ident": 8,
+		"order": 9,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "GetContactpersoon",
+		"ident": 9,
+		"order": 10,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
 	}
 ]

@@ -1,0 +1,25 @@
+
+Do ivSqlRow.$cols.$add('C_CNAAM1',kCharacter,kSimplechar,100)
+Do ivSqlRow.$cols.$add('S_CSOORT',kCharacter,kSimplechar,128)
+Do ivSqlRow.$cols.$add('W_COMSCHRIJVING',kCharacter,kSimplechar,128)
+Do ivRowContacten.$definefromsqlclass(CPT.$tables.tTCONTACTEN)
+Do ivRowContactpersonen.$definefromsqlclass(CPT.$tables.tTCONTACTPERSONEN)
+Do ivListLijnen.$definefromsqlclass(CRM.$tables.tqCRMSupportCallLijnen)
+Do ivListOpvolging.$definefromsqlclass(CRM.$tables.tTCRMSUPPORTCALLOPVOLGING)
+
+Do ivRowContactInfo.$definefromsqlclass(CPT.$tables.tTCONTACTPERSONEN)
+
+Do ivListPrestaties.$definefromsqlclass(PRESTAT.$tables.tTPRESTATIES)
+
+Do ivRowWachtrijMedewerkers.$definefromsqlclass(CRM.$tables.tTCRMWACHTRIJMEDEWERKERS)
+
+;  If ivAccessRow.$findname('CTOEGANG')
+;  Else
+;  Do ivAccessRow.$define()
+;  Do ivAccessRow.$cols.$add('CLIBRARY',kCharacter,kSimplechar,50)
+;  Do ivAccessRow.$cols.$add('COBJECT',kCharacter,kSimplechar,50)
+;  Do ivAccessRow.$cols.$add('CTOEGANG',kBoolean)
+;  Do ivAccessRow.$cols.$add('CINSERT',kBoolean)
+;  Do ivAccessRow.$cols.$add('CUPDATE',kBoolean)
+;  Do ivAccessRow.$cols.$add('CDELETE',kBoolean)
+;  End If

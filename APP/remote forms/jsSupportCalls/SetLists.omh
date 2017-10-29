@@ -1,0 +1,9 @@
+
+Do ivListSupportSoorten.$search($ref.CCRMSUPPORTSOORT=ivSqlRow.CCRMSUPPORTSOORT,kTrue,kFalse,kFalse,kFalse)
+Do ivListCommunicatiesoorten.$search(ivListCommunicatiesoorten.CCOMMUNICATIESOORT=ivSqlRow.CCOMMUNICATIESOORT,kTrue,kFalse,kFalse,kFalse)
+Do ivListWachtrijen.$search($ref.CCRMWACHTRIJ=ivSqlRow.CCRMWACHTRIJ,kTrue,kFalse,kFalse,kFalse)
+Do ivListPrioriteiten.$search($ref.prioriteit=ivSqlRow.CPRIORITEIT,kTrue,kFalse,kFalse,kFalse)
+Do ivListProductFamilies.$search(ivListProductFamilies.CCRMPRODUCTFAMILIE=ivSqlRow.CCRMPRODUCTFAMILIE,kTrue,kFalse,kFalse,kFalse)
+Do ivListProducten.$unfilter(0)
+Do ivListProducten.$filter(($ref.CCRMPRODUCTFAMILIE=ivSqlRow.CCRMPRODUCTFAMILIE)|($ref.CCRMPRODUCTFAMILIE=''))
+Do ivListProducten.$search(ivListProducten.CCRMPRODUCT=ivSqlRow.CCRMPRODUCT,kTrue,kFalse,kFalse,kFalse)

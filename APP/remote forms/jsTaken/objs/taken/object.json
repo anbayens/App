@@ -77,7 +77,7 @@
 		"visible": true
 	},
 	"multivalueproperties": {
-		"selected": 4,
+		"selected": 6,
 		"properties": [
 			{
 				"columnallownulldateinput": false,
@@ -114,7 +114,7 @@
 				"columnfontstyle": "kPlain",
 				"columnjst": "kLeftJst",
 				"columnminwidth": 0,
-				"columnmode": "kJSDataGridModeAuto",
+				"columnmode": "kJSDataGridModeFormatted",
 				"columnname": "Taak",
 				"columnnumberformat": "",
 				"columnpicklist": "",
@@ -174,7 +174,7 @@
 				"columncanresize": true,
 				"columncansort": true,
 				"columndatacol": "5",
-				"columndateformat": "kJSFormatNone",
+				"columndateformat": "kJSFormatShortDate",
 				"columndateformatcustom": "",
 				"columnenabled": true,
 				"columnfontstyle": "kPlain",
@@ -196,7 +196,7 @@
 				"columncanresize": true,
 				"columncansort": true,
 				"columndatacol": "6",
-				"columndateformat": "kJSFormatNone",
+				"columndateformat": "kJSFormatShortDate",
 				"columndateformatcustom": "",
 				"columnenabled": true,
 				"columnfontstyle": "kPlain",
@@ -283,7 +283,7 @@
 		"768": {
 			"left": 0,
 			"top": 0,
-			"width": 729,
+			"width": 768,
 			"height": 529,
 			"dragborder": false,
 			"edgefloat": "kEFnone",
@@ -293,7 +293,7 @@
 		"1024": {
 			"left": 0,
 			"top": 0,
-			"width": 1012,
+			"width": 1024,
 			"height": 529,
 			"dragborder": false,
 			"edgefloat": "kEFnone",
@@ -303,7 +303,7 @@
 		"1300": {
 			"left": 0,
 			"top": 0,
-			"width": 1294,
+			"width": 1304,
 			"height": 529,
 			"dragborder": false,
 			"edgefloat": "kEFnone",

@@ -1,2 +1,5 @@
 ;  Enter your initialization code here
+Do method $DefineLists
+Do method $BuildLists
+
 Do method fillData

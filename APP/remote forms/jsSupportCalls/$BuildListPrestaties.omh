@@ -1,0 +1,11 @@
+
+Do ivListPrestaties.$clear()
+If $libs.$findname("PRESTAT")
+	Calculate whereclause as con(" WHERE CINTERNEFIRMAS_FK=",$ctask.tvFirmaMedewerkerList.F_CINTERNEFIRMAS_PK," AND CDOCUMENTTYPES_FK=97 AND TPRESTATIES.CDOCUMENT_FK = ",ivSqlRow.C1," ORDER BY TPRESTATIES.CDATUM DESC ")
+	Do ivListPrestaties.$sessionobject.$assign($cinst.ivSessieRO)
+	Do ivListPrestaties.$select(whereclause)
+	Do ivListPrestaties.$fetch(kFetchAll)
+	Do ivListPrestaties.$line.$assign(0)
+End If
+
+Redraw {ivListPrestaties,ivListPrestaties_TOTAALDUURTIJD,ivListPrestaties_TOTAALDUURTIJDEXTRA}

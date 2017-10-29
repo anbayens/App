@@ -1,6 +1,6 @@
 {
 	"ident": 1041,
-	"order": 35,
+	"order": 33,
 	"objtype": "kComponent",
 	"componentlib": "jsEdit",
 	"componentctrl": "Edit Control",
@@ -17,7 +17,7 @@
 		"borderradius": "0",
 		"contextmenu": "",
 		"cssclassname": "myEntry",
-		"dataname": "iSqlRow.CMEDEWERKERVOORCC",
+		"dataname": "ivSqlRow.CMEDEWERKERVOORCC",
 		"dateformat": "kJSFormatNone",
 		"dateformatcustom": "",
 		"desgroup": 0,
@@ -28,7 +28,7 @@
 		"dragmode": "kNoDragging",
 		"dropmode": "kAcceptNone",
 		"effect": "kJSborderDefault",
-		"enabled": true,
+		"enabled": false,
 		"events": "",
 		"fieldstyle": "CtrlEditText",
 		"font": 1,
@@ -58,8 +58,8 @@
 	"layout": {
 		"768": {
 			"left": 112,
-			"top": 200,
-			"width": 150,
+			"top": 288,
+			"width": 480,
 			"height": 25,
 			"align": "kLeftJst",
 			"dragborder": false,
@@ -69,7 +69,7 @@
 		},
 		"1024": {
 			"left": 112,
-			"top": 200,
+			"top": 288,
 			"width": 150,
 			"height": 25,
 			"align": "kLeftJst",
@@ -80,7 +80,7 @@
 		},
 		"1300": {
 			"left": 112,
-			"top": 200,
+			"top": 288,
 			"width": 150,
 			"height": 25,
 			"align": "kLeftJst",

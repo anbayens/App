@@ -1,0 +1,24 @@
+;  Do $ctask.tvSqlObj.$GetSessionRO() Returns ivSessieRO
+Do ivSqlRow.$definefromsqlclass($libs.CRM.$tables.tTCRMSUPPORTCALLS)
+Do ivSqlRow.$sessionobject.$assign(ivSessieRO) Returns #F
+Calculate where as con('WHERE CCRMSUPPORTCALLS_PK =  ',ivSqlList.CCRMSUPPORTCALLS_PK)
+Do ivSqlRow.$select(where) Returns #F
+If flag true
+	Do ivSqlRow.$fetch(kFetchAll)
+	
+	Do method GetContact
+	Do method GetContactpersoon
+	Do method SetSignaal
+	Do method SetAlarm
+	Do method SetReactietijd
+	Do method SetLists
+	
+	Do method $BuildListLijnen     ;; tab 2
+	Do method $InterpreteListLijnen
+	Do method $BuildListTaken
+	
+	Do method $BuildListPrestaties     ;; tab 3
+	Do method $BuildListOpvolging     ;; tab 4
+Else
+	Do $cinst.$showmessage(con(ivSqlRow.$statementobject.$nativeerrorcode,' - ',ivSqlRow.$statementobject.$nativeerrortext),'SQL Error')
+End If

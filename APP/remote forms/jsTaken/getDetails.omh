@@ -1,10 +1,13 @@
 ;  Do $ctask.tvSqlObj.$GetSessionRO() Returns ivSessieRO
-Do iSqlRow.$definefromsqlclass($libs.CRM.$tables.tTCRMTAKEN)
-Do iSqlRow.$sessionobject.$assign(ivSessieRO) Returns #F
+Do ivSqlRow.$definefromsqlclass($libs.CRM.$tables.tTCRMTAKEN)
+Do ivSqlRow.$sessionobject.$assign(ivSessieRO) Returns #F
 Calculate where as con('WHERE CCRMTAKEN_PK =  ',ivSqlList.CCRMTAKEN_PK)
-Do iSqlRow.$select(where) Returns #F
+Do ivSqlRow.$select(where) Returns #F
 If flag true
-	Do iSqlRow.$fetch(kFetchAll)
+	Do ivSqlRow.$fetch(kFetchAll)
+	Do ivListPrioriteit.$line.$assign(ivSqlRow.CPRIORITEIT+1)
+	Do method GetContact
+	Do method GetContactpersoon
 Else
-	Do $cinst.$showmessage(con(iSqlRow.$statementobject.$nativeerrorcode,' - ',iSqlRow.$statementobject.$nativeerrortext),'SQL Error')
+	Do $cinst.$showmessage(con(ivSqlRow.$statementobject.$nativeerrorcode,' - ',ivSqlRow.$statementobject.$nativeerrortext),'SQL Error')
 End If

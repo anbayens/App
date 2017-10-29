@@ -1,9 +1,0 @@
-On evClick
-	Do $cwind.$objs.subform.$classname.$assign('jsSupportCall')
-On evDoubleClick
-	
-On evCellChanged
-	
-On evHeaderClick
-	
-On evHeadedListDisplayOrderChanged

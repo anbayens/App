@@ -1,0 +1,6 @@
+
+If ivSqlRow.CMETALARM
+	Do $cinst.$objs.tabpane.$objs.CMETALARM.$textcolor.$assign(kRed)
+Else
+	Do $cinst.$objs.tabpane.$objs.CMETALARM.$textcolor.$assign(kBlack)
+End If

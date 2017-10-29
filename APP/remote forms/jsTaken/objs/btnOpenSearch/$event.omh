@@ -1,5 +1,5 @@
 On evClick
-	Do $cinst.$beginanimations(700)
+	Do $cinst.$beginanimations(300)
 	Do $cinst.$objs.searchPane.$alpha.$assign(255)
 	Do $cinst.$objs.searchPane.$height.$assign(159)
 	Do $cinst.$commitanimations()

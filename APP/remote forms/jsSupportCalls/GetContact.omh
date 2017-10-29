@@ -1,0 +1,14 @@
+
+Do ivRowContacten.$clear()
+Do ivRowContacten.$sessionobject.$assign($cinst.ivSessieRO)
+Do ivRowContacten.$select(con(" WHERE TCONTACTEN.CCONTACTEN_PK = ",ivSqlRow.CCONTACTEN_FK))
+Do ivRowContacten.$fetch(1)
+Calculate ivSqlRow.C_CNAAM1 as ivRowContacten.CNAAM1
+Calculate ivRowContactInfo.CTELEFOON as ivRowContacten.CTELEFOON
+Calculate ivRowContactInfo.CFAX as ivRowContacten.CFAX
+Calculate ivRowContactInfo.CMOBILE as ivRowContacten.CMOBILE
+Calculate ivRowContactInfo.CFUNCTIE as ''
+Calculate ivRowContactInfo.CSELECTIECODE as ''
+
+Calculate $ctask.tvRowRecent.CCONTACTEN_PK as ivSqlRow.CCONTACTEN_FK
+Calculate $ctask.tvRowRecent.CCONTACTEND_PK as ivSqlRow.CCONTACTEN_FK

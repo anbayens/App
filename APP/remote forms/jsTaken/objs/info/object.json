@@ -1,6 +1,6 @@
 {
 	"ident": 1038,
-	"order": 32,
+	"order": 30,
 	"objtype": "kComponent",
 	"componentlib": "jsEdit",
 	"componentctrl": "Edit Control",
@@ -17,7 +17,7 @@
 		"borderradius": "0",
 		"contextmenu": "",
 		"cssclassname": "myEntry",
-		"dataname": "iSqlRow.CINFO",
+		"dataname": "ivSqlRow.CINFO",
 		"dateformat": "kJSFormatNone",
 		"dateformatcustom": "",
 		"desgroup": 0,
@@ -58,9 +58,9 @@
 	"layout": {
 		"768": {
 			"left": 112,
-			"top": 288,
+			"top": 408,
 			"width": 628,
-			"height": 128,
+			"height": 184,
 			"align": "kLeftJst",
 			"dragborder": false,
 			"edgefloat": "kEFnone",
@@ -69,9 +69,9 @@
 		},
 		"1024": {
 			"left": 112,
-			"top": 288,
+			"top": 408,
 			"width": 628,
-			"height": 128,
+			"height": 184,
 			"align": "kLeftJst",
 			"dragborder": false,
 			"edgefloat": "kEFnone",
@@ -80,9 +80,9 @@
 		},
 		"1300": {
 			"left": 112,
-			"top": 288,
+			"top": 408,
 			"width": 628,
-			"height": 128,
+			"height": 184,
 			"align": "kLeftJst",
 			"dragborder": false,
 			"edgefloat": "kEFnone",

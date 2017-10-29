@@ -1,6 +1,6 @@
 {
 	"ident": 1047,
-	"order": 41,
+	"order": 39,
 	"objtype": "kComponent",
 	"componentlib": "jsCheckbox",
 	"componentctrl": "Checkbox Control",
@@ -11,7 +11,7 @@
 		"bordercolor": "kColorDefault",
 		"contextmenu": "",
 		"cssclassname": "",
-		"dataname": "iSqlRow.CMETOPVOLGING",
+		"dataname": "ivSqlRow.CMETOPVOLGING",
 		"desgroup": 0,
 		"designactive": true,
 		"deslock": false,
@@ -37,8 +37,8 @@
 	},
 	"layout": {
 		"768": {
-			"left": 336,
-			"top": 80,
+			"left": 544,
+			"top": 48,
 			"width": 120,
 			"height": 25,
 			"dragborder": false,
@@ -47,8 +47,8 @@
 			"visible": true
 		},
 		"1024": {
-			"left": 336,
-			"top": 80,
+			"left": 520,
+			"top": 48,
 			"width": 120,
 			"height": 25,
 			"dragborder": false,
@@ -57,8 +57,8 @@
 			"visible": true
 		},
 		"1300": {
-			"left": 336,
-			"top": 80,
+			"left": 520,
+			"top": 48,
 			"width": 120,
 			"height": 25,
 			"dragborder": false,

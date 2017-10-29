@@ -1,8 +1,8 @@
 {
 	"classtype": "kRemoteForm",
-	"internalversion": 38,
+	"internalversion": 846,
 	"designtaskname": "remoteTask",
-	"nextident": 1005,
+	"nextident": 1091,
 	"lastgroupident": 0,
 	"cvardefs": [
 
@@ -14,10 +14,206 @@
 			"type": "kList",
 			"subtype": "",
 			"sublen": 0
+		},
+		{
+			"name": "ivListCommunicatiesoorten",
+			"order": 8,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListLijnen",
+			"order": 18,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListOpvolging",
+			"order": 17,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListPrestaties",
+			"order": 19,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListPrioriteit",
+			"order": 6,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListPrioriteiten",
+			"order": 10,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListProducten",
+			"order": 11,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListProductFamilies",
+			"order": 12,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListReactietijden",
+			"order": 13,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListSupportSoorten",
+			"order": 7,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListTaken",
+			"order": 20,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListTypes",
+			"order": 15,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListWachtrijen",
+			"order": 9,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivoCRM",
+			"order": 24,
+			"type": "kObject",
+			"subtype": "CRM.oCRM",
+			"sublen": 0
+		},
+		{
+			"name": "ivoPRESTAT",
+			"order": 22,
+			"type": "kObject",
+			"subtype": "PRESTAT.oPRESTAT",
+			"sublen": 0
+		},
+		{
+			"name": "ivoStatRW",
+			"order": 16,
+			"type": "kObject",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivReactietijd",
+			"order": 14,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "ivRowContacten",
+			"order": 26,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivRowContactInfo",
+			"order": 28,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivRowContactpersonen",
+			"order": 27,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivRowInst",
+			"order": 21,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivRowMedewerkers",
+			"order": 23,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivRowWachtrijMedewerkers",
+			"order": 29,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivSessieRO",
+			"order": 4,
+			"type": "kObject",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivSqlList",
+			"order": 2,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivSqlRow",
+			"order": 5,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "New_Variable",
+			"order": 25,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "where",
+			"order": 3,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
 		}
 	],
 	"properties": {
-		"aligntogrid": false,
+		"aligntogrid": true,
 		"alpha": 255,
 		"alwaysenabledobject": "",
 		"animatelayouttransitions": false,
@@ -46,27 +242,27 @@
 		"issupercomponent": false,
 		"layoutbreakpoints": "768,1024,1300",
 		"layouttype": "kLayoutTypeResponsive",
-		"left": 0,
-		"moddate": "2017-10-23 22:41:06",
+		"left": 357,
+		"moddate": "2017-10-29 15:26:09",
 		"okkeyobject": "",
 		"serverlessclient": false,
 		"showascheckedout": false,
-		"showgrid": false,
-		"sizetogrid": false,
+		"showgrid": true,
+		"sizetogrid": true,
 		"startfield": 0,
 		"title": {
 			"type": 0,
 			"calc": "New remote form"
 		},
-		"top": 14,
+		"top": 0,
 		"userinfo": "",
 		"version": "",
 		"vertgrid": 8,
 		"vertscroll": false
 	},
 	"layout": {
-		"width": 1517,
-		"height": 821,
+		"width": 1348,
+		"height": 982,
 		"768": {
 			"height": 0
 		},

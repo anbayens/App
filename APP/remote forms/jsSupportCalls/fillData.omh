@@ -1,13 +1,12 @@
-Calculate lSessionName as 'SESSIERO'
-Do iSqlList.$definefromsqlclass($libs.CRM.$schemas.TCRMSUPPORTCALLS)
-Do iSqlList.$sessionobject.$assign($root.$sessions.[lSessionName].$sessionobject) Returns #F
-Calculate where as "WHERE CAFGESLOTEN = FALSE AND CMEDEWERKER = 'AN' "
-Do iSqlList.$select(where) Returns #F
+Do $ctask.tvSqlObj.$GetSessionRO() Returns ivSessieRO
+Do ivSqlList.$definefromsqlclass($libs.CRM.$tables.tqCRMSupportCalls)
+Do ivSqlList.$sessionobject.$assign(ivSessieRO) Returns #F
+
+Calculate where as con('WHERE CMEDEWERKERS_FK = ',$ctask.tvFirmaMedewerkerList.M_CMEDEWERKERS_PK)
+Calculate where as con(where,' AND CAFGESLOTEN = FALSE ')
+Do ivSqlList.$select(where) Returns #F
 If flag true
-	Do iSqlList.$fetch(kFetchAll)
+	Do ivSqlList.$fetch(kFetchAll)
 Else
-	Do $cinst.$showmessage(con(iSqlList.$statementobject.$nativeerrorcode,' - ',iSqlList.$statementobject.$nativeerrortext),'SQL Error')
-End If
-Else
-Do $cinst.$showmessage(con('Session ',chr(39),lSessionName,chr(39),' does not exist.'),'SQL Error')
+	Do $cinst.$showmessage(con(ivSqlList.$statementobject.$nativeerrorcode,' - ',ivSqlList.$statementobject.$nativeerrortext),'SQL Error')
 End If

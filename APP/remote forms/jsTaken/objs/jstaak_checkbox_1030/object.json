@@ -1,6 +1,6 @@
 {
 	"ident": 1046,
-	"order": 40,
+	"order": 38,
 	"objtype": "kComponent",
 	"componentlib": "jsCheckbox",
 	"componentctrl": "Checkbox Control",
@@ -11,7 +11,7 @@
 		"bordercolor": "kColorDefault",
 		"contextmenu": "",
 		"cssclassname": "",
-		"dataname": "iSqlRow.CAFGESLOTEN",
+		"dataname": "ivSqlRow.CAFGESLOTEN",
 		"desgroup": 0,
 		"designactive": true,
 		"deslock": false,
@@ -38,7 +38,7 @@
 	"layout": {
 		"768": {
 			"left": 648,
-			"top": 8,
+			"top": 0,
 			"width": 120,
 			"height": 25,
 			"dragborder": false,
@@ -48,7 +48,7 @@
 		},
 		"1024": {
 			"left": 648,
-			"top": 8,
+			"top": 0,
 			"width": 120,
 			"height": 25,
 			"dragborder": false,
@@ -58,7 +58,7 @@
 		},
 		"1300": {
 			"left": 648,
-			"top": 8,
+			"top": 0,
 			"width": 120,
 			"height": 25,
 			"dragborder": false,

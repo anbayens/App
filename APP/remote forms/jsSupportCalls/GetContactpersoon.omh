@@ -1,0 +1,12 @@
+
+Do ivRowContactpersonen.$clear()
+If ivSqlRow.CCONTACTPERSONEN_FK
+	Do ivRowContactpersonen.$sessionobject.$assign($cinst.ivSessieRO) Returns #F
+	Do ivRowContactpersonen.$select(con(" WHERE CCONTACTPERSONEN_PK = ",ivSqlRow.CCONTACTPERSONEN_FK))
+	Do ivRowContactpersonen.$fetch(1)
+	Calculate ivRowContactInfo.CTELEFOON as pick(len(ivRowContactpersonen.CTELEFOON)>0,ivRowContacten.CTELEFOON,ivRowContactpersonen.CTELEFOON)
+	Calculate ivRowContactInfo.CFAX as pick(len(ivRowContactpersonen.CFAX)>0,ivRowContacten.CFAX,ivRowContactpersonen.CFAX)
+	Calculate ivRowContactInfo.CMOBILE as pick(len(ivRowContactpersonen.CMOBILE)>0,ivRowContacten.CMOBILE,ivRowContactpersonen.CMOBILE)
+	Calculate ivRowContactInfo.CFUNCTIE as ivRowContactpersonen.CFUNCTIE
+	Calculate ivRowContactInfo.CSELECTIECODE as ivRowContactpersonen.CSELECTIECODE
+End If

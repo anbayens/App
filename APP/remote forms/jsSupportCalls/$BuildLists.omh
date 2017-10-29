@@ -1,0 +1,19 @@
+
+Do $ctask.tvoCPTLists.$BuildListCommunicatiesoorten Returns ivListCommunicatiesoorten
+Do ivoCRM.$BuildListSupportSoorten() Returns ivListSupportSoorten
+Do ivoCRM.$BuildListWachtrijen Returns ivListWachtrijen
+Do ivoCRM.$BuildListPrioriteiten Returns ivListPrioriteiten
+Do ivoCRM.$BuildListProductfamilies Returns ivListProductFamilies
+Do ivoCRM.$BuildListProducten(97) Returns ivListProducten
+Do ivoCRM.$BuildListSupportTypes() Returns ivListTypes
+Do ivoCRM.$BuildListReactietijden() Returns ivListReactietijden
+Do ivoCRM.$BuildRowMedewerkers() Returns ivRowMedewerkers
+;  Do method SetWachtrijMedewerkers
+
+Do ivListCommunicatiesoorten.$line.$assign(1)
+Do ivListSupportSoorten.$line.$assign(1)
+Do ivListWachtrijen.$line.$assign(1)
+Do ivListProductFamilies.$addbefore(1,"") Returns ref
+Do ivListProducten.$addbefore(1,"") Returns ref
+Do ivListProducten.$smartlist.$assign(kTrue)
+Do ivListProducten.$filter($ref.CCRMPRODUCTFAMILIE='')

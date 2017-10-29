@@ -1,0 +1,5 @@
+
+Calculate whereclause as con(' WHERE CCRMSUPPORTCALLS_FK=',ivSqlRow.CCRMSUPPORTCALLS_PK,' ORDER BY CCRMSUPPORTCALLOPVOLGING_PK')
+Do ivListOpvolging.$sessionobject.$assign($cinst.ivSessieRO)
+Do ivListOpvolging.$select(whereclause)
+Do ivListOpvolging.$fetch(kFetchAll)

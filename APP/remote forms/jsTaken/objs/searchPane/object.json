@@ -1,6 +1,6 @@
 {
 	"ident": 1004,
-	"order": 4,
+	"order": 45,
 	"objtype": "kPagedPane",
 	"properties": {
 		"alpha": 255,
@@ -34,8 +34,8 @@
 		"768": {
 			"left": 104,
 			"top": 0,
-			"width": 729,
-			"height": 159,
+			"width": 664,
+			"height": 32,
 			"dragborder": false,
 			"edgefloat": "kEFnone",
 			"errortextpos": "kJSErrorTextPosUnder",
@@ -44,18 +44,18 @@
 		"1024": {
 			"left": 104,
 			"top": 0,
-			"width": 729,
-			"height": 159,
+			"width": 664,
+			"height": 32,
 			"dragborder": false,
 			"edgefloat": "kEFnone",
 			"errortextpos": "kJSErrorTextPosUnder",
 			"visible": true
 		},
 		"1300": {
-			"left": 105,
+			"left": 104,
 			"top": 0,
-			"width": 729,
-			"height": 52,
+			"width": 664,
+			"height": 32,
 			"dragborder": false,
 			"edgefloat": "kEFnone",
 			"errortextpos": "kJSErrorTextPosUnder",

@@ -1,6 +1,6 @@
 {
 	"classtype": "kRemoteForm",
-	"internalversion": 168,
+	"internalversion": 179,
 	"designtaskname": "remoteTask",
 	"nextident": 1006,
 	"lastgroupident": 0,
@@ -14,7 +14,7 @@
 			"type": "kCharacter",
 			"subtype": "kSimplechar",
 			"sublen": 100000000,
-			"initval": "'developmentdb'"
+			"initval": "'justtestdb'"
 		},
 		{
 			"name": "ivGebruiker",
@@ -98,7 +98,7 @@
 		"layoutbreakpoints": "768,1024,1300",
 		"layouttype": "kLayoutTypeResponsive",
 		"left": 359,
-		"moddate": "2017-10-25 20:46:00",
+		"moddate": "2017-10-28 10:35:05",
 		"okkeyobject": "",
 		"serverlessclient": false,
 		"showascheckedout": false,

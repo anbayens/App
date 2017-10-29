@@ -1,0 +1,35 @@
+
+If ivSqlRow.C1&not(ivSqlRow.CAFGESLOTEN)
+	If $libs.$findname("PRESTAT")
+		;  SUPPORT
+		If len(ivRowInst.callprestatiesoort)
+			Do ivListPrestaties.$search(ivListPrestaties.CGESTART=kTrue,kTrue,kFalse,kFalse,kFalse) Returns lijn
+			If lijn
+				Do method $BuildListPrestaties
+				Do ivoPRESTAT.$OpenGestartePrestaties
+			Else
+				Do ivoPRESTAT.$GetSqlRow(ivRowInst.callprestatiesoort) Returns row
+				Calculate row.CDOCUMENTTYPE as ivSqlRow.CDOCUMENTTYPE
+				Calculate row.CDOCUMENTTYPES_FK as ivSqlRow.CDOCUMENTTYPES_FK
+				Calculate row.CNUMMER as ivSqlRow.CNUMMER
+				Calculate row.CDOCUMENT_FK as ivSqlRow.C1
+				Calculate row.CCONTACTEN_FK as ivSqlRow.CCONTACTEN_FK
+				Calculate row.CGESTART as kTrue
+				Calculate row.CEENHEID as ''
+				Do $ctask.tvSqlObj.$GetServerTime() Returns row.CUURVAN
+				Do ivoPRESTAT.$SetSqlRow(row)
+				Do ivoPRESTAT.$StartPrestatie Returns %OK
+				If %OK
+					Do method $BuildListPrestaties
+					Do ivoPRESTAT.$OpenGestartePrestaties
+				End If
+			End If
+		Else
+			Calculate msg as StringTable.$gettext('STA.GeenStandaardPrestatiesoortIngesteld')
+			Do $ctask.tvRoutines.$Message(msg)
+		End If
+	Else
+		Calculate msg as StringTable.$gettext('STA.ModuleTimeIsNietAanwezig')
+		Do $ctask.tvRoutines.$Message(msg)
+	End If
+End If

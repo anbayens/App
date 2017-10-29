@@ -1,0 +1,10 @@
+On evClick
+	Do method getDetails
+	Do $cinst.$objs.pagedpaneSupports.$currentpage.$assign(2)
+On evDoubleClick
+	
+On evCellChanged
+	
+On evHeaderClick
+	
+On evHeadedListDisplayOrderChanged

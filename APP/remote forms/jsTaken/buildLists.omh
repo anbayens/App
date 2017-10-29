@@ -1,7 +1,18 @@
 Do ivSelectRow.$definefromsqlclass($libs.CRM.$tables.tTCRMTAKEN)
 Do ivRowContacten.$definefromsqlclass(CPT.$tables.tTCONTACTEN)
+Do ivRowContactpersonen.$definefromsqlclass(CPT.$tables.tTCONTACTPERSONEN)
 
 Do ivoCPTLists.$BuildListMedewerkers() Returns ivListMedewerkers
+
+Do ivListPrioriteit.$cols.$add('Code',kNumber)
+Do ivListPrioriteit.$cols.$add('Prioriteit',kCharacter,kSimplechar,20)
+Do ivListPrioriteit.$cols.$add('Kleur',kNumber)
+Do ivListPrioriteit.$add(0,'',kBlack)
+Do ivListPrioriteit.$add(1,StringTable.$gettext('STA.Normaal'),kBlack)
+Do ivListPrioriteit.$add(2,StringTable.$gettext('STA.Dringend'),kDarkRed)
+Do ivListPrioriteit.$add(3,StringTable.$gettext('STA.ZeerDringend'),kRed)
+Calculate ivListPrioriteit.$line as 1
+
 
 Begin statement
 Sta: {SELECT CNAAM1, CCONTACTEN_PK, CCONTACT FROM TCONTACTEN WHERE CNIETACTIEF = FALSE ORDER BY CNAAM1}

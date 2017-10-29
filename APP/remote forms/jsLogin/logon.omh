@@ -8,6 +8,8 @@ Else
 End If
 
 Do $ctask.tvSqlObj.$GetSessionRO Returns ivSessieRO
+
+Calculate $ctask.tvTaalNrMedeweker as 1
 ;  Do method CheckMedewerker Returns %OK     ;; medewerker gebruiker
 ;  If not(%OK)
 ;  Quit event handler (Discard event)

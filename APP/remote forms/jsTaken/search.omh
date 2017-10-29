@@ -22,10 +22,12 @@ Switch ivStatusFilter
 		;  Calculate where as con(where,' AND  = ')
 End Switch
 
-
 Do ivSqlList.$select(where) Returns #F
 If flag true
 	Do ivSqlList.$fetch(kFetchAll)
 Else
 	Do $cinst.$showmessage(con(ivSqlList.$statementobject.$nativeerrorcode,' - ',ivSqlList.$statementobject.$nativeerrortext),'SQL Error')
 End If
+
+
+Do $cinst.$objs.pagedpaneTaken.$currentpage.$assign(1)

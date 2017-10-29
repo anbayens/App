@@ -1,0 +1,12 @@
+
+Calculate whereclause as con(' WHERE CCRMSUPPORTCALLS_FK=',ivSqlRow.CCRMSUPPORTCALLS_PK,' ORDER BY CCREATIEDATUM')
+Do ivListLijnen.$sessionobject.$assign($cinst.ivSessieRO)
+Do ivListLijnen.$select(whereclause)
+Do ivListLijnen.$fetch(kFetchAll)
+
+Do ivListLijnen.$cols.$add('CTYPEOMSCHRIJVING',kCharacter,kSimplechar,64)
+
+Do ivListLijnen.$sendall(ivListLijnen.CINFO.$assign(replaceall(ivListLijnen.CINFO,kTab,'   ')))
+Do ivListLijnen.$sendall(ivListLijnen.CINFO.$assign(replaceall(ivListLijnen.CINFO,kCr,' ')))
+Do ivListLijnen.$sendall(ivListLijnen.CINFO.$assign(replaceall(ivListLijnen.CINFO,kLf,' ')))
+Do ivListLijnen.$sendall(ivListLijnen.CINFO.$assign(left(ivListLijnen.CINFO,512)))

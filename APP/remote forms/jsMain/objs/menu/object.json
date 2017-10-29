@@ -10,7 +10,7 @@
 		"accessoryvaluecol": 5,
 		"alpha": 255,
 		"backalpha": 255,
-		"backcolor": "RGB(238,238,238)",
+		"backcolor": "RGB(255,255,255)",
 		"buffersize": 10,
 		"buttonalpha": 255,
 		"buttonbordercolor": "kColorDefault",

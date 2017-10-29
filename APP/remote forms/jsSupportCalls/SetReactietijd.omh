@@ -1,0 +1,8 @@
+
+Calculate ivReactietijd as 0
+Do ivListReactietijden.$line.$assign(1)
+If ivSqlRow.CREACTIETIJD
+	Do ivListReactietijden.$search(kFalse)
+	Do ivListReactietijden.$search(ivListReactietijden.van<=ivSqlRow.CREACTIETIJD&ivSqlRow.CREACTIETIJD<=ivListReactietijden.tot,kTrue,kFalse,kFalse,kFalse)
+	Calculate ivReactietijd as rnd(ivSqlRow.CREACTIETIJD/ivListReactietijden.factor,0)
+End If

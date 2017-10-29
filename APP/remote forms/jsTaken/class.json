@@ -1,8 +1,8 @@
 {
 	"classtype": "kRemoteForm",
-	"internalversion": 788,
+	"internalversion": 1089,
 	"designtaskname": "remoteTask",
-	"nextident": 1049,
+	"nextident": 1053,
 	"lastgroupident": 0,
 	"cvardefs": [
 
@@ -12,13 +12,6 @@
 			"name": "iKeyList",
 			"order": 18,
 			"type": "kList",
-			"subtype": "",
-			"sublen": 0
-		},
-		{
-			"name": "iSqlRow",
-			"order": 4,
-			"type": "kRow",
 			"subtype": "",
 			"sublen": 0
 		},
@@ -51,6 +44,13 @@
 			"sublen": 0
 		},
 		{
+			"name": "ivListPrioriteit",
+			"order": 14,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
 			"name": "ivListStatus",
 			"order": 8,
 			"type": "kList",
@@ -67,6 +67,13 @@
 		{
 			"name": "ivRowContacten",
 			"order": 9,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivRowContactpersonen",
+			"order": 15,
 			"type": "kRow",
 			"subtype": "",
 			"sublen": 0
@@ -100,6 +107,13 @@
 			"sublen": 0
 		},
 		{
+			"name": "ivSqlRow",
+			"order": 4,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
 			"name": "ivStatusFilter",
 			"order": 19,
 			"type": "kInteger",
@@ -115,7 +129,7 @@
 		}
 	],
 	"properties": {
-		"aligntogrid": false,
+		"aligntogrid": true,
 		"alpha": 255,
 		"alwaysenabledobject": "",
 		"animatelayouttransitions": false,
@@ -128,7 +142,7 @@
 		"componenttype": "kCompStoreHidden",
 		"contextmenu": "",
 		"createdate": "2017-10-23 19:48:04",
-		"currentlayoutbreakpoint": 1300,
+		"currentlayoutbreakpoint": 1024,
 		"defaultappearance": "kAppearanceiOS",
 		"desc": "",
 		"designshowmobiletitle": true,
@@ -144,19 +158,19 @@
 		"issupercomponent": false,
 		"layoutbreakpoints": "768,1024,1300",
 		"layouttype": "kLayoutTypeResponsive",
-		"left": 149,
-		"moddate": "2017-10-26 22:58:12",
+		"left": 99,
+		"moddate": "2017-10-28 10:32:24",
 		"okkeyobject": "",
 		"serverlessclient": false,
 		"showascheckedout": false,
-		"showgrid": false,
-		"sizetogrid": false,
+		"showgrid": true,
+		"sizetogrid": true,
 		"startfield": 0,
 		"title": {
 			"type": 0,
 			"calc": "New remote form"
 		},
-		"top": 195,
+		"top": 0,
 		"userinfo": "",
 		"version": "",
 		"vertgrid": 8,

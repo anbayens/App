@@ -1,5 +1,6 @@
 On evClick
-	
+	;  Do method $InterpreteListLijnen
+	Do $cinst.$objs.pagedpaneOpvolging.$currentpage.$assign(2)
 On evDoubleClick
 	
 On evCellChanged

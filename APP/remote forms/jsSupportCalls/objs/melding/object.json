@@ -58,9 +58,9 @@
 	"layout": {
 		"768": {
 			"left": 104,
-			"top": 272,
+			"top": 296,
 			"width": 656,
-			"height": 224,
+			"height": 184,
 			"align": "kLeftJst",
 			"dragborder": false,
 			"edgefloat": "kEFnone",
@@ -69,9 +69,9 @@
 		},
 		"1024": {
 			"left": 104,
-			"top": 272,
+			"top": 296,
 			"width": 656,
-			"height": 224,
+			"height": 184,
 			"align": "kLeftJst",
 			"dragborder": false,
 			"edgefloat": "kEFnone",
@@ -80,9 +80,9 @@
 		},
 		"1300": {
 			"left": 104,
-			"top": 272,
+			"top": 296,
 			"width": 656,
-			"height": 224,
+			"height": 184,
 			"align": "kLeftJst",
 			"dragborder": false,
 			"edgefloat": "kEFnone",

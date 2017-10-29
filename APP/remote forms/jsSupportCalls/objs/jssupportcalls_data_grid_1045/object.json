@@ -77,7 +77,7 @@
 		"visible": true
 	},
 	"multivalueproperties": {
-		"selected": 8,
+		"selected": 12,
 		"properties": [
 			{
 				"columnallownulldateinput": false,
@@ -359,7 +359,7 @@
 		"1024": {
 			"left": 0,
 			"top": 0,
-			"width": 768,
+			"width": 1024,
 			"height": 576,
 			"dragborder": false,
 			"edgefloat": "kEFnone",
@@ -369,7 +369,7 @@
 		"1300": {
 			"left": 0,
 			"top": 0,
-			"width": 768,
+			"width": 1296,
 			"height": 576,
 			"dragborder": false,
 			"edgefloat": "kEFnone",

@@ -45,7 +45,7 @@
 	"layout": {
 		"768": {
 			"left": 104,
-			"top": 168,
+			"top": 184,
 			"width": 152,
 			"height": 24,
 			"dragborder": false,
@@ -55,7 +55,7 @@
 		},
 		"1024": {
 			"left": 104,
-			"top": 168,
+			"top": 184,
 			"width": 152,
 			"height": 24,
 			"dragborder": false,
@@ -65,7 +65,7 @@
 		},
 		"1300": {
 			"left": 104,
-			"top": 168,
+			"top": 184,
 			"width": 152,
 			"height": 24,
 			"dragborder": false,

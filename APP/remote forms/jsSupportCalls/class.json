@@ -1,8 +1,8 @@
 {
 	"classtype": "kRemoteForm",
-	"internalversion": 846,
+	"internalversion": 1324,
 	"designtaskname": "remoteTask",
-	"nextident": 1091,
+	"nextident": 1118,
 	"lastgroupident": 0,
 	"cvardefs": [
 
@@ -242,8 +242,8 @@
 		"issupercomponent": false,
 		"layoutbreakpoints": "768,1024,1300",
 		"layouttype": "kLayoutTypeResponsive",
-		"left": 357,
-		"moddate": "2017-10-29 15:26:09",
+		"left": 62,
+		"moddate": "2017-10-29 21:29:02",
 		"okkeyobject": "",
 		"serverlessclient": false,
 		"showascheckedout": false,
@@ -261,8 +261,8 @@
 		"vertscroll": false
 	},
 	"layout": {
-		"width": 1348,
-		"height": 982,
+		"width": 1566,
+		"height": 1110,
 		"768": {
 			"height": 0
 		},

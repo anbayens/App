@@ -38,7 +38,7 @@
 		"enabled": true,
 		"enterable": false,
 		"evenrowcolor": "kColorDefault",
-		"events": "",
+		"events": "evClick",
 		"extendable": false,
 		"fieldstyle": "CtrlDataGrid",
 		"filterareaheight": 0,
@@ -77,7 +77,7 @@
 		"visible": true
 	},
 	"multivalueproperties": {
-		"selected": 1,
+		"selected": 5,
 		"properties": [
 			{
 				"columnallownulldateinput": false,

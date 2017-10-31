@@ -1,6 +1,6 @@
 {
 	"ident": 1033,
-	"order": 33,
+	"order": 31,
 	"objtype": "kComponent",
 	"componentlib": "jsLabel",
 	"componentctrl": "Label Object",
@@ -25,7 +25,7 @@
 		"fontstyle": "kPlain",
 		"objlink": 131073,
 		"preventlayoutanimation": false,
-		"text": "<i class=\"fa fa-fax\" aria-hidden=\"true\"></i>",
+		"text": "BTW Code",
 		"textcolor": "kColorDefault",
 		"textishtml": true,
 		"tooltip": "",

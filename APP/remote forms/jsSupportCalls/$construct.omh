@@ -3,3 +3,7 @@ Do method $DefineLists
 Do method $BuildLists
 
 Do method fillData
+
+If $ctask.tvRowRecent.CCRMSUPPORTCALLS_PK
+	Do method getDetails ($ctask.tvRowRecent.CCRMSUPPORTCALLS_PK)
+End If

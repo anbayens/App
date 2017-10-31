@@ -1,10 +1,10 @@
 Do $ctask.tvSqlObj.$GetSessionRO() Returns ivSessieRO
-Do iSqlList.$definefromsqlclass($libs.CPT.$tables.tqKlanten)
-Do iSqlList.$sessionobject.$assign(ivSessieRO) Returns #F
+Do ivSqlList.$definefromsqlclass($libs.CPT.$tables.tqKlanten)
+Do ivSqlList.$sessionobject.$assign(ivSessieRO) Returns #F
 Calculate where as 'AND CNIETACTIEF = FALSE'
-Do iSqlList.$select(where) Returns #F
+Do ivSqlList.$select(where) Returns #F
 If flag true
-	Do iSqlList.$fetch(kFetchAll)
+	Do ivSqlList.$fetch(kFetchAll)
 Else
-	Do $cinst.$showmessage(con(iSqlList.$statementobject.$nativeerrorcode,' - ',iSqlList.$statementobject.$nativeerrortext),'SQL Error')
+	Do $cinst.$showmessage(con(ivSqlList.$statementobject.$nativeerrorcode,' - ',ivSqlList.$statementobject.$nativeerrortext),'SQL Error')
 End If

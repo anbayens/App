@@ -1,0 +1,4 @@
+Do $ctask.tvRowRecent.$define()
+Do $ctask.tvRowRecent.$cols.$add('CCRMTAKEN_PK',kInteger)
+Do $ctask.tvRowRecent.$cols.$add('CAGENDA_PK',kInteger)
+Do $ctask.tvRowRecent.$cols.$add('CCRMSUPPORTCALLS_PK',kInteger)

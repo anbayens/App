@@ -1,5 +1,6 @@
 On evClick
-	Do $cwind.$objs.subform.$classname.$assign('jsTaak')
+	Do $cwind.$objs.subform.$classname.$assign('jsTaken')
+	Calculate $ctask.tvRowRecent.CCRMTAKEN_PK as ivListTaken.CCRMTAKEN_PK
 On evDoubleClick
 	
 On evCellChanged

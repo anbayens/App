@@ -1,6 +1,6 @@
 {
 	"ident": 1020,
-	"order": 20,
+	"order": 18,
 	"objtype": "kComponent",
 	"componentlib": "jsLabel",
 	"componentctrl": "Label Object",
@@ -25,7 +25,7 @@
 		"fontstyle": "kPlain",
 		"objlink": 131073,
 		"preventlayoutanimation": false,
-		"text": "Ondernemingsnr",
+		"text": "Gewicht",
 		"textcolor": "kColorDefault",
 		"textishtml": false,
 		"tooltip": "",

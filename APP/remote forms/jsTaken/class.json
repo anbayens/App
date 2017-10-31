@@ -1,8 +1,8 @@
 {
 	"classtype": "kRemoteForm",
-	"internalversion": 1089,
+	"internalversion": 1164,
 	"designtaskname": "remoteTask",
-	"nextident": 1053,
+	"nextident": 1057,
 	"lastgroupident": 0,
 	"cvardefs": [
 
@@ -142,7 +142,7 @@
 		"componenttype": "kCompStoreHidden",
 		"contextmenu": "",
 		"createdate": "2017-10-23 19:48:04",
-		"currentlayoutbreakpoint": 1024,
+		"currentlayoutbreakpoint": 1300,
 		"defaultappearance": "kAppearanceiOS",
 		"desc": "",
 		"designshowmobiletitle": true,
@@ -159,7 +159,7 @@
 		"layoutbreakpoints": "768,1024,1300",
 		"layouttype": "kLayoutTypeResponsive",
 		"left": 99,
-		"moddate": "2017-10-28 10:32:24",
+		"moddate": "2017-10-30 20:15:54",
 		"okkeyobject": "",
 		"serverlessclient": false,
 		"showascheckedout": false,

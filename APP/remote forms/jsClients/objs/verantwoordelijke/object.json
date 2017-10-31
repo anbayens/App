@@ -17,7 +17,7 @@
 		"borderradius": "0",
 		"contextmenu": "",
 		"cssclassname": "myEntry",
-		"dataname": "iSqlRow.CMEDEWERKER",
+		"dataname": "ivSqlRow.CMEDEWERKER",
 		"dateformat": "kJSFormatNone",
 		"dateformatcustom": "",
 		"desgroup": 0,
@@ -57,7 +57,7 @@
 	},
 	"layout": {
 		"768": {
-			"left": 448,
+			"left": 520,
 			"top": 80,
 			"width": 181,
 			"height": 20,
@@ -69,7 +69,7 @@
 		},
 		"1024": {
 			"left": 520,
-			"top": 104,
+			"top": 80,
 			"width": 181,
 			"height": 20,
 			"align": "kLeftJst",
@@ -80,7 +80,7 @@
 		},
 		"1300": {
 			"left": 520,
-			"top": 104,
+			"top": 80,
 			"width": 181,
 			"height": 20,
 			"align": "kLeftJst",

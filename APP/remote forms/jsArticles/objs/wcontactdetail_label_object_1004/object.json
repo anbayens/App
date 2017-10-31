@@ -25,7 +25,7 @@
 		"fontstyle": "kPlain",
 		"objlink": 131073,
 		"preventlayoutanimation": false,
-		"text": "City",
+		"text": "Omschrijving E",
 		"textcolor": "kColorDefault",
 		"textishtml": false,
 		"tooltip": "",
@@ -36,7 +36,7 @@
 	"layout": {
 		"768": {
 			"left": 0,
-			"top": 104,
+			"top": 80,
 			"width": 120,
 			"height": 20,
 			"align": "kLeftJst",

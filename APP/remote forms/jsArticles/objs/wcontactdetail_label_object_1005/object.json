@@ -25,7 +25,7 @@
 		"fontstyle": "kPlain",
 		"objlink": 131073,
 		"preventlayoutanimation": false,
-		"text": "Country",
+		"text": "Omschrijving D",
 		"textcolor": "kColorDefault",
 		"textishtml": false,
 		"tooltip": "",
@@ -36,7 +36,7 @@
 	"layout": {
 		"768": {
 			"left": 0,
-			"top": 128,
+			"top": 104,
 			"width": 120,
 			"height": 20,
 			"align": "kLeftJst",

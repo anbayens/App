@@ -1,5 +1,6 @@
 On evClick
-	Do $cwind.$objs.subform.$classname.$assign('jsSupportCall')
+	Do $cwind.$objs.subform.$classname.$assign('jsSupportCalls')
+	Calculate $ctask.tvRowRecent.CCRMSUPPORTCALLS_PK as ivListSupportCalls.CCRMSUPPORTCALLS_PK
 On evDoubleClick
 	
 On evCellChanged

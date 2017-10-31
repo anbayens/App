@@ -84,7 +84,14 @@
 		"order": 6,
 		"clientexec": false,
 		"pvardefs": [
-
+			{
+				"name": "pCRMSUPPORTCALLS_PK",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			}
 		],
 		"lvardefs": [
 

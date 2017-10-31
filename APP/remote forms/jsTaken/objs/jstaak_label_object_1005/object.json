@@ -36,8 +36,8 @@
 	"layout": {
 		"768": {
 			"left": 8,
-			"top": 88,
-			"width": 96,
+			"top": 96,
+			"width": 120,
 			"height": 25,
 			"align": "kLeftJst",
 			"dragborder": false,
@@ -47,7 +47,7 @@
 		},
 		"1024": {
 			"left": 8,
-			"top": 88,
+			"top": 96,
 			"width": 120,
 			"height": 25,
 			"align": "kLeftJst",
@@ -58,7 +58,7 @@
 		},
 		"1300": {
 			"left": 8,
-			"top": 88,
+			"top": 96,
 			"width": 120,
 			"height": 25,
 			"align": "kLeftJst",

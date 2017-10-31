@@ -1,6 +1,6 @@
 {
 	"ident": 1021,
-	"order": 21,
+	"order": 19,
 	"objtype": "kComponent",
 	"componentlib": "jsLabel",
 	"componentctrl": "Label Object",
@@ -25,7 +25,7 @@
 		"fontstyle": "kPlain",
 		"objlink": 131073,
 		"preventlayoutanimation": false,
-		"text": "Vertegenwoordiger",
+		"text": "GN Code",
 		"textcolor": "kColorDefault",
 		"textishtml": false,
 		"tooltip": "",

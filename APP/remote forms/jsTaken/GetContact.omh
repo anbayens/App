@@ -4,6 +4,3 @@ If ivSqlRow.CCONTACTEN_FK
 	Do ivRowContacten.$select(con(" WHERE CCONTACTEN_PK = ",ivSqlRow.CCONTACTEN_FK))
 	Do ivRowContacten.$fetch(1)
 End If
-;  Calculate ivSqlRow.C_CNAAM1 as ivRowContacten.CNAAM1
-;  Calculate $ctask.tvRowRecent.CCONTACTEN_PK as ivSqlRow.CCONTACTEN_FK
-;  Calculate $ctask.tvRowRecent.CCONTACTEND_PK as ivSqlRow.CCONTACTEN_FK

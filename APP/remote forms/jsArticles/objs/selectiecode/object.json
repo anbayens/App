@@ -1,6 +1,6 @@
 {
 	"ident": 1029,
-	"order": 29,
+	"order": 27,
 	"objtype": "kComponent",
 	"componentlib": "jsEdit",
 	"componentctrl": "Edit Control",
@@ -58,7 +58,7 @@
 	"layout": {
 		"768": {
 			"left": 448,
-			"top": 128,
+			"top": 104,
 			"width": 181,
 			"height": 20,
 			"align": "kLeftJst",

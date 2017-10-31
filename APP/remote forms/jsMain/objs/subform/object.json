@@ -25,7 +25,7 @@
 		"preventlayoutanimation": false,
 		"tooltip": "",
 		"userinfo": "",
-		"vertscroll": false,
+		"vertscroll": true,
 		"visible": true
 	},
 	"layout": {
@@ -43,7 +43,7 @@
 			"left": 160,
 			"top": 74,
 			"width": 864,
-			"height": 814,
+			"height": 865,
 			"dragborder": false,
 			"edgefloat": "kEFright",
 			"errortextpos": "kJSErrorTextPosUnder",
@@ -53,7 +53,7 @@
 			"left": 161,
 			"top": 74,
 			"width": 1139,
-			"height": 814,
+			"height": 865,
 			"dragborder": false,
 			"edgefloat": "kEFright",
 			"errortextpos": "kJSErrorTextPosUnder",

@@ -1,6 +1,6 @@
 {
 	"classtype": "kRemoteForm",
-	"internalversion": 181,
+	"internalversion": 224,
 	"designtaskname": "remoteTask",
 	"nextident": 1026,
 	"lastgroupident": 0,
@@ -93,7 +93,7 @@
 		"componenttype": "kCompStoreHidden",
 		"contextmenu": "",
 		"createdate": "2017-10-23 19:48:04",
-		"currentlayoutbreakpoint": 1300,
+		"currentlayoutbreakpoint": 768,
 		"defaultappearance": "kAppearanceiOS",
 		"desc": "",
 		"designshowmobiletitle": true,
@@ -109,8 +109,8 @@
 		"issupercomponent": false,
 		"layoutbreakpoints": "768,1024,1300",
 		"layouttype": "kLayoutTypeResponsive",
-		"left": 135,
-		"moddate": "2017-10-28 10:18:30",
+		"left": 212,
+		"moddate": "2017-10-31 21:54:04",
 		"okkeyobject": "",
 		"serverlessclient": false,
 		"showascheckedout": false,
@@ -121,15 +121,15 @@
 			"type": 0,
 			"calc": "New remote form"
 		},
-		"top": 10,
+		"top": 0,
 		"userinfo": "",
 		"version": "",
 		"vertgrid": 8,
 		"vertscroll": false
 	},
 	"layout": {
-		"width": 1426,
-		"height": 1033,
+		"width": 1415,
+		"height": 1110,
 		"768": {
 			"height": 0
 		},

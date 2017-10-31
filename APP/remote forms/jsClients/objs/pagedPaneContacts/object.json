@@ -34,8 +34,8 @@
 		"768": {
 			"left": 0,
 			"top": 32,
-			"width": 768,
-			"height": 824,
+			"width": 1304,
+			"height": 837,
 			"dragborder": false,
 			"edgefloat": "kEFnone",
 			"errortextpos": "kJSErrorTextPosUnder",
@@ -43,9 +43,9 @@
 		},
 		"1024": {
 			"left": 0,
-			"top": 0,
+			"top": 32,
 			"width": 1024,
-			"height": 832,
+			"height": 837,
 			"dragborder": false,
 			"edgefloat": "kEFnone",
 			"errortextpos": "kJSErrorTextPosUnder",
@@ -53,7 +53,7 @@
 		},
 		"1300": {
 			"left": 0,
-			"top": 0,
+			"top": 32,
 			"width": 1304,
 			"height": 837,
 			"dragborder": false,

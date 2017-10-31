@@ -1,4 +1,3 @@
-;  Enter your initialization code here
 
 ;  hide search field
 Do $cinst.$objs.searchPane.$alpha.$assign(0)
@@ -6,3 +5,7 @@ Do $cinst.$objs.searchPane.$height.$assign(0)
 
 Do method buildLists
 Do method fillData
+
+If $ctask.tvRowRecent.CCRMTAKEN_PK
+	Do method getDetails ($ctask.tvRowRecent.CCRMTAKEN_PK)
+End If

@@ -89,7 +89,14 @@
 		"order": 8,
 		"clientexec": false,
 		"pvardefs": [
-
+			{
+				"name": "pCRMTAKEN_PK",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1
+			}
 		],
 		"lvardefs": [
 

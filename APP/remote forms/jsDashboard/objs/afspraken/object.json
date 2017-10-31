@@ -77,7 +77,7 @@
 		"visible": true
 	},
 	"multivalueproperties": {
-		"selected": 6,
+		"selected": 1,
 		"properties": [
 			{
 				"columnallownulldateinput": false,

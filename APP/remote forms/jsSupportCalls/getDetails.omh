@@ -1,7 +1,9 @@
-;  Do $ctask.tvSqlObj.$GetSessionRO() Returns ivSessieRO
+Do $cinst.$objs.pagedpaneSupports.$currentpage.$assign(2)
+Do $cinst.$objs.tabSupportcall.$currenttab.$assign(2)
+
 Do ivSqlRow.$definefromsqlclass($libs.CRM.$tables.tTCRMSUPPORTCALLS)
 Do ivSqlRow.$sessionobject.$assign(ivSessieRO) Returns #F
-Calculate where as con('WHERE CCRMSUPPORTCALLS_PK =  ',ivSqlList.CCRMSUPPORTCALLS_PK)
+Calculate where as con('WHERE CCRMSUPPORTCALLS_PK =  ',pCRMSUPPORTCALLS_PK)
 Do ivSqlRow.$select(where) Returns #F
 If flag true
 	Do ivSqlRow.$fetch(kFetchAll)

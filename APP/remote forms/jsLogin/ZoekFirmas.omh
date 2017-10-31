@@ -21,6 +21,4 @@ If lijn=0
 	Do tvFirmaMedewerkerList.$line.$assign(1)
 End If
 Calculate tvFirmaMedewerkerList.[lijn].$selected as 1
-;  Do $imenus.mBestanden.$RedrawMenu
-;  Set Omnis window title {Dave ([con($ctask.tvFirmaMedewerkerList.F_CNAAM1,' ',$ctask.tvFirmaMedewerkerList.CINTERNEFIRMAVESTIGING)])}     ;; Windows
 Quit method kTrue

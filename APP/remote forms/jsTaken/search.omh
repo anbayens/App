@@ -1,7 +1,6 @@
 Do $ctask.tvSqlObj.$GetSessionRO() Returns ivSessieRO
 Do ivSqlList.$definefromsqlclass($libs.CRM.$tables.tqCRMTaken)
 Do ivSqlList.$sessionobject.$assign(ivSessieRO) Returns #F
-;  Calculate where as 'AND CNIETACTIEF = FALSE'
 
 If ivListMedewerkers.CMEDEWERKER<>''
 	Calculate where as con('WHERE CMEDEWERKERSVOOR_FK = ',ivListMedewerkers.CMEDEWERKERS_PK)
@@ -19,7 +18,6 @@ Switch ivStatusFilter
 	Case 1
 		Calculate where as con(where,' AND CMETOPVOLGING = TRUE')
 	Case 2
-		;  Calculate where as con(where,' AND  = ')
 End Switch
 
 Do ivSqlList.$select(where) Returns #F
@@ -28,6 +26,5 @@ If flag true
 Else
 	Do $cinst.$showmessage(con(ivSqlList.$statementobject.$nativeerrorcode,' - ',ivSqlList.$statementobject.$nativeerrortext),'SQL Error')
 End If
-
 
 Do $cinst.$objs.pagedpaneTaken.$currentpage.$assign(1)

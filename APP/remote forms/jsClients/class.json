@@ -1,27 +1,13 @@
 {
 	"classtype": "kRemoteForm",
-	"internalversion": 65,
+	"internalversion": 542,
 	"designtaskname": "remoteTask",
-	"nextident": 1063,
+	"nextident": 1101,
 	"lastgroupident": 0,
 	"cvardefs": [
 
 	],
 	"ivardefs": [
-		{
-			"name": "iContactAdresList",
-			"order": 14,
-			"type": "kList",
-			"subtype": "",
-			"sublen": 0
-		},
-		{
-			"name": "iContactPersonsList",
-			"order": 12,
-			"type": "kList",
-			"subtype": "",
-			"sublen": 0
-		},
 		{
 			"name": "iFilter",
 			"order": 5,
@@ -37,60 +23,145 @@
 			"sublen": 0
 		},
 		{
-			"name": "iList",
+			"name": "iVertCell",
+			"order": 4,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "ivGemAantalDagenKlant",
+			"order": 23,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"desc": "2.74"
+		},
+		{
+			"name": "ivGemAantalDagenLev",
+			"order": 24,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"desc": "2.74"
+		},
+		{
+			"name": "ivKlantRow",
 			"order": 2,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivKredietlijn",
+			"order": 20,
+			"type": "kNumber",
+			"subtype": "k2dp",
+			"sublen": 0
+		},
+		{
+			"name": "ivListAlgemeneRekeningen",
+			"order": 33,
 			"type": "kList",
 			"subtype": "",
 			"sublen": 0
 		},
 		{
-			"name": "iNavMenu",
-			"order": 6,
+			"name": "ivListBetalingsvoorwaarden",
+			"order": 28,
 			"type": "kList",
 			"subtype": "",
 			"sublen": 0
 		},
 		{
-			"name": "iNavMenu2",
+			"name": "ivListBTWRegimes",
+			"order": 25,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListCollectieRekening",
+			"order": 34,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListContactAdres",
+			"order": 14,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListContactPersons",
+			"order": 12,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListContactRollen",
+			"order": 29,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListContactSaldi",
+			"order": 19,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListFactuurVia",
+			"order": 27,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListKortinggroepen",
+			"order": 26,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListLeveringsvoorwaarden",
+			"order": 31,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListMunten",
+			"order": 30,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListRolgRoepen",
 			"order": 8,
 			"type": "kList",
 			"subtype": "",
 			"sublen": 0
 		},
 		{
-			"name": "iNavMenu3",
-			"order": 9,
-			"type": "kList",
-			"subtype": "",
-			"sublen": 0
-		},
-		{
-			"name": "iNavObj",
+			"name": "ivListTarieven",
 			"order": 7,
-			"type": "kObject",
-			"subtype": "oNavMenu",
-			"sublen": 0,
-			"initval": "kFalse"
-		},
-		{
-			"name": "iSqlList",
-			"order": 1,
 			"type": "kList",
 			"subtype": "",
 			"sublen": 0
 		},
 		{
-			"name": "iSqlRow",
-			"order": 11,
-			"type": "kRow",
+			"name": "ivListTransporteurs",
+			"order": 32,
+			"type": "kList",
 			"subtype": "",
-			"sublen": 0
-		},
-		{
-			"name": "iVertCell",
-			"order": 4,
-			"type": "kInteger",
-			"subtype": "k32bitint",
 			"sublen": 0
 		},
 		{
@@ -101,10 +172,24 @@
 			"sublen": 0
 		},
 		{
-			"name": "ivoStat",
-			"order": 15,
+			"name": "ivOrder",
+			"order": 6,
 			"type": "kObject",
-			"subtype": "",
+			"subtype": "ORDER.oOrder",
+			"sublen": 0
+		},
+		{
+			"name": "ivSaldoKlant",
+			"order": 21,
+			"type": "kNumber",
+			"subtype": "k2dp",
+			"sublen": 0
+		},
+		{
+			"name": "ivSaldoLev",
+			"order": 22,
+			"type": "kNumber",
+			"subtype": "k2dp",
 			"sublen": 0
 		},
 		{
@@ -115,9 +200,16 @@
 			"sublen": 0
 		},
 		{
-			"name": "refContainer",
-			"order": 10,
-			"type": "kItemref",
+			"name": "ivSqlList",
+			"order": 1,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivSqlRow",
+			"order": 11,
+			"type": "kRow",
 			"subtype": "",
 			"sublen": 0
 		},
@@ -143,7 +235,7 @@
 		"componenttype": "kCompStoreHidden",
 		"contextmenu": "",
 		"createdate": "2017-10-23 19:48:04",
-		"currentlayoutbreakpoint": 1300,
+		"currentlayoutbreakpoint": 1024,
 		"defaultappearance": "kAppearanceiOS",
 		"desc": "",
 		"designshowmobiletitle": true,
@@ -159,8 +251,8 @@
 		"issupercomponent": false,
 		"layoutbreakpoints": "768,1024,1300",
 		"layouttype": "kLayoutTypeResponsive",
-		"left": 513,
-		"moddate": "2017-10-26 22:54:46",
+		"left": 98,
+		"moddate": "2017-10-31 21:58:15",
 		"okkeyobject": "",
 		"serverlessclient": false,
 		"showascheckedout": true,
@@ -171,15 +263,15 @@
 			"type": 0,
 			"calc": "New remote form"
 		},
-		"top": 79,
+		"top": 0,
 		"userinfo": "",
 		"version": "",
 		"vertgrid": 8,
 		"vertscroll": false
 	},
 	"layout": {
-		"width": 1502,
-		"height": 954,
+		"width": 1722,
+		"height": 1093,
 		"768": {
 			"height": 500
 		},

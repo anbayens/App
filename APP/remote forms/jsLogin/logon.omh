@@ -19,31 +19,6 @@ Calculate $ctask.tvTaalNrMedeweker as 1
 ;  Quit event handler (Discard event)
 ;  End If
 ;
-;  Do method GetModules     ;; .lbs
-;  Do $ctask.tvSQLObj.$BuildListModules Returns ivListModules     ;; in database
-;  Do method CheckVersies Returns %OK     ;; versies
-;  If not(%OK)
-;  Do $ctask.tvRoutines.$Uitloggen()
-;  Quit event handler (Discard event)
-;  End If
-;  Do method CheckSessie Returns %OK     ;; sessie
-;  If not(%OK)
-;  Do $ctask.tvRoutines.$Uitloggen()
-;  Quit event handler (Discard event)
-;  End If
-;  If ivRowMedewerkers.CISBEHEERDER     ;; meldingen voor de beheerder(s)
-;  Do method CheckBackup
-;  End If
-;
-;  Do method SetPrefs (ivRowMedewerkers.CAUTOWIJZIG,ivRowMedewerkers.CAUTOSELECTIE,ivRowMedewerkers.CREPINGAVE,ivRowMedewerkers.CTAAL)
-;  Do method EnableArchief (kTrue)
-;  Do method InstallMenuBestanden
 ;
 Do method ZoekFirmas Returns %OK
-;  If not(%OK)
-;  Do $ctask.tvRoutines.$Uitloggen()
-;  Quit event handler (Discard event)
-;  End If
-;  Do method $DisableMenulinesBestanden
-;
-;  Do method TestToegangModules
+Do method defineRowRecent Returns %OK

@@ -1,6 +1,6 @@
 {
 	"classtype": "kRemoteTask",
-	"internalversion": 13,
+	"internalversion": 17,
 	"nextident": 1,
 	"tvardefs": [
 		{
@@ -11,10 +11,24 @@
 			"sublen": 0
 		},
 		{
+			"name": "tvoCPTLists",
+			"order": 6,
+			"type": "kObject",
+			"subtype": "CPT.oCPTLists",
+			"sublen": 0
+		},
+		{
 			"name": "tvRoutines",
 			"order": 2,
 			"type": "kObject",
 			"subtype": "CPT.oRoutines",
+			"sublen": 0
+		},
+		{
+			"name": "tvRowRecent",
+			"order": 5,
+			"type": "kRow",
+			"subtype": "",
 			"sublen": 0
 		},
 		{
@@ -54,7 +68,7 @@
 		"localtime": false,
 		"maxtime": 0,
 		"maxusers": 0,
-		"moddate": "2017-10-28 12:26:52",
+		"moddate": "2017-10-30 20:44:12",
 		"restful": false,
 		"restfulapiname": "",
 		"showascheckedout": true,

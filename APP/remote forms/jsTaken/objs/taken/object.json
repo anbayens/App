@@ -283,7 +283,7 @@
 		"768": {
 			"left": 0,
 			"top": 0,
-			"width": 768,
+			"width": 1024,
 			"height": 529,
 			"dragborder": false,
 			"edgefloat": "kEFnone",
@@ -303,7 +303,7 @@
 		"1300": {
 			"left": 0,
 			"top": 0,
-			"width": 1304,
+			"width": 1024,
 			"height": 529,
 			"dragborder": false,
 			"edgefloat": "kEFnone",

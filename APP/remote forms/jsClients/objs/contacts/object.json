@@ -173,8 +173,8 @@
 		"768": {
 			"left": 0,
 			"top": 0,
-			"width": 1304,
-			"height": 552,
+			"width": 1024,
+			"height": 776,
 			"dragborder": false,
 			"edgefloat": "kEFright",
 			"errortextpos": "kJSErrorTextPosUnder",
@@ -193,7 +193,7 @@
 		"1300": {
 			"left": 0,
 			"top": 0,
-			"width": 1304,
+			"width": 1024,
 			"height": 776,
 			"dragborder": false,
 			"edgefloat": "kEFright",

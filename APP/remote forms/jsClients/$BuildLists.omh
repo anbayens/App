@@ -8,5 +8,5 @@ Do $ctask.tvoCPTLists.$BuildListLeveringsvoorwaarden() Returns ivListLeveringsvo
 Do $ctask.tvoCPTLists.$BuildListTransporteurs() Returns ivListTransporteurs
 Do $ctask.tvoCPTLists.$BuildListAlgRek() Returns ivListAlgemeneRekeningen
 Do $ctask.tvoCPTLists.$BuildListAlgRek() Returns ivListCollectieRekening
-Do ivOrder.$BuildListTarieven() Returns ivListTarieven
+;  Do ivOrder.$BuildListTarieven() Returns ivListTarieven
 Do ivListKortinggroepen.$addbefore(1)

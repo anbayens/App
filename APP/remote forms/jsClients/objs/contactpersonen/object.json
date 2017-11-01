@@ -77,7 +77,7 @@
 		"visible": true
 	},
 	"multivalueproperties": {
-		"selected": 2,
+		"selected": 3,
 		"properties": [
 			{
 				"columnallownulldateinput": false,
@@ -151,7 +151,7 @@
 		"768": {
 			"left": 0,
 			"top": 272,
-			"width": 832,
+			"width": 800,
 			"height": 150,
 			"dragborder": false,
 			"edgefloat": "kEFnone",
@@ -161,7 +161,7 @@
 		"1024": {
 			"left": 0,
 			"top": 272,
-			"width": 832,
+			"width": 800,
 			"height": 150,
 			"dragborder": false,
 			"edgefloat": "kEFnone",
@@ -171,7 +171,7 @@
 		"1300": {
 			"left": 0,
 			"top": 272,
-			"width": 832,
+			"width": 800,
 			"height": 150,
 			"dragborder": false,
 			"edgefloat": "kEFnone",

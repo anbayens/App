@@ -1,6 +1,6 @@
 {
 	"ident": 1067,
-	"order": 46,
+	"order": 43,
 	"objtype": "kComponent",
 	"componentlib": "jsLabel",
 	"componentctrl": "Label Object",
@@ -23,7 +23,7 @@
 		"font": 1,
 		"fontsize": 10,
 		"fontstyle": "kPlain",
-		"objlink": 131073,
+		"objlink": 65651,
 		"preventlayoutanimation": false,
 		"text": "Aantal ex factuur",
 		"textcolor": "kColorDefault",
@@ -36,7 +36,7 @@
 	"layout": {
 		"768": {
 			"left": 8,
-			"top": 808,
+			"top": 216,
 			"width": 120,
 			"height": 24,
 			"align": "kLeftJst",
@@ -47,7 +47,7 @@
 		},
 		"1024": {
 			"left": 8,
-			"top": 808,
+			"top": 216,
 			"width": 120,
 			"height": 24,
 			"align": "kLeftJst",
@@ -58,7 +58,7 @@
 		},
 		"1300": {
 			"left": 8,
-			"top": 808,
+			"top": 216,
 			"width": 120,
 			"height": 24,
 			"align": "kLeftJst",

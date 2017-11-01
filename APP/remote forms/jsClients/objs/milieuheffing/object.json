@@ -1,6 +1,6 @@
 {
 	"ident": 1122,
-	"order": 98,
+	"order": 95,
 	"objtype": "kComponent",
 	"componentlib": "jsCheckbox",
 	"componentctrl": "Checkbox Control",
@@ -27,7 +27,7 @@
 		"fontstyle": "kPlain",
 		"iconid": 0,
 		"linestyle": 1,
-		"objlink": 131073,
+		"objlink": 65647,
 		"preventlayoutanimation": false,
 		"text": "Milieuheffing",
 		"textcolor": "kColorDefault",
@@ -38,8 +38,8 @@
 	"layout": {
 		"768": {
 			"left": 816,
-			"top": 272,
-			"width": 192,
+			"top": 248,
+			"width": 104,
 			"height": 24,
 			"dragborder": false,
 			"edgefloat": "kEFnone",
@@ -48,8 +48,8 @@
 		},
 		"1024": {
 			"left": 816,
-			"top": 272,
-			"width": 192,
+			"top": 248,
+			"width": 104,
 			"height": 24,
 			"dragborder": false,
 			"edgefloat": "kEFnone",
@@ -58,8 +58,8 @@
 		},
 		"1300": {
 			"left": 816,
-			"top": 272,
-			"width": 192,
+			"top": 248,
+			"width": 104,
 			"height": 24,
 			"dragborder": false,
 			"edgefloat": "kEFnone",

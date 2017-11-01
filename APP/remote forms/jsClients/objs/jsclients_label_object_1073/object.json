@@ -1,6 +1,6 @@
 {
 	"ident": 1073,
-	"order": 52,
+	"order": 49,
 	"objtype": "kComponent",
 	"componentlib": "jsLabel",
 	"componentctrl": "Label Object",
@@ -23,7 +23,7 @@
 		"font": 1,
 		"fontsize": 10,
 		"fontstyle": "kPlain",
-		"objlink": 131073,
+		"objlink": 65651,
 		"preventlayoutanimation": false,
 		"text": "Fin. Korting",
 		"textcolor": "kColorDefault",
@@ -36,7 +36,7 @@
 	"layout": {
 		"768": {
 			"left": 352,
-			"top": 616,
+			"top": 24,
 			"width": 120,
 			"height": 24,
 			"align": "kLeftJst",
@@ -47,7 +47,7 @@
 		},
 		"1024": {
 			"left": 352,
-			"top": 616,
+			"top": 24,
 			"width": 120,
 			"height": 24,
 			"align": "kLeftJst",
@@ -58,7 +58,7 @@
 		},
 		"1300": {
 			"left": 352,
-			"top": 616,
+			"top": 24,
 			"width": 120,
 			"height": 24,
 			"align": "kLeftJst",

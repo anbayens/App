@@ -1,6 +1,6 @@
 {
 	"ident": 1095,
-	"order": 72,
+	"order": 69,
 	"objtype": "kComponent",
 	"componentlib": "jsCheckbox",
 	"componentctrl": "Checkbox Control",
@@ -27,7 +27,7 @@
 		"fontstyle": "kPlain",
 		"iconid": 0,
 		"linestyle": 1,
-		"objlink": 131073,
+		"objlink": 65651,
 		"preventlayoutanimation": false,
 		"text": "Voor waar en echt...",
 		"textcolor": "kColorDefault",
@@ -37,8 +37,8 @@
 	},
 	"layout": {
 		"768": {
-			"left": 640,
-			"top": 664,
+			"left": 712,
+			"top": 104,
 			"width": 192,
 			"height": 24,
 			"dragborder": false,
@@ -47,8 +47,8 @@
 			"visible": true
 		},
 		"1024": {
-			"left": 640,
-			"top": 664,
+			"left": 712,
+			"top": 104,
 			"width": 192,
 			"height": 24,
 			"dragborder": false,
@@ -57,8 +57,8 @@
 			"visible": true
 		},
 		"1300": {
-			"left": 640,
-			"top": 664,
+			"left": 712,
+			"top": 104,
 			"width": 192,
 			"height": 24,
 			"dragborder": false,

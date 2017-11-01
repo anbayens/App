@@ -15,7 +15,7 @@
 		"autocorrect": true,
 		"autoedit": true,
 		"backalpha": 255,
-		"backcolor": "kWhite",
+		"backcolor": "RGB(239,239,239)",
 		"bordercolor": "kColorDefault",
 		"canresizecolumns": true,
 		"cansortcolumns": true,
@@ -77,7 +77,7 @@
 		"visible": true
 	},
 	"multivalueproperties": {
-		"selected": 4,
+		"selected": 2,
 		"properties": [
 			{
 				"columnallownulldateinput": false,

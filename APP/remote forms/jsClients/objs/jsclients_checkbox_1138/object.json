@@ -1,6 +1,6 @@
 {
 	"ident": 1138,
-	"order": 114,
+	"order": 110,
 	"objtype": "kComponent",
 	"componentlib": "jsCheckbox",
 	"componentctrl": "Checkbox Control",
@@ -27,7 +27,7 @@
 		"fontstyle": "kPlain",
 		"iconid": 0,
 		"linestyle": 1,
-		"objlink": 131073,
+		"objlink": 65652,
 		"preventlayoutanimation": false,
 		"text": "Geblokkeerd",
 		"textcolor": "kColorDefault",
@@ -38,7 +38,7 @@
 	"layout": {
 		"768": {
 			"left": 128,
-			"top": 944,
+			"top": 104,
 			"width": 192,
 			"height": 24,
 			"dragborder": false,
@@ -48,7 +48,7 @@
 		},
 		"1024": {
 			"left": 128,
-			"top": 944,
+			"top": 104,
 			"width": 192,
 			"height": 24,
 			"dragborder": false,
@@ -58,7 +58,7 @@
 		},
 		"1300": {
 			"left": 128,
-			"top": 944,
+			"top": 104,
 			"width": 192,
 			"height": 24,
 			"dragborder": false,

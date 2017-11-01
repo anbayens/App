@@ -1,6 +1,6 @@
 {
 	"ident": 1110,
-	"order": 62,
+	"order": 58,
 	"objtype": "kComponent",
 	"componentlib": "jsCheckbox",
 	"componentctrl": "Checkbox Control",
@@ -27,7 +27,7 @@
 		"fontstyle": "kPlain",
 		"iconid": 0,
 		"linestyle": 1,
-		"objlink": 131074,
+		"objlink": 65602,
 		"preventlayoutanimation": false,
 		"text": "Afgesloten",
 		"textcolor": "kColorDefault",
@@ -37,8 +37,8 @@
 	},
 	"layout": {
 		"768": {
-			"left": 104,
-			"top": 568,
+			"left": 112,
+			"top": 328,
 			"width": 120,
 			"height": 24,
 			"dragborder": false,
@@ -47,8 +47,8 @@
 			"visible": true
 		},
 		"1024": {
-			"left": 104,
-			"top": 568,
+			"left": 112,
+			"top": 328,
 			"width": 120,
 			"height": 24,
 			"dragborder": false,
@@ -57,8 +57,8 @@
 			"visible": true
 		},
 		"1300": {
-			"left": 104,
-			"top": 568,
+			"left": 112,
+			"top": 328,
 			"width": 120,
 			"height": 24,
 			"dragborder": false,

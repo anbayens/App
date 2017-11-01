@@ -33,7 +33,7 @@
 		"linestyle": 1,
 		"listcolumn": 10,
 		"numberformat": "",
-		"objlink": 131074,
+		"objlink": 65601,
 		"preventlayoutanimation": false,
 		"selectedlinecolor": "kColorDefault",
 		"selectedlinetextcolor": "kColorDefault",
@@ -44,8 +44,8 @@
 	},
 	"layout": {
 		"768": {
-			"left": 104,
-			"top": 152,
+			"left": 112,
+			"top": 168,
 			"width": 152,
 			"height": 24,
 			"dragborder": false,
@@ -54,8 +54,8 @@
 			"visible": true
 		},
 		"1024": {
-			"left": 104,
-			"top": 152,
+			"left": 112,
+			"top": 168,
 			"width": 152,
 			"height": 24,
 			"dragborder": false,
@@ -64,8 +64,8 @@
 			"visible": true
 		},
 		"1300": {
-			"left": 104,
-			"top": 152,
+			"left": 112,
+			"top": 168,
 			"width": 152,
 			"height": 24,
 			"dragborder": false,

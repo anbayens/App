@@ -1,6 +1,6 @@
 {
 	"classtype": "kRemoteForm",
-	"internalversion": 116,
+	"internalversion": 126,
 	"designtaskname": "remoteTask",
 	"nextident": 1165,
 	"lastgroupident": 0,
@@ -252,7 +252,7 @@
 		"layoutbreakpoints": "768,1024,1300",
 		"layouttype": "kLayoutTypeResponsive",
 		"left": 90,
-		"moddate": "2017-11-01 20:31:48",
+		"moddate": "2017-11-01 22:07:14",
 		"okkeyobject": "",
 		"serverlessclient": false,
 		"showascheckedout": true,
@@ -273,13 +273,13 @@
 		"width": 1260,
 		"height": 1077,
 		"768": {
-			"height": 500
+			"height": 0
 		},
 		"1024": {
-			"height": 500
+			"height": 0
 		},
 		"1300": {
-			"height": 500
+			"height": 0
 		}
 	}
 }

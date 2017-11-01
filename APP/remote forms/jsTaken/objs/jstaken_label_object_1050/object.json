@@ -23,7 +23,7 @@
 		"font": 1,
 		"fontsize": 10,
 		"fontstyle": "kPlain",
-		"objlink": 131073,
+		"objlink": 65583,
 		"preventlayoutanimation": false,
 		"text": "Tel:",
 		"textcolor": "kColorDefault",
@@ -36,7 +36,7 @@
 	"layout": {
 		"768": {
 			"left": 440,
-			"top": 392,
+			"top": 64,
 			"width": 26,
 			"height": 25,
 			"align": "kLeftJst",
@@ -47,7 +47,7 @@
 		},
 		"1024": {
 			"left": 440,
-			"top": 392,
+			"top": 64,
 			"width": 26,
 			"height": 25,
 			"align": "kLeftJst",
@@ -58,7 +58,7 @@
 		},
 		"1300": {
 			"left": 440,
-			"top": 392,
+			"top": 64,
 			"width": 26,
 			"height": 25,
 			"align": "kLeftJst",

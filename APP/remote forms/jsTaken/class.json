@@ -1,8 +1,8 @@
 {
 	"classtype": "kRemoteForm",
-	"internalversion": 1164,
+	"internalversion": 1231,
 	"designtaskname": "remoteTask",
-	"nextident": 1057,
+	"nextident": 1059,
 	"lastgroupident": 0,
 	"cvardefs": [
 
@@ -134,7 +134,7 @@
 		"alwaysenabledobject": "",
 		"animatelayouttransitions": false,
 		"backalpha": 255,
-		"backcolor": "RGB(255,255,255)",
+		"backcolor": "RGB(239,239,239)",
 		"backpattern": 0,
 		"cancelkeyobject": "",
 		"collectperformancedata": false,
@@ -151,7 +151,7 @@
 		"editordata": "",
 		"events": "",
 		"external": true,
-		"forecolor": "RGB(255,255,255)",
+		"forecolor": "RGB(239,239,239)",
 		"horzgrid": 8,
 		"horzscroll": false,
 		"inheritedorder": 1,
@@ -159,7 +159,7 @@
 		"layoutbreakpoints": "768,1024,1300",
 		"layouttype": "kLayoutTypeResponsive",
 		"left": 99,
-		"moddate": "2017-10-30 20:15:54",
+		"moddate": "2017-11-01 21:43:57",
 		"okkeyobject": "",
 		"serverlessclient": false,
 		"showascheckedout": false,

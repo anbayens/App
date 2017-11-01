@@ -42,7 +42,7 @@
 		"hottabtextcolor": "kColorDefault",
 		"linkedobject": "pagedpaneOpvolging",
 		"maxfixedtabsize": 200,
-		"objlink": 131074,
+		"objlink": 65603,
 		"preventlayoutanimation": false,
 		"side": "kJSTabsSideTop",
 		"tabbackalpha": 255,
@@ -71,7 +71,7 @@
 		"visible": true
 	},
 	"multivalueproperties": {
-		"selected": 1,
+		"selected": 2,
 		"properties": [
 			{
 				"::tabiconid": 0,
@@ -94,7 +94,7 @@
 	"layout": {
 		"768": {
 			"left": 0,
-			"top": 600,
+			"top": 0,
 			"width": 104,
 			"height": 32,
 			"align": "kCenterJst",
@@ -105,7 +105,7 @@
 		},
 		"1024": {
 			"left": 0,
-			"top": 600,
+			"top": 0,
 			"width": 104,
 			"height": 32,
 			"align": "kCenterJst",
@@ -116,7 +116,7 @@
 		},
 		"1300": {
 			"left": 0,
-			"top": 600,
+			"top": 0,
 			"width": 104,
 			"height": 32,
 			"align": "kCenterJst",

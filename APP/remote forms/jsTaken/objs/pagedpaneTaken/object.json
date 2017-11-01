@@ -7,7 +7,7 @@
 		"animatetransitions": false,
 		"autoscroll": false,
 		"backalpha": 255,
-		"backcolor": "RGB(255,255,255)",
+		"backcolor": "RGB(238,238,238)",
 		"bordercolor": "kColorDefault",
 		"borderradius": "0",
 		"contextmenu": "",
@@ -42,7 +42,7 @@
 			"visible": true
 		},
 		"1024": {
-			"left": 0,
+			"left": 8,
 			"top": 32,
 			"width": 768,
 			"height": 678,
@@ -52,7 +52,7 @@
 			"visible": true
 		},
 		"1300": {
-			"left": 0,
+			"left": 8,
 			"top": 32,
 			"width": 768,
 			"height": 678,

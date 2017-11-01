@@ -22,7 +22,7 @@
 		"enabled": true,
 		"events": "",
 		"linestyle": 1,
-		"objlink": 131074,
+		"objlink": 65603,
 		"pagecount": 2,
 		"preventlayoutanimation": false,
 		"scrolltochangepage": false,
@@ -33,8 +33,8 @@
 	"layout": {
 		"768": {
 			"left": 0,
-			"top": 632,
-			"width": 760,
+			"top": 32,
+			"width": 768,
 			"height": 312,
 			"dragborder": false,
 			"edgefloat": "kEFnone",
@@ -43,8 +43,8 @@
 		},
 		"1024": {
 			"left": 0,
-			"top": 632,
-			"width": 760,
+			"top": 32,
+			"width": 768,
 			"height": 312,
 			"dragborder": false,
 			"edgefloat": "kEFnone",
@@ -53,8 +53,8 @@
 		},
 		"1300": {
 			"left": 0,
-			"top": 632,
-			"width": 760,
+			"top": 32,
+			"width": 768,
 			"height": 312,
 			"dragborder": false,
 			"edgefloat": "kEFnone",

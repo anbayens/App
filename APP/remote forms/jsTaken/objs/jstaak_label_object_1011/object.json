@@ -23,7 +23,7 @@
 		"font": 1,
 		"fontsize": 10,
 		"fontstyle": "kPlain",
-		"objlink": 131073,
+		"objlink": 65583,
 		"preventlayoutanimation": false,
 		"text": "Contactpersoon",
 		"textcolor": "kColorDefault",
@@ -36,8 +36,8 @@
 	"layout": {
 		"768": {
 			"left": 8,
-			"top": 392,
-			"width": 120,
+			"top": 64,
+			"width": 96,
 			"height": 25,
 			"align": "kLeftJst",
 			"dragborder": false,
@@ -47,8 +47,8 @@
 		},
 		"1024": {
 			"left": 8,
-			"top": 392,
-			"width": 120,
+			"top": 64,
+			"width": 96,
 			"height": 25,
 			"align": "kLeftJst",
 			"dragborder": false,
@@ -58,8 +58,8 @@
 		},
 		"1300": {
 			"left": 8,
-			"top": 392,
-			"width": 120,
+			"top": 64,
+			"width": 96,
 			"height": 25,
 			"align": "kLeftJst",
 			"dragborder": false,

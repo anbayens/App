@@ -27,7 +27,7 @@
 		"fontstyle": "kPlain",
 		"iconid": 0,
 		"linestyle": 1,
-		"objlink": 131073,
+		"objlink": 65582,
 		"preventlayoutanimation": false,
 		"text": "Afgesloten",
 		"textcolor": "kColorDefault",
@@ -37,9 +37,9 @@
 	},
 	"layout": {
 		"768": {
-			"left": 648,
-			"top": 0,
-			"width": 120,
+			"left": 664,
+			"top": 8,
+			"width": 88,
 			"height": 25,
 			"dragborder": false,
 			"edgefloat": "kEFnone",
@@ -48,7 +48,7 @@
 		},
 		"1024": {
 			"left": 648,
-			"top": 0,
+			"top": 8,
 			"width": 120,
 			"height": 25,
 			"dragborder": false,
@@ -58,7 +58,7 @@
 		},
 		"1300": {
 			"left": 648,
-			"top": 0,
+			"top": 8,
 			"width": 120,
 			"height": 25,
 			"dragborder": false,

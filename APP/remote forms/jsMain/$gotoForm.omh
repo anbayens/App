@@ -1,10 +1,10 @@
 
 Do $cwind.$objs.subform.$classname.$assign(iSubList.iFormName)
 
-If iSubList.iFormName='jsClients'|iSubList.iFormName='jsSuppliers'
-	Do $cwind.$objs.subform.$height.$assign(1500)
-	Do $cwind.$objs.menu.$height.$assign(1500)
-Else
-	Do $cwind.$objs.subform.$height.$assign(700)
-	Do $cwind.$objs.menu.$height.$assign(700)
-End If
+;  If iSubList.iFormName='jsClients'|iSubList.iFormName='jsSuppliers'
+;  Do $cwind.$objs.subform.$height.$assign(1500)
+;  Do $cwind.$objs.menu.$height.$assign(1500)
+;  Else
+;  Do $cwind.$objs.subform.$height.$assign(700)
+;  Do $cwind.$objs.menu.$height.$assign(700)
+;  End If

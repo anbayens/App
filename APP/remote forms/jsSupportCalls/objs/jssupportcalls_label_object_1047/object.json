@@ -23,7 +23,7 @@
 		"font": 1,
 		"fontsize": 10,
 		"fontstyle": "kPlain",
-		"objlink": 131074,
+		"objlink": 65601,
 		"preventlayoutanimation": false,
 		"text": "Middel",
 		"textcolor": "kColorDefault",
@@ -35,8 +35,8 @@
 	},
 	"layout": {
 		"768": {
-			"left": 272,
-			"top": 152,
+			"left": 280,
+			"top": 168,
 			"width": 80,
 			"height": 24,
 			"align": "kLeftJst",
@@ -46,8 +46,8 @@
 			"visible": true
 		},
 		"1024": {
-			"left": 272,
-			"top": 152,
+			"left": 280,
+			"top": 168,
 			"width": 80,
 			"height": 24,
 			"align": "kLeftJst",
@@ -57,8 +57,8 @@
 			"visible": true
 		},
 		"1300": {
-			"left": 272,
-			"top": 152,
+			"left": 280,
+			"top": 168,
 			"width": 80,
 			"height": 24,
 			"align": "kLeftJst",

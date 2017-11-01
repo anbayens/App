@@ -27,7 +27,7 @@
 		"fontstyle": "kPlain",
 		"iconid": 0,
 		"linestyle": 1,
-		"objlink": 131073,
+		"objlink": 65582,
 		"preventlayoutanimation": false,
 		"text": "Opdracht",
 		"textcolor": "kColorDefault",
@@ -37,7 +37,7 @@
 	},
 	"layout": {
 		"768": {
-			"left": 520,
+			"left": 528,
 			"top": 96,
 			"width": 120,
 			"height": 25,
@@ -47,7 +47,7 @@
 			"visible": true
 		},
 		"1024": {
-			"left": 520,
+			"left": 528,
 			"top": 96,
 			"width": 120,
 			"height": 25,
@@ -57,7 +57,7 @@
 			"visible": true
 		},
 		"1300": {
-			"left": 520,
+			"left": 528,
 			"top": 96,
 			"width": 120,
 			"height": 25,

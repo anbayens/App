@@ -44,7 +44,7 @@
 		"linkedobject": "",
 		"negallowed": true,
 		"numberformat": "",
-		"objlink": 131073,
+		"objlink": 65582,
 		"preventlayoutanimation": false,
 		"systemkeys": false,
 		"textcolor": "kColorDefault",
@@ -57,7 +57,7 @@
 	},
 	"layout": {
 		"768": {
-			"left": 112,
+			"left": 120,
 			"top": 56,
 			"width": 398,
 			"height": 25,
@@ -68,7 +68,7 @@
 			"visible": true
 		},
 		"1024": {
-			"left": 112,
+			"left": 120,
 			"top": 56,
 			"width": 398,
 			"height": 25,
@@ -79,7 +79,7 @@
 			"visible": true
 		},
 		"1300": {
-			"left": 112,
+			"left": 120,
 			"top": 56,
 			"width": 398,
 			"height": 25,

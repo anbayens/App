@@ -1,13 +1,13 @@
 {
 	"ident": 1062,
-	"order": 42,
+	"order": 41,
 	"objtype": "kComponent",
 	"componentlib": "jsTabs",
 	"componentctrl": "Tab Control",
 	"properties": {
 		"alpha": 255,
 		"backalpha": 255,
-		"backcolor": "RGB(255,255,255)",
+		"backcolor": "RGB(239,239,239)",
 		"baseedgealpha": 255,
 		"baseedgecolor": "kColorDefault",
 		"baseedgewidth": 0,
@@ -71,7 +71,7 @@
 		"visible": true
 	},
 	"multivalueproperties": {
-		"selected": 1,
+		"selected": 2,
 		"properties": [
 			{
 				"::tabiconid": 0,

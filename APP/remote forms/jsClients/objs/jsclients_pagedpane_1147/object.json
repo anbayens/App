@@ -33,9 +33,9 @@
 	"layout": {
 		"768": {
 			"left": 8,
-			"top": 736,
+			"top": 848,
 			"width": 1016,
-			"height": 264,
+			"height": 384,
 			"dragborder": false,
 			"edgefloat": "kEFnone",
 			"errortextpos": "kJSErrorTextPosUnder",
@@ -43,9 +43,9 @@
 		},
 		"1024": {
 			"left": 8,
-			"top": 736,
+			"top": 848,
 			"width": 1016,
-			"height": 264,
+			"height": 384,
 			"dragborder": false,
 			"edgefloat": "kEFnone",
 			"errortextpos": "kJSErrorTextPosUnder",
@@ -53,9 +53,9 @@
 		},
 		"1300": {
 			"left": 8,
-			"top": 736,
+			"top": 848,
 			"width": 1016,
-			"height": 264,
+			"height": 384,
 			"dragborder": false,
 			"edgefloat": "kEFnone",
 			"errortextpos": "kJSErrorTextPosUnder",

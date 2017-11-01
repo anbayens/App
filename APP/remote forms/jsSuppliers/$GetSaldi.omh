@@ -1,0 +1,22 @@
+Calculate ivSaldoKlant as 0
+Calculate ivSaldoLev as 0
+Calculate ivKredietlijn as 0
+Calculate ivGemAantalDagenKlant as 0     ;; 2.74
+Calculate ivGemAantalDagenLev as 0     ;; 2.74
+Do ivListContactSaldi.$define()
+Begin statement
+Sta: {SELECT CCONTACTSALDI_PK,CCONTACTROL,CKREDIETLIJN,CSALDO,CGEMAANTALDAGEN FROM TCONTACTSALDI}
+Sta: {WHERE CINTERNEFIRMAS_FK=@[$ctask.tvFirmaMedewerkerList.F_CINTERNEFIRMAS_PK] AND CCONTACTEN_FK=@[ivSqlRow.CCONTACTEN_PK]}
+End statement
+Do $ctask.tvSQLObj.$SelectList(ivListContactSaldi)
+Do ivListContactSaldi.$search($ref.CCONTACTROL='C',kTrue,kFalse,kFalse,kFalse) Returns lijn
+If lijn
+	Calculate ivSaldoLev as ivListContactSaldi.CSALDO
+	Calculate ivGemAantalDagenLev as ivListContactSaldi.CGEMAANTALDAGEN     ;; 2.74
+End If
+Do ivListContactSaldi.$search($ref.CCONTACTROL='D',kTrue,kFalse,kFalse,kFalse) Returns lijn
+If lijn     ;; Deze lijn blijft current
+	Calculate ivSaldoKlant as ivListContactSaldi.CSALDO
+	Calculate ivKredietlijn as ivListContactSaldi.CKREDIETLIJN
+	Calculate ivGemAantalDagenKlant as ivListContactSaldi.CGEMAANTALDAGEN     ;; 2.74
+End If

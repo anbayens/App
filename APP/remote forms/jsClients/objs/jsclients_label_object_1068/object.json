@@ -35,7 +35,7 @@
 	},
 	"layout": {
 		"768": {
-			"left": 352,
+			"left": 360,
 			"top": 184,
 			"width": 120,
 			"height": 24,
@@ -46,7 +46,7 @@
 			"visible": true
 		},
 		"1024": {
-			"left": 352,
+			"left": 360,
 			"top": 184,
 			"width": 120,
 			"height": 24,
@@ -57,7 +57,7 @@
 			"visible": true
 		},
 		"1300": {
-			"left": 352,
+			"left": 360,
 			"top": 184,
 			"width": 120,
 			"height": 24,

@@ -30,7 +30,7 @@ End If
 
 Do ivKlantRow.$definefromsqlclass($libs.CPT.$tables.tTCONTACTROLLEN)
 Do ivKlantRow.$sessionobject.$assign(ivSessieRO) Returns #F
-Calculate where as con('WHERE CCONTACTEN_FK = ',ivSqlList.CCONTACTEN_PK)
+Calculate where as con('WHERE CCONTACTEN_FK = ',ivSqlList.CCONTACTEN_PK," AND CCONTACTROL = 'D'")
 Do ivKlantRow.$select(where) Returns #F
 If flag true
 	Do ivKlantRow.$fetch(kFetchAll)

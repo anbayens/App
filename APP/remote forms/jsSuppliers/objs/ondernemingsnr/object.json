@@ -17,7 +17,7 @@
 		"borderradius": "0",
 		"contextmenu": "",
 		"cssclassname": "myEntry",
-		"dataname": "iSqlRow.CONDERNEMINGSNUMMER",
+		"dataname": "ivSqlRow.CONDERNEMINGSNUMMER",
 		"dateformat": "kJSFormatNone",
 		"dateformatcustom": "",
 		"desgroup": 0,
@@ -44,7 +44,7 @@
 		"linkedobject": "",
 		"negallowed": true,
 		"numberformat": "",
-		"objlink": 131073,
+		"objlink": 65622,
 		"preventlayoutanimation": false,
 		"systemkeys": false,
 		"textcolor": "kColorDefault",
@@ -57,7 +57,7 @@
 	},
 	"layout": {
 		"768": {
-			"left": 448,
+			"left": 488,
 			"top": 32,
 			"width": 181,
 			"height": 20,
@@ -68,8 +68,8 @@
 			"visible": true
 		},
 		"1024": {
-			"left": 520,
-			"top": 56,
+			"left": 488,
+			"top": 32,
 			"width": 181,
 			"height": 20,
 			"align": "kLeftJst",
@@ -79,8 +79,8 @@
 			"visible": true
 		},
 		"1300": {
-			"left": 520,
-			"top": 56,
+			"left": 488,
+			"top": 32,
 			"width": 181,
 			"height": 20,
 			"align": "kLeftJst",

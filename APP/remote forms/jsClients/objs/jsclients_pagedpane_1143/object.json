@@ -32,30 +32,30 @@
 	},
 	"layout": {
 		"768": {
-			"left": 0,
+			"left": 8,
 			"top": 40,
 			"width": 1024,
-			"height": 296,
+			"height": 400,
 			"dragborder": false,
 			"edgefloat": "kEFnone",
 			"errortextpos": "kJSErrorTextPosUnder",
 			"visible": true
 		},
 		"1024": {
-			"left": 0,
+			"left": 8,
 			"top": 40,
 			"width": 1024,
-			"height": 296,
+			"height": 400,
 			"dragborder": false,
 			"edgefloat": "kEFnone",
 			"errortextpos": "kJSErrorTextPosUnder",
 			"visible": true
 		},
 		"1300": {
-			"left": 0,
+			"left": 8,
 			"top": 40,
 			"width": 1024,
-			"height": 296,
+			"height": 400,
 			"dragborder": false,
 			"edgefloat": "kEFnone",
 			"errortextpos": "kJSErrorTextPosUnder",

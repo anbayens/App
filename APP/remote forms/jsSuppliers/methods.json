@@ -51,9 +51,21 @@
 		]
 	},
 	{
+		"name": "$BuildLists",
+		"ident": 5,
+		"order": 3,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
 		"name": "fillData",
 		"ident": 0,
-		"order": 3,
+		"order": 4,
 		"clientexec": false,
 		"pvardefs": [
 
@@ -65,14 +77,44 @@
 	{
 		"name": "$showDetails",
 		"ident": 3,
-		"order": 4,
+		"order": 5,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$GetSaldi",
+		"ident": 4,
+		"order": 6,
 		"clientexec": false,
 		"pvardefs": [
 
 		],
 		"lvardefs": [
 			{
-				"name": "lSessionName",
+				"name": "lijn",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "setLists",
+		"ident": 6,
+		"order": 7,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "kfaSel",
 				"order": 1,
 				"type": "kCharacter",
 				"subtype": "kSimplechar",

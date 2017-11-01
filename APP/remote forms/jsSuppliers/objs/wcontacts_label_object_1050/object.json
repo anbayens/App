@@ -19,11 +19,11 @@
 		"dropmode": "kAcceptNone",
 		"enabled": false,
 		"events": "",
-		"fieldstyle": "CtrlLabel",
-		"font": 1,
+		"fieldstyle": "",
+		"font": 6,
 		"fontsize": 10,
 		"fontstyle": "kPlain",
-		"objlink": 131073,
+		"objlink": 65622,
 		"preventlayoutanimation": false,
 		"text": "<i class=\"fa fa-fax\" aria-hidden=\"true\"></i>",
 		"textcolor": "kColorDefault",
@@ -35,9 +35,9 @@
 	},
 	"layout": {
 		"768": {
-			"left": 0,
+			"left": 8,
 			"top": 224,
-			"width": 120,
+			"width": 112,
 			"height": 20,
 			"align": "kLeftJst",
 			"dragborder": false,
@@ -46,9 +46,9 @@
 			"visible": true
 		},
 		"1024": {
-			"left": 0,
+			"left": 8,
 			"top": 224,
-			"width": 120,
+			"width": 112,
 			"height": 20,
 			"align": "kLeftJst",
 			"dragborder": false,
@@ -57,9 +57,9 @@
 			"visible": true
 		},
 		"1300": {
-			"left": 0,
+			"left": 8,
 			"top": 224,
-			"width": 120,
+			"width": 112,
 			"height": 20,
 			"align": "kLeftJst",
 			"dragborder": false,

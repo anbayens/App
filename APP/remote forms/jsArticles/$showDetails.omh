@@ -1,0 +1,9 @@
+Do ivSqlRow.$definefromsqlclass($libs.ORDER.$tables.tTARTIKELS)
+Do ivSqlRow.$sessionobject.$assign(ivSessieRo) Returns #F
+Calculate where as con('WHERE CARTIKELS_PK =  ',ivSqlList.CARTIKELS_PK)
+Do ivSqlRow.$select(where) Returns #F
+If flag true
+	Do ivSqlRow.$fetch(kFetchAll)
+Else
+	Do $cinst.$showmessage(con(ivSqlRow.$statementobject.$nativeerrorcode,' - ',ivSqlRow.$statementobject.$nativeerrortext),'SQL Error')
+End If

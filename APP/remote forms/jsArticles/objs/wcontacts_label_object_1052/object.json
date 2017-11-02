@@ -1,6 +1,6 @@
 {
 	"ident": 1035,
-	"order": 33,
+	"order": 32,
 	"objtype": "kComponent",
 	"componentlib": "jsLabel",
 	"componentctrl": "Label Object",
@@ -23,7 +23,7 @@
 		"font": 1,
 		"fontsize": 10,
 		"fontstyle": "kPlain",
-		"objlink": 131073,
+		"objlink": 65573,
 		"preventlayoutanimation": false,
 		"text": "Selectiecode",
 		"textcolor": "kColorDefault",
@@ -35,8 +35,8 @@
 	},
 	"layout": {
 		"768": {
-			"left": 0,
-			"top": 176,
+			"left": 8,
+			"top": 168,
 			"width": 120,
 			"height": 20,
 			"align": "kLeftJst",
@@ -46,8 +46,8 @@
 			"visible": true
 		},
 		"1024": {
-			"left": 0,
-			"top": 176,
+			"left": 8,
+			"top": 168,
 			"width": 120,
 			"height": 20,
 			"align": "kLeftJst",
@@ -57,8 +57,8 @@
 			"visible": true
 		},
 		"1300": {
-			"left": 0,
-			"top": 176,
+			"left": 8,
+			"top": 168,
 			"width": 120,
 			"height": 20,
 			"align": "kLeftJst",

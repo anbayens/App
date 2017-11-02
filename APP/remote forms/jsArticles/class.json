@@ -1,27 +1,13 @@
 {
 	"classtype": "kRemoteForm",
-	"internalversion": 48,
+	"internalversion": 600,
 	"designtaskname": "remoteTask",
-	"nextident": 1044,
+	"nextident": 1127,
 	"lastgroupident": 0,
 	"cvardefs": [
 
 	],
 	"ivardefs": [
-		{
-			"name": "iContactAdresList",
-			"order": 7,
-			"type": "kList",
-			"subtype": "",
-			"sublen": 0
-		},
-		{
-			"name": "iContactPersonsList",
-			"order": 6,
-			"type": "kList",
-			"subtype": "",
-			"sublen": 0
-		},
 		{
 			"name": "iFilter",
 			"order": 4,
@@ -37,20 +23,6 @@
 			"sublen": 0
 		},
 		{
-			"name": "iSqlList",
-			"order": 1,
-			"type": "kList",
-			"subtype": "",
-			"sublen": 0
-		},
-		{
-			"name": "iSqlRow",
-			"order": 5,
-			"type": "kRow",
-			"subtype": "",
-			"sublen": 0
-		},
-		{
 			"name": "iVertCell",
 			"order": 3,
 			"type": "kInteger",
@@ -63,6 +35,27 @@
 			"type": "kObject",
 			"subtype": "",
 			"sublen": 0
+		},
+		{
+			"name": "ivSqlList",
+			"order": 9,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivSqlRow",
+			"order": 5,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "where",
+			"order": 10,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
 		}
 	],
 	"properties": {
@@ -71,8 +64,8 @@
 		"alwaysenabledobject": "",
 		"animatelayouttransitions": false,
 		"backalpha": 255,
-		"backcolor": "RGB(255,255,255)",
-		"backpattern": 0,
+		"backcolor": "RGB(239,239,239)",
+		"backpattern": 1,
 		"cancelkeyobject": "",
 		"collectperformancedata": false,
 		"componenticon": 0,
@@ -95,8 +88,8 @@
 		"issupercomponent": false,
 		"layoutbreakpoints": "768,1024,1300",
 		"layouttype": "kLayoutTypeResponsive",
-		"left": 259,
-		"moddate": "2017-10-31 22:01:57",
+		"left": 142,
+		"moddate": "2017-11-02 22:28:31",
 		"okkeyobject": "",
 		"serverlessclient": false,
 		"showascheckedout": false,
@@ -107,15 +100,15 @@
 			"type": 0,
 			"calc": "New remote form"
 		},
-		"top": 1,
+		"top": 0,
 		"userinfo": "",
 		"version": "",
 		"vertgrid": 8,
 		"vertscroll": false
 	},
 	"layout": {
-		"width": 1084,
-		"height": 1046,
+		"width": 1127,
+		"height": 1050,
 		"768": {
 			"height": 0
 		},

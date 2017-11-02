@@ -32,9 +32,9 @@
 	},
 	"layout": {
 		"768": {
-			"left": 0,
+			"left": 8,
 			"top": 1024,
-			"width": 768,
+			"width": 758,
 			"height": 192,
 			"dragborder": false,
 			"edgefloat": "kEFnone",

@@ -1,13 +1,13 @@
 {
 	"ident": 1043,
-	"order": 37,
+	"order": 36,
 	"objtype": "kComponent",
 	"componentlib": "jsTabs",
 	"componentctrl": "Tab Control",
 	"properties": {
 		"alpha": 255,
 		"backalpha": 255,
-		"backcolor": "RGB(255,255,255)",
+		"backcolor": "RGB(239,239,239)",
 		"baseedgealpha": 255,
 		"baseedgecolor": "kColorDefault",
 		"baseedgewidth": 0,

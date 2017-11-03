@@ -25,7 +25,7 @@
 		"fontstyle": "kPlain",
 		"objlink": 65573,
 		"preventlayoutanimation": false,
-		"text": "Vervangartikel",
+		"text": "Extra 1",
 		"textcolor": "kColorDefault",
 		"textishtml": false,
 		"tooltip": "",
@@ -36,7 +36,7 @@
 	"layout": {
 		"768": {
 			"left": 8,
-			"top": 264,
+			"top": 368,
 			"width": 120,
 			"height": 20,
 			"align": "kLeftJst",
@@ -47,7 +47,7 @@
 		},
 		"1024": {
 			"left": 8,
-			"top": 264,
+			"top": 368,
 			"width": 120,
 			"height": 20,
 			"align": "kLeftJst",
@@ -58,7 +58,7 @@
 		},
 		"1300": {
 			"left": 8,
-			"top": 264,
+			"top": 368,
 			"width": 120,
 			"height": 20,
 			"align": "kLeftJst",

@@ -33,7 +33,7 @@
 	"layout": {
 		"768": {
 			"left": 8,
-			"top": 1144,
+			"top": 1896,
 			"width": 752,
 			"height": 688,
 			"dragborder": false,
@@ -43,7 +43,7 @@
 		},
 		"1024": {
 			"left": 8,
-			"top": 1144,
+			"top": 1896,
 			"width": 752,
 			"height": 688,
 			"dragborder": false,
@@ -53,7 +53,7 @@
 		},
 		"1300": {
 			"left": 8,
-			"top": 1144,
+			"top": 1896,
 			"width": 752,
 			"height": 688,
 			"dragborder": false,

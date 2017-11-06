@@ -1,0 +1,7 @@
+
+Calculate list as $ctask.tvFirmaMedewerkerList
+Do list.$search(list.F_CINTERNEFIRMAS_PK=$ctask.tvFirmaMedewerkerList.F_CINTERNEFIRMAS_PK,kTrue,kFalse,kTrue,kTrue)
+Do list.$remove(kListKeepSelected)
+Do list.$sendall(inclause.$assign(con(inclause,list.V_CINTERNEFIRMAVESTIGINGEN_PK,',')))
+Calculate inclause as con("(",mid(inclause,1,len(inclause)-1),")")
+Quit method inclause

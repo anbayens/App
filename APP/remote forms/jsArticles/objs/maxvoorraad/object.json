@@ -17,7 +17,7 @@
 		"borderradius": "0",
 		"contextmenu": "",
 		"cssclassname": "myEntry",
-		"dataname": "ivSqlRow.CMAXIMUMVOORRAAD",
+		"dataname": "ivListInVestiging.CMAXVOORRAAD",
 		"dateformat": "kJSFormatNone",
 		"dateformatcustom": "",
 		"desgroup": 0,

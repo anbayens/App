@@ -20,6 +20,11 @@
     border-width: 0.5px;
 }
 
+.ctrl-drop-button{
+	background-image: url("images/down.gif") !important;
+}
+
+
 /* Datagrid Column Headers */
 .grid .slick-header-column {
 /*background:-moz-linear-gradient(bottom,rgb(15,46,64),white); /* Firefox */

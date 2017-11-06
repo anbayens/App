@@ -1,6 +1,6 @@
 {
 	"ident": 1124,
-	"order": 112,
+	"order": 108,
 	"objtype": "kComponent",
 	"componentlib": "jsCheckbox",
 	"componentctrl": "Checkbox Control",
@@ -37,8 +37,8 @@
 	},
 	"layout": {
 		"768": {
-			"left": 400,
-			"top": 208,
+			"left": 528,
+			"top": 176,
 			"width": 120,
 			"height": 24,
 			"dragborder": false,

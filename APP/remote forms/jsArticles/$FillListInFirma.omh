@@ -1,0 +1,11 @@
+
+Do ivListInFirma.$add() Returns ref
+Do ref.CINTERNFIRMA.$assign($ctask.tvFirmaMedewerkerList.F_CINTERNEFIRMA)
+Do ref.CINTERNFIRMAS_FK.$assign($ctask.tvFirmaMedewerkerList.F_CINTERNEFIRMAS_PK)
+Do ref.CARTIKELS_FK.$assign(0)
+Do ref.CLAATSTEAANKOOPPRIJS.$assign(0)
+Do ref.CLAATSTEAANKOOPKOSTEN.$assign(0)
+Do ref.CGEMAANKOOPPRIJS.$assign(0)
+Do ref.CAANKOOPREKENING.$assign('')
+Do ref.CAANKOOPREKENINGEN_FK.$assign(#NULL)
+Do ivListInFirma.$line.$assign(1)

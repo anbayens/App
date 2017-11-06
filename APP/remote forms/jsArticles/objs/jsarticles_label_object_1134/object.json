@@ -1,6 +1,6 @@
 {
 	"ident": 1134,
-	"order": 122,
+	"order": 118,
 	"objtype": "kComponent",
 	"componentlib": "jsLabel",
 	"componentctrl": "Label Object",
@@ -23,7 +23,7 @@
 		"font": 1,
 		"fontsize": 10,
 		"fontstyle": "kPlain",
-		"objlink": 65651,
+		"objlink": 65647,
 		"preventlayoutanimation": false,
 		"text": "Land van herkomst",
 		"textcolor": "kColorDefault",

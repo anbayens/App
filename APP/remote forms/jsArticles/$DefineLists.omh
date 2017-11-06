@@ -1,0 +1,53 @@
+
+Do ivSqlRow.$cols.$add('G_CARTIKELGROEP1',kCharacter,kSimplechar,30)
+Do ivListEenhedenVerkoop.$define()
+Do ivListEenhedenVerkoop.$cols.$add('CEENHEID1',kCharacter,kSimplechar,30)
+
+Do ivListTarievenLtd.$define()
+Do ivListTarievenLtd.$cols.$add('CTARIEF',kCharacter,kSimplechar,10)
+
+Do ivListInFirma.$definefromsqlclass(ORDER.$tables.tTARTIKELINFIRMA)
+Do ivListInVestiging.$definefromsqlclass(ORDER.$tables.tTARTIKELINVESTIGING)
+Do ivListLocaties.$definefromsqlclass(ORDER.$tables.tTARTIKELLOCATIES)
+Do ivListVerpakkingen.$definefromsqlclass(ORDER.$tables.tTARTIKELVERPAKKINGEN)
+Do ivRowContacten.$definefromsqlclass(CPT.$tables.tTCONTACTEN)
+Do ivListVoorraad.$definefromsqlclass(ORDER.$tables.tqArtikelVoorraadMagazijn)
+Do ivRowArtikelgroepen.$definefromsqlclass(ORDER.$tables.tTARTIKELGROEPEN)
+
+Do ivListLeveranciers.$definefromsqlclass(ORDER.$tables.tTARTIKELLEVERANCIERS)
+Do ivListLeveranciers.$cols.$add('C_CCONTACT',kCharacter,kSimplechar,10)
+Do ivListLeveranciers.$cols.$add('C_CNAAM1',kCharacter,kSimplechar,50)
+
+Do ivListPrijzen.$definefromsqlclass(ORDER.$tables.tTARTIKELPRIJZEN)
+Do ivListPrijzen.$cols.$add('T_CINCLBTW',kBoolean)     ;; 23
+Do ivListPrijzen.$cols.$add('T_CKOERS',kNumber,k6dp)
+Do ivListPrijzen.$cols.$add('T_CMARGE',kNumber,k2dp)
+Do ivListPrijzen.$cols.$add('T_CMUNT',kCharacter,kSimplechar,3)
+Do ivListPrijzen.$cols.$add('T_CMUNTEN_FK',kInteger,k32bitint)
+Do ivListPrijzen.$cols.$add('T_COMSCHRIJVING1',kCharacter,kSimplechar,30)
+Do ivListPrijzen.$cols.$add('T_CTARIEF',kCharacter,kSimplechar,10)
+Do ivListPrijzen.$cols.$add('R_MARGE',kNumber,k2dp)
+Do ivListPrijzen.$cols.$add('R_CINCLBTW',kCharacter,kSimplechar,5)
+Do ivListPrijzen.$cols.$add('A_CEENHEIDVOORRAAD',kCharacter,kSimplechar,10)
+
+Do ivListGekoppeld.$definefromsqlclass(ORDER.$tables.tTARTIKELGEKOPPELD)
+
+Do ivListToolbarActies.$define()
+Do ivListToolbarActies.$cols.$add('CCODE',kInteger,k32bitint)
+Do ivListToolbarActies.$cols.$add('CACTIE',kCharacter,kSimplechar,100)
+
+Do ivRowMatenbalken.$definefromsqlclass(ORDER.$tables.tTMATENBALKEN)
+Do ivRowMatenbalken.$sessionobject.$assign($cinst.ivSessieRO)
+Do ivRowKleurenkaarten.$definefromsqlclass(ORDER.$tables.tTKLEURENKAARTEN)
+Do ivRowKleurenkaarten.$sessionobject.$assign($cinst.ivSessieRO)
+Do ivListKleurenMaten.$define()
+Do ivListArtikelKleurMaat.$definefromsqlclass(ORDER.$tables.tTARTIKELKLEURMAAT)
+Do ivListArtikelKleurMaat.$cols.$add('K_COMSCHRIJVING',kCharacter,kSimplechar,30)     ;; +
+Do ivListArtikelKleurMaatPrijzen.$definefromsqlclass(ORDER.$tables.tTARTIKELKLEURMAATPRIJZEN)
+Do ivListArtikelKleurMaatLeveranciers.$definefromsqlclass(ORDER.$tables.tTARTIKELKLEURMAATLEVERANCIERS)
+
+Do ivListBijlagen.$definefromsqlclass(ORDER.$tables.tTARTIKELBIJLAGEN)
+Do ivListBijlagen.$cols.$add('CTEXT',kCharacter,kSimplechar,256)
+
+Do ivRowLeeggoed.$definefromsqlclass(ORDER.$tables.tTARTIKELLEEGGOED)     ;; 2.74
+Do ivRowLeeggoed.$sessionobject.$assign($cinst.ivSessieRO)     ;; 2.74

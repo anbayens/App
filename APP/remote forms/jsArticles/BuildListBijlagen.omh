@@ -1,0 +1,16 @@
+
+Do ivListBijlagen.$clear()
+Calculate whereclause as con(" WHERE CARTIKELS_FK = ",$cinst.ivSqlRow.CARTIKELS_PK)
+Do list.$definefromsqlclass(ORDER.$tables.tqArtikelBijlagen)
+Do con("SELECT ",list.$selectnames(),' FROM ',list.$servertablenames(),' ',whereclause) Returns statement
+Do ivSessieRo.$newstatement('tqArtikelBijlagen') Returns StatObj
+Do StatObj.$execdirect(statement)
+Do StatObj.$fetch(list,kFetchAll)
+Do ivListBijlagen.$merge(list,kTrue)
+For ivListBijlagen.$line from 1 to ivListBijlagen.$linecount step 1
+	Calculate ivListBijlagen.CTEXT as con(ivListBijlagen.CDOCUMENTPAD,ivListBijlagen.CDOCUMENTBLOBNAAM,ivListBijlagen.CONDERWERP)
+End For
+Do ivListBijlagen.$line.$assign(1)
+Set reference ivRefListBijlagen to ivListBijlagen.[ivListBijlagen.$line]
+Do ivRefListBijlagen.$selected.$assign(kTrue)
+Do ivListBijlagen.$smartlist.$assign(kTrue)

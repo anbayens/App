@@ -1,0 +1,13 @@
+
+Calculate whereclause as con("WHERE CINTERNEFIRMAS_FK = ",$ctask.tvFirmaMedewerkerList.F_CINTERNEFIRMAS_PK)
+Calculate whereclause as con(whereclause," AND CARTIKELS_FK = ",$cinst.ivSqlRow.CARTIKELS_PK)
+
+Do ivListInFirma.$clear()
+Do ivListInFirma.$sessionobject.$assign($cinst.ivSessieRO)
+Do ivListInFirma.$select(whereclause)
+Do ivListInFirma.$fetch(kFetchAll)
+Do ivListInFirma.$smartlist.$assign(kTrue)
+If not(ivListInFirma.$linecount)
+	Do method $FillListInFirma
+End If
+Do ivListInFirma.$line.$assign(1)

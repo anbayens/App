@@ -1,0 +1,28 @@
+
+Do ivListPrijzen.$clear()
+Do list.$definefromsqlclass(ORDER.$tables.tqArtikelPrijzen)
+Begin statement
+Sta: {SELECT [list.$selectnames()] FROM [list.$servertablenames()] [list.$extraquerytext]}
+Sta: {AND CARTIKELS_FK = @[ivSqlRow.CARTIKELS_PK]}
+Sta: {AND TARTIKELPRIJZEN.CINTERNEFIRMAS_FK=@[$ctask.tvFirmaMedewerkerList.F_CINTERNEFIRMAS_PK]}
+Sta: {AND TTARIEVEN.CNIETACTIEF=FALSE}
+Sta: {ORDER BY TARTIKELPRIJZEN.CTARIEF, TARTIKELPRIJZEN.CAANTALFACTOR}
+End statement
+Do $ctask.tvSQLObj.$SelectList(ivListPrijzen)
+
+;  bereken reële marge en adviesverkoopprijs
+Calculate ivRowInst.CVERKOOPPRIJSADVIES as 0
+Calculate ivRowInst.CVERKOOPPRIJSADVIESMUNT as ''
+Do ivListPrijzen.$first() Returns ref
+While ref
+	If ref.CTARIEF=ivRowInst.algtarief&ref.CEENHEIDVERKOOP=ivSqlRow.CEENHEIDVOORRAAD
+		Calculate ivRowInst.CVERKOOPPRIJSADVIES as ref.CVERKOOPPRIJS
+		Calculate ivRowInst.CVERKOOPPRIJSADVIESMUNT as ref.T_CMUNT
+	End If
+	Do method BerekenReeleMarge (ivListPrijzen.$line)
+	Calculate ivListPrijzen.R_CINCLBTW as pick(ivListPrijzen.T_CINCLBTW,'',pick((sys(6)='X'),'X','√'))
+	Calculate ivListPrijzen.A_CEENHEIDVOORRAAD as ivSqlRow.CEENHEIDVOORRAAD
+	Do ivListPrijzen.$next() Returns ref
+End While
+
+Do ivListPrijzen.$smartlist.$assign(kTrue)

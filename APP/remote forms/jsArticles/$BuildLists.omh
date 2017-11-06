@@ -1,0 +1,20 @@
+
+Do $ctask.tvoCPTLists.$BuildListBTWCodes() Returns ivListBTWCodes
+Do ivListBTWCodes.$sendall($ref.$selected.$assign(kTrue),$ref.CIMPORT=kFalse&$ref.CEXPORT=kFalse&$ref.CMEDECONTRACTANT=kFalse&$ref.CINTRA=kFalse&$ref.CINTRADIENSTEN=kFalse&$ref.CVERKOOP=kTrue)
+Do ivListBTWCodes.$remove(kListKeepSelected)
+Do $ctask.tvoCPTLists.$BuildListEenheden() Returns ivListEenheden
+Do $ctask.tvoCPTLists.$BuildListKortinggroepenArtikel() Returns ivListKortinggroepen
+Do $ctask.tvoCPTLists.$BuildListMunten(kFalse,kFalse) Returns ivListMunten
+Do $ctask.tvoCPTLists.$BuildListTalen() Returns ivListTalen
+Do $ctask.tvoCPTLists.$BuildListMagazijnen() Returns ivListMagazijnen
+Do ivListMagazijnen.$search(ivListMagazijnen.CHOOFDMAGAZIJN=kTrue,kTrue,kFalse,kFalse,kFalse)
+
+Do ivoOrder.$BuildListTarieven() Returns ivListTarieven
+Do ivListTarievenLtd.$merge(ivListTarieven,kTrue)
+
+Do ivListEenheden.$addbefore(1)
+Calculate ivListEenhedenVoorraad as ivListEenheden
+Calculate ivListEenhedenAankoop as ivListEenheden
+Do ivListEenhedenVerkoop.$merge(ivListEenheden,kTrue)
+
+Do ivListKortinggroepen.$addbefore(1)

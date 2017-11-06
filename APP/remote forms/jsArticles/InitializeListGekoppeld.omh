@@ -1,0 +1,6 @@
+
+Do ivListGekoppeld.$clear()
+Do ivListGekoppeld.$cols.$add('A_CARTIKEL',kCharacter,kSimplechar,25)
+Do ivListGekoppeld.$cols.$add('A_COMSCHRIJVING1',kCharacter,kSimplechar,240)
+Do ivListGekoppeld.$cols.$add('A_CEENHEIDVOORRAAD',kCharacter,kSimplechar,10)
+Do ivListGekoppeld.$smartlist.$assign(kTrue)

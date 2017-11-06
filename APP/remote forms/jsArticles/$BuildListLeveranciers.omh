@@ -1,0 +1,17 @@
+
+Do ivListLeveranciers.$clear()
+Do list.$definefromsqlclass(ORDER.$tables.tqArtikelLeveranciers)
+
+Begin statement
+Sta: {SELECT [list.$selectnames()] FROM [list.$servertablenames()] [list.$extraquerytext]}
+Sta: {AND CARTIKELS_FK = @[$cinst.ivSqlRow.CARTIKELS_PK]}
+Sta: {AND CINTERNEFIRMAS_FK=@[$ctask.tvFirmaMedewerkerList.F_CINTERNEFIRMAS_PK]}
+Sta: {ORDER BY CHOOFDLEVERANCIER DESC, TCONTACTEN.CNAAM1, CEENHEIDAANKOOP, CAANKOOPPRIJSDATUM DESC}
+End statement
+Do $ctask.tvSQLObj.$SelectList(ivListLeveranciers)
+Do ivListLeveranciers.$smartlist.$assign(kTrue)
+
+Do ivListLeveranciers.$search(kFalse)
+Do ivListLeveranciers.$line.$assign(1)
+Set reference ivRefListLeveranciers to ivListLeveranciers.[ivListLeveranciers.$line]
+Do ivRefListLeveranciers.$selected.$assign(kTrue)

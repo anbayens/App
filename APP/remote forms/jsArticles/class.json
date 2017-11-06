@@ -1,8 +1,8 @@
 {
 	"classtype": "kRemoteForm",
-	"internalversion": 752,
+	"internalversion": 1076,
 	"designtaskname": "remoteTask",
-	"nextident": 1194,
+	"nextident": 1197,
 	"lastgroupident": 0,
 	"cvardefs": [
 
@@ -23,10 +23,335 @@
 			"sublen": 0
 		},
 		{
+			"name": "ivBeschikbaarHoofdmagazijn",
+			"order": 54,
+			"type": "kNumber",
+			"subtype": "kFloatdp",
+			"sublen": 0
+		},
+		{
 			"name": "iVertCell",
 			"order": 3,
 			"type": "kInteger",
 			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "ivInBestelling",
+			"order": 49,
+			"type": "kNumber",
+			"subtype": "kFloatdp",
+			"sublen": 0
+		},
+		{
+			"name": "ivInBestellingLeverancier",
+			"order": 26,
+			"type": "kNumber",
+			"subtype": "kFloatdp",
+			"sublen": 0
+		},
+		{
+			"name": "ivInconsignatieklant",
+			"order": 55,
+			"type": "kNumber",
+			"subtype": "kFloatdp",
+			"sublen": 0
+		},
+		{
+			"name": "ivInConsignatieLev",
+			"order": 43,
+			"type": "kNumber",
+			"subtype": "kFloatdp",
+			"sublen": 0
+		},
+		{
+			"name": "ivInLeveringLev",
+			"order": 52,
+			"type": "kNumber",
+			"subtype": "kFloatdp",
+			"sublen": 0
+		},
+		{
+			"name": "ivInPicking",
+			"order": 51,
+			"type": "kNumber",
+			"subtype": "kFloatdp",
+			"sublen": 0
+		},
+		{
+			"name": "ivInProductie",
+			"order": 40,
+			"type": "kNumber",
+			"subtype": "kFloatdp",
+			"sublen": 0
+		},
+		{
+			"name": "ivInReservatie",
+			"order": 50,
+			"type": "kNumber",
+			"subtype": "kFloatdp",
+			"sublen": 0
+		},
+		{
+			"name": "ivInvoorraad",
+			"order": 42,
+			"type": "kNumber",
+			"subtype": "kFloatdp",
+			"sublen": 0
+		},
+		{
+			"name": "ivListArtikelKleurMaat",
+			"order": 25,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0,
+			"desc": "2.61"
+		},
+		{
+			"name": "ivListArtikelKleurMaatLeveranciers",
+			"order": 28,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0,
+			"desc": "2.61"
+		},
+		{
+			"name": "ivListArtikelKleurMaatPrijzen",
+			"order": 27,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0,
+			"desc": "2.61"
+		},
+		{
+			"name": "ivListBijlagen",
+			"order": 24,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListBTWCodes",
+			"order": 31,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListEenheden",
+			"order": 30,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListEenhedenAankoop",
+			"order": 35,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListEenhedenVerkoop",
+			"order": 1,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListEenhedenVoorraad",
+			"order": 32,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListGekoppeld",
+			"order": 16,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListInFirma",
+			"order": 20,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListInVestiging",
+			"order": 15,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListKleurenMaten",
+			"order": 18,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListKortinggroepen",
+			"order": 33,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListLeveranciers",
+			"order": 6,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListLocaties",
+			"order": 12,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListMagazijnen",
+			"order": 39,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListMunten",
+			"order": 34,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListPrijzen",
+			"order": 17,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListTalen",
+			"order": 36,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListTarieven",
+			"order": 38,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListTarievenLtd",
+			"order": 19,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListToolbarActies",
+			"order": 21,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListVerpakkingen",
+			"order": 23,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListVoorraad",
+			"order": 7,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivoOrder",
+			"order": 37,
+			"type": "kObject",
+			"subtype": "oOrder",
+			"sublen": 0
+		},
+		{
+			"name": "ivRefListBijlagen",
+			"order": 47,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivRefListGekoppeld",
+			"order": 45,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivRefListLeveranciers",
+			"order": 44,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivRowArtikelgroepen",
+			"order": 22,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivRowContacten",
+			"order": 11,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivRowInLeveringLeverancier",
+			"order": 48,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivRowInst",
+			"order": 46,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivRowKleurenkaarten",
+			"order": 14,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivRowLeeggoed",
+			"order": 29,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivRowMatenbalken",
+			"order": 13,
+			"type": "kRow",
+			"subtype": "",
 			"sublen": 0
 		},
 		{
@@ -51,6 +376,20 @@
 			"sublen": 0
 		},
 		{
+			"name": "ivVoorraadbeschikbaar",
+			"order": 53,
+			"type": "kNumber",
+			"subtype": "kFloatdp",
+			"sublen": 0
+		},
+		{
+			"name": "ivVoorrproductie",
+			"order": 41,
+			"type": "kNumber",
+			"subtype": "kFloatdp",
+			"sublen": 0
+		},
+		{
 			"name": "where",
 			"order": 10,
 			"type": "kCharacter",
@@ -72,7 +411,7 @@
 		"componenttype": "kCompStoreHidden",
 		"contextmenu": "",
 		"createdate": "2017-10-23 19:48:04",
-		"currentlayoutbreakpoint": 1300,
+		"currentlayoutbreakpoint": 768,
 		"defaultappearance": "kAppearanceiOS",
 		"desc": "",
 		"designshowmobiletitle": true,
@@ -88,8 +427,8 @@
 		"issupercomponent": false,
 		"layoutbreakpoints": "768,1024,1300",
 		"layouttype": "kLayoutTypeResponsive",
-		"left": 142,
-		"moddate": "2017-11-03 16:43:10",
+		"left": 674,
+		"moddate": "2017-11-06 21:51:50",
 		"okkeyobject": "",
 		"serverlessclient": false,
 		"showascheckedout": false,
@@ -107,8 +446,8 @@
 		"vertscroll": false
 	},
 	"layout": {
-		"width": 1236,
-		"height": 1082,
+		"width": 812,
+		"height": 1098,
 		"768": {
 			"height": 0
 		},

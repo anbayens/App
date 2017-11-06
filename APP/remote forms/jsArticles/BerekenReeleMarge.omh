@@ -1,0 +1,30 @@
+
+Calculate ivListPrijzen.[pLijn].R_MARGE as 0
+If ivListPrijzen.[pLijn].CVERKOOPPRIJS=0
+	Quit method
+End If
+Calculate verkoop as ivListPrijzen.[pLijn].CVERKOOPPRIJS
+Calculate factor as ivListPrijzen.[pLijn].CAANTALFACTOR
+Calculate factor as pick(factor=0,factor,1)
+Calculate verkoop as verkoop/factor
+Calculate ivListPrijzen.[pLijn].R_CINCLBTW as pick(ivListPrijzen.[pLijn].T_CINCLBTW,'',pick((sys(6)='X'),'X','√'))
+If ivListPrijzen.[pLijn].T_CINCLBTW
+	Calculate btwpercentage as ivListBTWCodes.CBTWPERCENTAGE
+	Calculate verkoop as rnd((verkoop/(1+btwpercentage/100))/ivListPrijzen.[pLijn].T_CKOERS,ivRowInst.algdecimaleneenheidsprijs)
+Else
+	Calculate verkoop as rnd(verkoop/ivListPrijzen.[pLijn].T_CKOERS,ivRowInst.algdecimaleneenheidsprijs)
+End If
+If ivListInFirma.CLAATSTEAANKOOPPRIJS>0
+	Calculate aankoop as ivListInFirma.CLAATSTEAANKOOPPRIJS+pick(ivRowInst.artinclaankoopkosten,0,ivListInFirma.CLAATSTEAANKOOPKOSTEN)
+End If
+If aankoop=0
+	Calculate marge as 100
+Else
+	If ivRowInst.artberverkoopprijs     ;; marge op verkoopprijs
+		Calculate marge as (aankoop/verkoop-1)*-100
+	Else     ;; marge op aankoopprijs
+		Calculate marge as (verkoop-aankoop)/aankoop*100
+	End If
+End If
+Calculate ivListPrijzen.[pLijn].R_MARGE as marge
+Redraw {ivListPrijzen_R_MARGE}

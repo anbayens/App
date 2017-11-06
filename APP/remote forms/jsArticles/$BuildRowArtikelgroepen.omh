@@ -1,0 +1,11 @@
+
+Do ivRowArtikelgroepen.$clear()
+If ivSqlRow.CARTIKELGROEPEN_FK
+	Begin statement
+	Sta: {SELECT CARTIKELGROEP,CARTIKELGROEP1 FROM TARTIKELGROEPEN WHERE CARTIKELGROEPEN_PK=@[ivSqlRow.CARTIKELGROEPEN_FK]}
+	End statement
+	Do $ctask.tvSqlObj.$SelectList(row)
+	Calculate ivRowArtikelgroepen.CARTIKELGROEP as row.CARTIKELGROEP
+	Calculate ivRowArtikelgroepen.CARTIKELGROEP1 as row.CARTIKELGROEP1
+	Calculate ivSqlRow.G_CARTIKELGROEP1 as row.CARTIKELGROEP1
+End If

@@ -1,0 +1,11 @@
+
+Do method InitializeListGekoppeld
+Calculate whereclause as con(" AND CARTIKELS_FK = ",$cinst.ivSqlRow.CARTIKELS_PK)
+Calculate whereclause as con(whereclause," AND TARTIKELGEKOPPELD.CINTERNEFIRMAS_FK = ",$ctask.tvFirmaMedewerkerList.F_CINTERNEFIRMAS_PK)
+Calculate orderbyclause as " ORDER BY TARTIKELGEKOPPELD.CLIJNNUMMER, TARTIKELGEKOPPELD.CARTIKELGEKOPPELD_PK "
+Do List.$definefromsqlclass(ORDER.$tables.tqArtikelGekoppeld)
+Do con("SELECT ",List.$selectnames(),' FROM ',List.$servertablenames(),' ',List.$extraquerytext,whereclause,orderbyclause) Returns Statement
+Do ivSessieRo.$newstatement('tArtikelGekoppeld') Returns StatObj
+Do StatObj.$execdirect(Statement)
+Do StatObj.$fetch(ivListGekoppeld,kFetchAll)
+Do ivListGekoppeld.$smartlist.$assign(kTrue)

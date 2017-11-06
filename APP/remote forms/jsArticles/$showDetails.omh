@@ -7,3 +7,29 @@ If flag true
 Else
 	Do $cinst.$showmessage(con(ivSqlRow.$statementobject.$nativeerrorcode,' - ',ivSqlRow.$statementobject.$nativeerrortext),'SQL Error')
 End If
+
+;  tab 1
+Calculate $ctask.tvRowRecent.CARTIKELS_PK as ivSqlRow.CARTIKELS_PK
+Do ivListBTWCodes.$search(ivListBTWCodes.CBTWCODE=ivSqlRow.CBTWCODE,kTrue,kFalse,kFalse,kFalse)
+Do ivListEenhedenVoorraad.$search(ivListEenhedenVoorraad.CEENHEID1=ivSqlRow.CEENHEIDVOORRAAD,kTrue,kFalse,kFalse,kFalse)
+Do method $BuildRowArtikelgroepen
+Do method $BuildListInFirma
+Do method $BuildListInVestiging
+Do method $BuildRowInLeveringLeverancier
+Do method $BuildListLocaties
+Do method $BuildListVoorraad (kTrue) Returns ivListVoorraad
+
+;       ;; tab 3
+Do method $BuildListPrijzen
+Do method $FillListPrijzen
+Do ivListKortinggroepen.$search(ivListKortinggroepen.COMSCHRIJVING=ivSqlRow.CKORTINGGROEP,kTrue,kFalse,kFalse,kFalse)
+
+;       ;; tab 4
+Do method $GetContact
+Do method $BuildListLeveranciers
+
+;       ;; tab 6
+Do method $BuildListGekoppeld
+
+;       ;; tab 8
+Do method BuildListBijlagen

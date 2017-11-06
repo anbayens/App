@@ -1,0 +1,15 @@
+
+Do ivListInVestiging.$add() Returns ref
+Do ref.CINTERNFIRMAS_FK.$assign(0)
+Do ref.CINTERNFIRMAVESTIGINGEN_FK.$assign(0)
+Do ref.CARTIKELS_FK.$assign(0)
+Do ref.CINBESTELLINGKLANT.$assign(0)
+Do ref.CINBESTELLINGLEVERANCIER.$assign(0)
+Do ref.CINCONSIGNATIEKLANT.$assign(0)
+Do ref.CINCONSIGNATIELEVERANCIER.$assign(0)
+Do ref.CINRESERVATIE.$assign(0)
+Do ref.CINPRODUCTIE.$assign(0)
+Do ref.CVOORPRODUCTIE.$assign(0)
+Do ref.CMINVOORRAAD.$assign(0)
+Do ref.CMAXVOORRAAD.$assign(0)
+Do ivListInVestiging.$line.$assign(1)

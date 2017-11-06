@@ -1,0 +1,11 @@
+
+Do list.$definefromsqlclass(ORDER.$tables.tqArtikelVoorraadMagazijn)
+Calculate whereclause as con(" WHERE CARTIKELS_FK = ",$cinst.ivSqlRow.CARTIKELS_PK)
+If pHuidigeVestiging
+	Calculate whereclause as con(whereclause," AND CINTERNEFIRMAVESTIGINGEN_FK = ",$ctask.tvFirmaMedewerkerList.V_CINTERNEFIRMAVESTIGINGEN_PK)
+End If
+Calculate orderbyclause as " ORDER BY CINTERNEFIRMA, CINTERNEFIRMAVESTIGING, 12 DESC, CVESTIGINGMAGAZIJN, CMAAT, CKLEUR "
+Do list.$sessionobject.$assign($cinst.ivSessieRO)
+Do list.$select(con(whereclause,orderbyclause))
+Do list.$fetch(kFetchAll)
+Quit method list

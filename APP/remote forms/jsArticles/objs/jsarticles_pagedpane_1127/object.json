@@ -1,6 +1,6 @@
 {
 	"ident": 1127,
-	"order": 115,
+	"order": 111,
 	"objtype": "kPagedPane",
 	"properties": {
 		"alpha": 255,
@@ -33,7 +33,7 @@
 	"layout": {
 		"768": {
 			"left": 8,
-			"top": 1264,
+			"top": 1224,
 			"width": 752,
 			"height": 344,
 			"dragborder": false,

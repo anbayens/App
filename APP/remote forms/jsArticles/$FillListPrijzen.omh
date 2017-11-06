@@ -1,0 +1,26 @@
+
+Do ivListTarieven.$first() Returns ref
+While ref
+	Do ivListPrijzen.$search(kFalse)
+	Do ivListPrijzen.$search($ref.CTARIEVEN_FK=ref.CTARIEVEN_PK,kTrue,kFalse,kFalse,kFalse) Returns lijn
+	If not(lijn)
+		Do ivListPrijzen.$add() Returns listref
+		Calculate listref.CINTERNEFIRMA as $ctask.tvFirmaMedewerkerList.F_CINTERNEFIRMA
+		Calculate listref.CINTERNEFIRMAS_FK as $ctask.tvFirmaMedewerkerList.F_CINTERNEFIRMAS_PK
+		Calculate listref.CTARIEF as ref.CTARIEF
+		Calculate listref.CTARIEVEN_FK as ref.CTARIEVEN_PK
+		Calculate listref.CVERKOOPPRIJS as 0
+		Calculate listref.CAANTALFACTOR as 0
+		Calculate listref.CEENHEIDVERKOOP as ivSqlRow.CEENHEIDVOORRAAD
+		Calculate listref.T_CINCLBTW as ref.CINCLBTW
+		Calculate listref.R_CINCLBTW as pick(ref.CINCLBTW,'',pick((sys(6)='X'),'X','√'))
+		Calculate listref.CMARGE as ref.CMARGE
+		Calculate listref.R_MARGE as 0
+		Calculate listref.T_CMUNT as ref.CMUNT
+		Calculate listref.T_CKOERS as ref.CKOERS
+		Calculate listref.A_CEENHEIDVOORRAAD as ivSqlRow.CEENHEIDVOORRAAD
+	End If
+	Do ivListTarieven.$next() Returns ref
+End While
+
+Do ivListPrijzen.$sort(ivListPrijzen.CTARIEF,kFalse,ivListPrijzen.CAANTALFACTOR,kFalse)     ;; 2.71.3

@@ -1,0 +1,11 @@
+
+Calculate whereclause as con(" WHERE CINTERNEFIRMAVESTIGINGEN_FK = ",$ctask.tvFirmaMedewerkerList.V_CINTERNEFIRMAVESTIGINGEN_PK)
+Calculate whereclause as con(whereclause," AND CINTERNEFIRMAS_FK = ",$ctask.tvFirmaMedewerkerList.F_CINTERNEFIRMAS_PK)
+Calculate whereclause as con(whereclause," AND CARTIKELS_FK = ",$cinst.ivSqlRow.CARTIKELS_PK)
+
+Do ivListLocaties.$clear()
+Do ivListLocaties.$sessionobject.$assign($cinst.ivSessieRO)
+Do ivListLocaties.$select(whereclause)
+Do ivListLocaties.$fetch(kFetchAll)
+Do ivListLocaties.$search(ivListLocaties.CVESTIGINGMAGAZIJN=ivListMagazijnen.CVESTIGINGMAGAZIJN,kTrue,kFalse,kFalse,kFalse)
+Do ivListLocaties.$smartlist.$assign(kTrue)

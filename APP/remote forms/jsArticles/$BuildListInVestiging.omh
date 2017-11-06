@@ -1,0 +1,37 @@
+
+Do list.$copydefinition(ivListInVestiging)
+Calculate whereclause as con("WHERE CINTERNEFIRMAS_FK = ",$ctask.tvFirmaMedewerkerList.F_CINTERNEFIRMAS_PK)
+If pEigenVestigingen     ;; enkel toegelaten vestigingen opvragen en beheren
+	Do ivListInVestiging.$clear()
+	Do method $BuildInclauseVestigingen Returns inclause
+	Calculate whereclause as con(whereclause,' AND CINTERNEFIRMAVESTIGINGEN_FK IN ',inclause)
+Else     ;; alle vestigingen om tellers te tonen in voorraadscherm
+	Calculate whereclause as con(whereclause,' AND CINTERNEFIRMAVESTIGINGEN_FK > 0')
+End If
+Calculate whereclause as con(whereclause," AND CARTIKELS_FK = ",$cinst.ivSqlRow.CARTIKELS_PK)
+
+If pEigenVestigingen
+	Do ivListInVestiging.$sessionobject.$assign($cinst.ivSessieRO)
+	Do ivListInVestiging.$select(whereclause)
+	Do ivListInVestiging.$fetch(kFetchAll)
+	Do ivListInVestiging.$smartlist.$assign(kTrue)
+	Calculate internefirmavestiging as $ctask.tvFirmaMedewerkerList.CINTERNEFIRMAVESTIGING
+	Do ivListInVestiging.$search(ivListInVestiging.CINTERNEFIRMAVESTIGING=internefirmavestiging,kTrue,kFalse,kFalse,kFalse)
+Else
+	Do list.$sessionobject.$assign($cinst.ivSessieRO)
+	Do list.$select(whereclause)
+	Do list.$fetch(kFetchAll)
+	Quit method list
+End If
+
+Calculate ivInBestelling as ivListInVestiging.$totc(ivListInVestiging.CINBESTELLINGKLANT*(ivListInVestiging.CINTERNEFIRMAVESTIGINGEN_FK=$ctask.tvFirmaMedewerkerList.V_CINTERNEFIRMAVESTIGINGEN_PK))
+Calculate ivInBestellingLeverancier as ivListInVestiging.$totc(ivListInVestiging.CINBESTELLINGLEVERANCIER*(ivListInVestiging.CINTERNEFIRMAVESTIGINGEN_FK=$ctask.tvFirmaMedewerkerList.V_CINTERNEFIRMAVESTIGINGEN_PK))
+Calculate ivInConsignatieLev as ivListInVestiging.$totc(ivListInVestiging.CINCONSIGNATIELEVERANCIER*(ivListInVestiging.CINTERNEFIRMAVESTIGINGEN_FK=$ctask.tvFirmaMedewerkerList.V_CINTERNEFIRMAVESTIGINGEN_PK))
+Calculate ivInProductie as ivListInVestiging.$totc(ivListInVestiging.CINPRODUCTIE*(ivListInVestiging.CINTERNEFIRMAVESTIGINGEN_FK=$ctask.tvFirmaMedewerkerList.V_CINTERNEFIRMAVESTIGINGEN_PK))
+Calculate ivVoorrproductie as ivListInVestiging.$totc(ivListInVestiging.CVOORPRODUCTIE*(ivListInVestiging.CINTERNEFIRMAVESTIGINGEN_FK=$ctask.tvFirmaMedewerkerList.V_CINTERNEFIRMAVESTIGINGEN_PK))
+Calculate ivInvoorraad as ivListVoorraad.$cols.CVOORRAAD.$total
+Calculate ivInReservatie as ivListInVestiging.$totc(ivListInVestiging.CINRESERVATIE*(ivListInVestiging.CINTERNEFIRMAVESTIGINGEN_FK=$ctask.tvFirmaMedewerkerList.V_CINTERNEFIRMAVESTIGINGEN_PK))
+Calculate ivInPicking as ivListVoorraad.$cols.CINPICKING.$total
+Calculate ivVoorraadbeschikbaar as ivListVoorraad.$cols.CVOORRAADBESCHIKBAAR.$total
+Calculate ivBeschikbaarHoofdmagazijn as ivListVoorraad.$totc(ivListVoorraad.CVOORRAADBESCHIKBAAR*(ivListVoorraad.CVESTIGINGMAGAZIJN=ivListMagazijnen.CVESTIGINGMAGAZIJN))
+Calculate ivInconsignatieklant as ivListInVestiging.$totc(ivListInVestiging.CINCONSIGNATIEKLANT*(ivListInVestiging.CINTERNEFIRMAVESTIGINGEN_FK=$ctask.tvFirmaMedewerkerList.V_CINTERNEFIRMAVESTIGINGEN_PK))

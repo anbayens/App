@@ -1,8 +1,8 @@
 {
 	"classtype": "kRemoteForm",
-	"internalversion": 1231,
+	"internalversion": 1432,
 	"designtaskname": "remoteTask",
-	"nextident": 1059,
+	"nextident": 1073,
 	"lastgroupident": 0,
 	"cvardefs": [
 
@@ -44,6 +44,13 @@
 			"sublen": 0
 		},
 		{
+			"name": "ivListPrestaties",
+			"order": 16,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
 			"name": "ivListPrioriteit",
 			"order": 14,
 			"type": "kList",
@@ -62,6 +69,13 @@
 			"order": 11,
 			"type": "kObject",
 			"subtype": "CPT.oCPTLists",
+			"sublen": 0
+		},
+		{
+			"name": "ivReeletijd",
+			"order": 21,
+			"type": "kNumber",
+			"subtype": "kFloatdp",
 			"sublen": 0
 		},
 		{
@@ -121,6 +135,20 @@
 			"sublen": 0
 		},
 		{
+			"name": "ivUrenGefactureerd",
+			"order": 20,
+			"type": "kNumber",
+			"subtype": "k2dpShortnum",
+			"sublen": 0
+		},
+		{
+			"name": "ivUrenGeraamd",
+			"order": 17,
+			"type": "kNumber",
+			"subtype": "k2dpShortnum",
+			"sublen": 0
+		},
+		{
 			"name": "where",
 			"order": 2,
 			"type": "kCharacter",
@@ -142,7 +170,7 @@
 		"componenttype": "kCompStoreHidden",
 		"contextmenu": "",
 		"createdate": "2017-10-23 19:48:04",
-		"currentlayoutbreakpoint": 1300,
+		"currentlayoutbreakpoint": 768,
 		"defaultappearance": "kAppearanceiOS",
 		"desc": "",
 		"designshowmobiletitle": true,
@@ -158,8 +186,8 @@
 		"issupercomponent": false,
 		"layoutbreakpoints": "768,1024,1300",
 		"layouttype": "kLayoutTypeResponsive",
-		"left": 99,
-		"moddate": "2017-11-01 21:43:57",
+		"left": 437,
+		"moddate": "2017-11-09 22:10:45",
 		"okkeyobject": "",
 		"serverlessclient": false,
 		"showascheckedout": false,
@@ -177,8 +205,8 @@
 		"vertscroll": false
 	},
 	"layout": {
-		"width": 1701,
-		"height": 867,
+		"width": 1221,
+		"height": 934,
 		"768": {
 			"height": 0
 		},

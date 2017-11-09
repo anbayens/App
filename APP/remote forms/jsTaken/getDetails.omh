@@ -10,6 +10,11 @@ If flag true
 	Do ivListPrioriteit.$line.$assign(ivSqlRow.CPRIORITEIT+1)
 	Do method GetContact
 	Do method GetContactpersoon
+	Do method $BuildListPrestaties
+	
+	Calculate ivUrenGeraamd as ivSqlRow.CGESCHATDUURTIJD/60
+	Calculate ivUrenGefactureerd as ivSqlRow.CFACTDUURTIJD/60
+	Calculate ivReeletijd as rnd(ivListPrestaties.$cols.CDUURTIJD.$total/60,2)
 Else
 	Do $cinst.$showmessage(con(ivSqlRow.$statementobject.$nativeerrorcode,' - ',ivSqlRow.$statementobject.$nativeerrortext),'SQL Error')
 End If

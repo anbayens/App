@@ -125,5 +125,23 @@
 		"lvardefs": [
 
 		]
+	},
+	{
+		"name": "$BuildListPrestaties",
+		"ident": 10,
+		"order": 11,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "whereclause",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
 	}
 ]

@@ -13,6 +13,8 @@ Do ivListPrioriteit.$add(2,StringTable.$gettext('STA.Dringend'),kDarkRed)
 Do ivListPrioriteit.$add(3,StringTable.$gettext('STA.ZeerDringend'),kRed)
 Calculate ivListPrioriteit.$line as 1
 
+Do ivListPrestaties.$definefromsqlclass(PRESTAT.$tables.tTPRESTATIES)
+
 Begin statement
 Sta: {SELECT CNAAM1, CCONTACTEN_PK, CCONTACT FROM TCONTACTEN WHERE CNIETACTIEF = FALSE ORDER BY CNAAM1}
 End statement

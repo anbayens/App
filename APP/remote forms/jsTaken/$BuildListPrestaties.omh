@@ -1,0 +1,10 @@
+
+Do ivListPrestaties.$clear()
+Calculate whereclause as con(" WHERE CINTERNEFIRMAS_FK=",$ctask.tvFirmaMedewerkerList.F_CINTERNEFIRMAS_PK," AND CDOCUMENTTYPES_FK=99 AND TPRESTATIES.CDOCUMENT_FK = ",ivSqlRow.CCRMTAKEN_PK," ORDER BY TPRESTATIES.CDATUM DESC ")
+
+Do ivListPrestaties.$sessionobject.$assign($cinst.ivSessieRO)
+Do ivListPrestaties.$select(whereclause)
+Do ivListPrestaties.$fetch(kFetchAll)
+Do ivListPrestaties.$line.$assign(0)
+
+Calculate ivSqlRow.CREEELDUURTIJD as ivListPrestaties.$cols.CDUURTIJD.$total()+ivListPrestaties.$cols.CDUURTIJDEXTRA.$total()

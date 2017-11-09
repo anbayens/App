@@ -47,9 +47,9 @@
 			"visible": true
 		},
 		"1024": {
-			"left": 648,
+			"left": 664,
 			"top": 8,
-			"width": 120,
+			"width": 88,
 			"height": 25,
 			"dragborder": false,
 			"edgefloat": "kEFnone",
@@ -57,9 +57,9 @@
 			"visible": true
 		},
 		"1300": {
-			"left": 648,
+			"left": 664,
 			"top": 8,
-			"width": 120,
+			"width": 88,
 			"height": 25,
 			"dragborder": false,
 			"edgefloat": "kEFnone",

@@ -1,13 +1,13 @@
 {
-	"ident": 1062,
-	"order": 41,
+	"ident": 1059,
+	"order": 48,
 	"objtype": "kComponent",
 	"componentlib": "jsTabs",
 	"componentctrl": "Tab Control",
 	"properties": {
 		"alpha": 255,
 		"backalpha": 255,
-		"backcolor": "RGB(239,239,239)",
+		"backcolor": "RGB(238,238,238)",
 		"baseedgealpha": 255,
 		"baseedgecolor": "kColorDefault",
 		"baseedgewidth": 0,
@@ -32,17 +32,17 @@
 		"extratabspacing": 0,
 		"fieldstyle": "",
 		"fixedtabsize": false,
-		"font": 6,
-		"fontsize": 8,
+		"font": 1,
+		"fontsize": 10,
 		"fontstyle": "kPlain",
 		"hotcurrent": false,
 		"hottabbackalpha": 255,
 		"hottabbackcolor": "kColorDefault",
 		"hottabbackiconid": 0,
 		"hottabtextcolor": "kColorDefault",
-		"linkedobject": "pagedPaneContacts",
+		"linkedobject": "pagedPaneDetails",
 		"maxfixedtabsize": 200,
-		"objlink": 0,
+		"objlink": 131073,
 		"preventlayoutanimation": false,
 		"side": "kJSTabsSideTop",
 		"tabbackalpha": 255,
@@ -78,7 +78,7 @@
 				"::tabtooltip": "",
 				"tabenabled": true,
 				"tabmenu": "",
-				"tabtext": "Clients",
+				"tabtext": "Taak",
 				"tabvisible": true
 			},
 			{
@@ -86,7 +86,7 @@
 				"::tabtooltip": "",
 				"tabenabled": true,
 				"tabmenu": "",
-				"tabtext": "Details",
+				"tabtext": "Prestaties",
 				"tabvisible": true
 			}
 		]
@@ -94,8 +94,8 @@
 	"layout": {
 		"768": {
 			"left": 0,
-			"top": 0,
-			"width": 200,
+			"top": 352,
+			"width": 120,
 			"height": 32,
 			"align": "kCenterJst",
 			"dragborder": false,
@@ -105,8 +105,8 @@
 		},
 		"1024": {
 			"left": 0,
-			"top": 0,
-			"width": 200,
+			"top": 352,
+			"width": 120,
 			"height": 32,
 			"align": "kCenterJst",
 			"dragborder": false,
@@ -116,8 +116,8 @@
 		},
 		"1300": {
 			"left": 0,
-			"top": 0,
-			"width": 200,
+			"top": 352,
+			"width": 120,
 			"height": 32,
 			"align": "kCenterJst",
 			"dragborder": false,

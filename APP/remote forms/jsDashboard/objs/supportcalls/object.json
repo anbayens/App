@@ -194,7 +194,7 @@
 	"layout": {
 		"768": {
 			"left": 8,
-			"top": 512,
+			"top": 648,
 			"width": 754,
 			"height": 150,
 			"dragborder": false,
@@ -204,8 +204,8 @@
 		},
 		"1024": {
 			"left": 8,
-			"top": 512,
-			"width": 1009,
+			"top": 648,
+			"width": 754,
 			"height": 150,
 			"dragborder": false,
 			"edgefloat": "kEFnone",
@@ -214,8 +214,8 @@
 		},
 		"1300": {
 			"left": 8,
-			"top": 512,
-			"width": 1279,
+			"top": 648,
+			"width": 754,
 			"height": 150,
 			"dragborder": false,
 			"edgefloat": "kEFnone",

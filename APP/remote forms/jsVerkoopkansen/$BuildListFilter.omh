@@ -1,0 +1,29 @@
+
+Do ivListFilter.$clear()
+Do ivListFilter.$merge(ivListLijnen,kTrue)
+Do ivListFilter.$cols.CSOORT.$removeduplicates(kTrue)
+Do ivListFilter.$sendall(ivListFilter.CTABEL.$assign())
+Do ivListFilter.$addbefore(1) Returns ref     ;; ___________
+Do ivListFilter.$addbefore(1) Returns ref     ;; ___________
+Calculate ref.C1 as StringTable.$gettext('STA.ExclusiefTaken')
+Calculate ref.C2 as 'EXCLUSIEFTAKEN'
+Do ivListFilter.$addbefore(1) Returns ref
+Calculate ref.C1 as StringTable.$gettext('STA.OpenstaandeTaken')
+Calculate ref.C2 as 'TCRMTAKEN.OPEN'
+Do ivListFilter.$addbefore(1) Returns ref
+Calculate ref.C1 as StringTable.$gettext('STA.Bijlagen')
+Calculate ref.C2 as 'TCRMVERKOOPKANSBIJLAGEN'
+Do ivListFilter.$addbefore(1) Returns ref
+Calculate ref.C1 as StringTable.$gettext('STA.Afspraken')
+Calculate ref.C2 as 'TAGENDA'
+Do ivListFilter.$addbefore(1) Returns ref
+Calculate ref.C1 as StringTable.$gettext('STA.Opdrachten')
+Calculate ref.C2 as 'TCRMTAKEN.CISOPDRACHT'
+Do ivListFilter.$addbefore(1) Returns ref
+Calculate ref.C1 as StringTable.$gettext('STA.Taken')
+Calculate ref.C2 as 'TCRMTAKEN'
+Do ivListFilter.$addbefore(1) Returns ref
+Calculate ref.C1 as StringTable.$gettext('STA.Communicaties')
+Calculate ref.C2 as 'TCRMCOMMUNICATIES'
+
+Do ivListFilter.$line.$assign(8)

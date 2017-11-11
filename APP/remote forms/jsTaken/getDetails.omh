@@ -11,6 +11,7 @@ If flag true
 	Do method GetContact
 	Do method GetContactpersoon
 	Do method $BuildListPrestaties
+	Do method BuildListBijlagen     ;; tab 2
 	
 	Calculate ivUrenGeraamd as ivSqlRow.CGESCHATDUURTIJD/60
 	Calculate ivUrenGefactureerd as ivSqlRow.CFACTDUURTIJD/60

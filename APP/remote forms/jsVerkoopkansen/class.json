@@ -1,22 +1,210 @@
 {
 	"classtype": "kRemoteForm",
-	"internalversion": 2,
+	"internalversion": 736,
 	"designtaskname": "remoteTask",
-	"nextident": 1002,
+	"nextident": 1066,
 	"lastgroupident": 0,
 	"cvardefs": [
 
 	],
 	"ivardefs": [
-
+		{
+			"name": "ivListAgenda",
+			"order": 27,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListFasen",
+			"order": 11,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListFilter",
+			"order": 15,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListLijnen",
+			"order": 20,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListPrestaties",
+			"order": 6,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListPrioriteit",
+			"order": 5,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListPrioriteiten",
+			"order": 16,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListSupportCalls",
+			"order": 26,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListTaken",
+			"order": 25,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListTermijnen",
+			"order": 17,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListVerkoopkansFasen",
+			"order": 14,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivListVerkoopkansSoort",
+			"order": 24,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivoCPT",
+			"order": 19,
+			"type": "kObject",
+			"subtype": "CPT.oCPT",
+			"sublen": 0
+		},
+		{
+			"name": "ivoCRM",
+			"order": 12,
+			"type": "kObject",
+			"subtype": "CRM.oCRM",
+			"sublen": 0
+		},
+		{
+			"name": "ivReeletijd",
+			"order": 9,
+			"type": "kNumber",
+			"subtype": "kFloatdp",
+			"sublen": 0
+		},
+		{
+			"name": "ivRowContacten",
+			"order": 10,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivRowContactpersonen",
+			"order": 21,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivRowVerkoopkansbijlagen",
+			"order": 13,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivRowVerkoopkansExtra",
+			"order": 18,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivSessieRO",
+			"order": 3,
+			"type": "kObject",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivSqlList",
+			"order": 1,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivSqlRow",
+			"order": 4,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivTextHuidigeproducten",
+			"order": 23,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "ivTextInteresses",
+			"order": 22,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "ivUrenGefactureerd",
+			"order": 8,
+			"type": "kNumber",
+			"subtype": "k2dpShortnum",
+			"sublen": 0
+		},
+		{
+			"name": "ivUrenGeraamd",
+			"order": 7,
+			"type": "kNumber",
+			"subtype": "k2dpShortnum",
+			"sublen": 0
+		},
+		{
+			"name": "where",
+			"order": 2,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		}
 	],
 	"properties": {
-		"aligntogrid": false,
+		"aligntogrid": true,
 		"alpha": 255,
 		"alwaysenabledobject": "",
 		"animatelayouttransitions": false,
 		"backalpha": 255,
-		"backcolor": "RGB(255,255,255)",
+		"backcolor": "RGB(239,239,239)",
 		"backpattern": 0,
 		"cancelkeyobject": "",
 		"collectperformancedata": false,
@@ -24,7 +212,7 @@
 		"componenttype": "kCompStoreHidden",
 		"contextmenu": "",
 		"createdate": "2017-10-23 19:48:04",
-		"currentlayoutbreakpoint": 1024,
+		"currentlayoutbreakpoint": 1300,
 		"defaultappearance": "kAppearanceiOS",
 		"desc": "",
 		"designshowmobiletitle": true,
@@ -33,41 +221,41 @@
 		"editordata": "",
 		"events": "",
 		"external": true,
-		"forecolor": "RGB(255,255,255)",
+		"forecolor": "RGB(239,239,239)",
 		"horzgrid": 8,
 		"horzscroll": false,
 		"inheritedorder": 1,
 		"issupercomponent": false,
-		"layoutbreakpoints": "320,768,1024",
+		"layoutbreakpoints": "768,1024,1300",
 		"layouttype": "kLayoutTypeResponsive",
-		"left": 376,
-		"moddate": "2017-10-22 21:59:59",
+		"left": 146,
+		"moddate": "2017-11-11 17:45:56",
 		"okkeyobject": "",
 		"serverlessclient": false,
 		"showascheckedout": false,
-		"showgrid": false,
-		"sizetogrid": false,
+		"showgrid": true,
+		"sizetogrid": true,
 		"startfield": 0,
 		"title": {
 			"type": 0,
 			"calc": "New remote form"
 		},
-		"top": 114,
+		"top": 16,
 		"userinfo": "",
 		"version": "",
 		"vertgrid": 8,
 		"vertscroll": false
 	},
 	"layout": {
-		"width": 857,
-		"height": 405,
-		"320": {
-			"height": 0
-		},
+		"width": 1249,
+		"height": 917,
 		"768": {
 			"height": 0
 		},
 		"1024": {
+			"height": 0
+		},
+		"1300": {
 			"height": 0
 		}
 	}

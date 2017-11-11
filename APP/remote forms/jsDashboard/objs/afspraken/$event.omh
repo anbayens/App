@@ -1,5 +1,6 @@
 On evClick
 	Do $cwind.$objs.subform.$classname.$assign('jsAfspraak')
+	Calculate $ctask.tvRowRecent.CAGEN_PK as ivListAgenda.CAGENDA_PK
 On evDoubleClick
 	
 On evCellChanged

@@ -1,8 +1,8 @@
 {
 	"classtype": "kRemoteForm",
-	"internalversion": 1121,
+	"internalversion": 1191,
 	"designtaskname": "remoteTask",
-	"nextident": 1160,
+	"nextident": 1161,
 	"lastgroupident": 0,
 	"cvardefs": [
 
@@ -151,6 +151,13 @@
 			"sublen": 0
 		},
 		{
+			"name": "ivListTaken",
+			"order": 9,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
 			"name": "ivListTarieven",
 			"order": 7,
 			"type": "kList",
@@ -235,7 +242,7 @@
 		"componenttype": "kCompStoreHidden",
 		"contextmenu": "",
 		"createdate": "2017-10-23 19:48:04",
-		"currentlayoutbreakpoint": 1300,
+		"currentlayoutbreakpoint": 768,
 		"defaultappearance": "kAppearanceiOS",
 		"desc": "",
 		"designshowmobiletitle": true,
@@ -251,8 +258,8 @@
 		"issupercomponent": false,
 		"layoutbreakpoints": "768,1024,1300",
 		"layouttype": "kLayoutTypeResponsive",
-		"left": 347,
-		"moddate": "2017-11-06 22:09:20",
+		"left": 181,
+		"moddate": "2017-11-11 17:42:21",
 		"okkeyobject": "",
 		"serverlessclient": false,
 		"showascheckedout": true,

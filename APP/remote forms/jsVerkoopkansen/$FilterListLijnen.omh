@@ -1,0 +1,18 @@
+
+Do ivListLijnen.$unfilter(0)
+If len(ivListFilter.CTABEL)
+	If ivListFilter.CTABEL='EXCLUSIEFTAKEN'
+		Do ivListLijnen.$filter(ivListLijnen.CTABEL<>'TCRMTAKEN')
+	Else If ivListFilter.CTABEL='TCRMTAKEN.CISOPDRACHT'
+		Do ivListLijnen.$filter(ivListLijnen.CTABEL='TCRMTAKEN'&ivListLijnen.CISOPDRACHT=kTrue)
+	Else If ivListFilter.CTABEL='TCRMTAKEN.OPEN'
+		Do ivListLijnen.$filter(ivListLijnen.CTABEL='TCRMTAKEN'&ivListLijnen.CAFGESLOTEN=kFalse)
+	Else
+		Do ivListLijnen.$filter(ivListLijnen.CTABEL=ivListFilter.CTABEL)
+	End If
+Else
+	If len(ivListFilter.CSOORT)
+		Do ivListLijnen.$filter(ivListLijnen.CSOORT=ivListFilter.CSOORT)
+	End If
+End If
+Do ivListLijnen.$line.$assign(1)

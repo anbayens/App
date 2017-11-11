@@ -1,6 +1,4 @@
 On evClick
-	;  Calculate $cwind.$ivars.1 as ivSqlList.CCRMTAKEN_PK
-	;  Do $cwind.$objs.subform.$classname.$assign('jsTaak')
 	Do method getDetails (ivSqlList.CCRMTAKEN_PK)
 On evDoubleClick
 	

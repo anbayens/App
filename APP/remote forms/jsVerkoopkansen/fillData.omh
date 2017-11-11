@@ -1,0 +1,10 @@
+Do $ctask.tvSqlObj.$GetSessionRO() Returns ivSessieRO
+Do ivSqlList.$definefromsqlclass($libs.CRM.$tables.tqCRMVerkoopkansen)
+Do ivSqlList.$sessionobject.$assign(ivSessieRO) Returns #F
+Calculate where as 'WHERE CAFGESLOTEN = FALSE ORDER BY CDATUM DESC'
+Do ivSqlList.$select(where) Returns #F
+If flag true
+	Do ivSqlList.$fetch(kFetchAll)
+Else
+	Do $cinst.$showmessage(con(ivSqlList.$statementobject.$nativeerrorcode,' - ',ivSqlList.$statementobject.$nativeerrortext),'SQL Error')
+End If

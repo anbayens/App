@@ -1,0 +1,13 @@
+
+Do ivListLijnen.$define()
+Begin statement
+Do method $BuildListLijnenCommunicaties
+Do method $BuildListLijnenTaken
+Do method $BuildListLijnenAgenda
+Do method $BuildListLijnenBijlagen
+End statement
+Do $ctask.tvSqlObj.$SelectList(ivListLijnen)
+
+Do method $BuildListLijnenExtra
+
+Do ivListLijnen.$smartlist.$assign(kTrue)

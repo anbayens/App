@@ -1,0 +1,21 @@
+On evClick
+	Switch ivListLijnen.CTABEL
+		Case 'TCRMTAKEN'
+			Do $cwind.$objs.subform.$classname.$assign('jsTaken')
+			Calculate $ctask.tvRowRecent.CCRMTAKEN_PK as ivListLijnen.CPK
+		Case 'TCRMSUPPORTCALLS'
+			Do $cwind.$objs.subform.$classname.$assign('jsSupportCalls')
+			Calculate $ctask.tvRowRecent.CCRMSUPPORTCALLS_PK as ivListLijnen.CPK
+		Case 'TAGENDA'
+			Do $cwind.$objs.subform.$classname.$assign('jsAfspraak')
+			Calculate $ctask.tvRowRecent.CAGEN_PK as ivListLijnen.CPK
+		Default
+			
+	End Switch
+On evDoubleClick
+	
+On evCellChanged
+	
+On evHeaderClick
+	
+On evHeadedListDisplayOrderChanged

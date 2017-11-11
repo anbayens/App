@@ -1,0 +1,4 @@
+
+Do ivoCRM.$BuildListTermijnen Returns ivListTermijnen
+Do ivoCRM.$BuildListPrioriteiten Returns ivListPrioriteiten
+Do ivListFasen.$define()

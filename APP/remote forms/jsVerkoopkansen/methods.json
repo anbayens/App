@@ -24,8 +24,8 @@
 		]
 	},
 	{
-		"name": "New Method",
-		"ident": 0,
+		"name": "$DefineLists",
+		"ident": 4,
 		"order": 3,
 		"clientexec": false,
 		"pvardefs": [
@@ -33,7 +33,538 @@
 		],
 		"lvardefs": [
 
+		]
+	},
+	{
+		"name": "$BuildLists",
+		"ident": 5,
+		"order": 4,
+		"clientexec": false,
+		"pvardefs": [
+
 		],
-		"empty": true
+		"lvardefs": [
+			{
+				"name": "list",
+				"order": 1,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "fillData",
+		"ident": 0,
+		"order": 5,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "getDetails",
+		"ident": 3,
+		"order": 6,
+		"clientexec": false,
+		"pvardefs": [
+			{
+				"name": "pCRMVERKOOPKANSEN_PK",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "%OK",
+				"order": 2,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"initval": "kTrue"
+			},
+			{
+				"name": "row",
+				"order": 3,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$GetContact",
+		"ident": 6,
+		"order": 7,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$GetContactpersoon",
+		"ident": 7,
+		"order": 8,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "selrow",
+				"order": 1,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$BuildListVerkoopkansFasen",
+		"ident": 8,
+		"order": 9,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "lijn",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "whereclause",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "$BuildListVerkoopkansSoort",
+		"ident": 25,
+		"order": 10,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "lijn",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "whereclause",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "$BuildListLijnen",
+		"ident": 9,
+		"order": 11,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$InterpreteListLijnen",
+		"ident": 10,
+		"order": 12,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "aantallijnen",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "bedrag",
+				"order": 3,
+				"type": "kNumber",
+				"subtype": "k2dp",
+				"sublen": 0
+			},
+			{
+				"name": "lijn",
+				"order": 7,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "listagendaextra",
+				"order": 6,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "row",
+				"order": 2,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "uurtot",
+				"order": 5,
+				"type": "kDate",
+				"subtype": "kTime",
+				"sublen": 0
+			},
+			{
+				"name": "uurvan",
+				"order": 4,
+				"type": "kDate",
+				"subtype": "kTime",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$BuildListLijnenCommunicaties",
+		"ident": 11,
+		"order": 13,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "serverversion",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "$BuildListLijnenTaken",
+		"ident": 12,
+		"order": 14,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "opdracht",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100
+			},
+			{
+				"name": "serverversion",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "soort",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 128
+			}
+		]
+	},
+	{
+		"name": "$BuildListLijnenAgenda",
+		"ident": 13,
+		"order": 15,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "serverversion",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "soort",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 128
+			}
+		]
+	},
+	{
+		"name": "$BuildListLijnenBijlagen",
+		"ident": 14,
+		"order": 16,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "serverversion",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "$BuildListLijnenExtra",
+		"ident": 15,
+		"order": 17,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "lijn",
+				"order": 5,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "listbijlagen",
+				"order": 1,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "listcommunicaties",
+				"order": 4,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "serverversion",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "$BuildListAgendaExtra",
+		"ident": 16,
+		"order": 18,
+		"clientexec": false,
+		"pvardefs": [
+			{
+				"name": "pPK",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "list",
+				"order": 3,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "whereclause",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "$BuildListFilter",
+		"ident": 18,
+		"order": 19,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "ref",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$FilterListLijnen",
+		"ident": 17,
+		"order": 20,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$BuildRowVerkopen",
+		"ident": 19,
+		"order": 21,
+		"clientexec": false,
+		"pvardefs": [
+			{
+				"name": "pPK",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "row",
+				"order": 2,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$BuildRowOpleiding",
+		"ident": 20,
+		"order": 22,
+		"clientexec": false,
+		"pvardefs": [
+			{
+				"name": "pPK",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "row",
+				"order": 1,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$BuildRowSupportCall",
+		"ident": 21,
+		"order": 23,
+		"clientexec": false,
+		"pvardefs": [
+			{
+				"name": "pPK",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "row",
+				"order": 1,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$SetFieldInteresses",
+		"ident": 22,
+		"order": 24,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "list",
+				"order": 1,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$SetFieldHuidigeproducten",
+		"ident": 23,
+		"order": 25,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "list",
+				"order": 1,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "SetListFields",
+		"ident": 24,
+		"order": 26,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
 	}
 ]

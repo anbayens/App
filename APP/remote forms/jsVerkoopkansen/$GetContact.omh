@@ -1,0 +1,7 @@
+
+Do ivRowContacten.$clear()
+If ivSqlRow.CCONTACTEN_FK
+	Do ivRowContacten.$sessionobject.$assign($cinst.ivSessieRO) Returns #F
+	Do ivRowContacten.$select(con(" WHERE CCONTACTEN_PK = ",ivSqlRow.CCONTACTEN_FK))
+	Do ivRowContacten.$fetch(1)
+End If

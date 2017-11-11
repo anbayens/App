@@ -1,0 +1,7 @@
+
+;  Calculate whereclause as con(' WHERE CCRMVERKOOPKANSEN_FK=',ivSqlRow.CCRMVERKOOPKANSEN_PK)
+
+Do ivListVerkoopkansSoort.$sessionobject.$assign($cinst.ivSessieRO)
+Do ivListVerkoopkansSoort.$select(whereclause)
+Do ivListVerkoopkansSoort.$fetch(kFetchAll)
+Do ivListVerkoopkansSoort.$smartlist.$assign(kTrue)

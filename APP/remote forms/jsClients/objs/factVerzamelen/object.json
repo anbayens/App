@@ -19,7 +19,7 @@
 		"disablesystemfocus": false,
 		"dropmode": "kAcceptNone",
 		"effect": "kJSborderNone",
-		"enabled": true,
+		"enabled": false,
 		"events": "",
 		"fieldstyle": "",
 		"font": 6,

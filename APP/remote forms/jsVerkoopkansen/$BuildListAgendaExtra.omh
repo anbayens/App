@@ -1,0 +1,8 @@
+
+Calculate whereclause as con(" WHERE CAGENDA_FK=",pPK)
+Do list.$definefromsqlclass(AGENDA.$tables.tTAGENDAEXTRA)
+Do list.$sessionobject.$assign($cinst.ivSessieRO)
+Do list.$select(whereclause)
+Do list.$fetch(kFetchAll)
+
+Quit method list

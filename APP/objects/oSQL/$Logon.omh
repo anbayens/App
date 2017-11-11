@@ -1,6 +1,8 @@
 
 Calculate ivServer as pServer
 Calculate ivDatabase as pDatabase
+Calculate databasepassword as 'oslo_2006'
+;  Calculate ivLogin as con(pLogin,'/',databasepassword)
 Calculate ivLogin as pLogin
 Calculate ivDatabaseOptions as ''
 Do ivTransInUseList.$clear()

@@ -2,6 +2,7 @@
 ;  hide search field
 Do $cinst.$objs.searchPane.$alpha.$assign(0)
 Do $cinst.$objs.searchPane.$height.$assign(0)
+Do $cinst.$objs.btnNaarVVK.$alpha.$assign(0)
 
 Do method buildLists
 Do method fillData

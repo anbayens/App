@@ -1,0 +1,3 @@
+
+Do ivListTermijnen.$search(ivListTermijnen.termijn=ivSqlRow.CTERMIJN,kTrue,kFalse,kFalse,kFalse)
+Do ivListPrioriteiten.$search(ivListPrioriteiten.prioriteit=ivSqlRow.CPRIORITEIT,kTrue,kFalse,kFalse,kFalse)

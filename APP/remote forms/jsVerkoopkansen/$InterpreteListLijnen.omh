@@ -1,0 +1,109 @@
+
+Calculate aantallijnen as ivListLijnen.$linecount
+
+For ivListLijnen.$line from 1 to aantallijnen step 1
+	Switch ivListLijnen.CTABEL
+		Case 'TCRMCOMMUNICATIES'
+			Calculate ivListLijnen.CONDERWERP as pick(isnull(ivListLijnen.CONDERWERP),ivListLijnen.CONDERWERP,'')
+			Calculate ivListLijnen.CINFO as con(ivListLijnen.CONDERWERP,pick(len(ivListLijnen.CONDERWERP)>0,'',' '),ivListLijnen.CINFO)
+			Calculate ivListLijnen.VAN as pick(ivListLijnen.CRICHTING,ivListLijnen.CNAAMCONTACTPERSOON,ivListLijnen.CMEDEWERKER)
+			Calculate ivListLijnen.AAN as pick(ivListLijnen.CRICHTING,ivListLijnen.CMEDEWERKER,ivListLijnen.CNAAMCONTACTPERSOON)
+			If ivListLijnen.CPRIVE
+				If ivListLijnen.CMEDEWERKER<>$ctask.tvFirmaMedewerkerList.M_CMEDEWERKER
+					Calculate ivListLijnen.CINFO as StringTable.$gettext('STA.Privé')
+				End If
+			End If
+		Case 'TCRMTAKEN'
+			If ivListLijnen.CISOPDRACHT
+				Calculate ivListLijnen.CINFO as con(ivListLijnen.NUMMER,' ',ivListLijnen.CONDERWERP,pick(len(ivListLijnen.CONDERWERP)>0,'',' '),ivListLijnen.CINFO)
+			End If
+			Calculate ivListLijnen.CNAAMCONTACTPERSOON as pick(isnull(ivListLijnen.CNAAMCONTACTPERSOON),ivListLijnen.CNAAMCONTACTPERSOON,'')
+			Calculate ivListLijnen.VAN as ivListLijnen.CCREATIEGEBRUIKER
+			Calculate ivListLijnen.AAN as ivListLijnen.CMEDEWERKER
+		Case 'TAGENDA'
+			Calculate ivListLijnen.CINFO as con(kCr,ivListLijnen.CINFOTEKST)
+			If ivListLijnen.CDOCUMENTTYPES_FK     ;; CSTATUS
+				Calculate ivListLijnen.CINFO as con('(',pick(ivListLijnen.CDOCUMENTTYPES_FK,'',StringTable.$gettext('STA.Meeting'),StringTable.$gettext('STA.Geannuleerd'),StringTable.$gettext('STA.Uitgesteld')),')',ivListLijnen.CINFO)
+			End If
+			Calculate ivListLijnen.CINFO as con(ivListLijnen.CAGENDALABEL,' ',ivListLijnen.CINFO)
+			If len(ivListLijnen.CLOCATIE)
+				Calculate ivListLijnen.CINFO as con('@',ivListLijnen.CLOCATIE,' ',ivListLijnen.CINFO)
+			End If
+			Calculate ivListLijnen.CINFO as con(ivListLijnen.CONDERWERP,' ',ivListLijnen.CINFO)
+			Calculate ivListLijnen.CINFO as con(ivListLijnen.CNAAMCONTACTPERSOON,' ',ivListLijnen.CINFO)
+			Calculate ivListLijnen.VAN as ivListLijnen.CMEDEWERKER
+			If ivListLijnen.CPRIVE
+				Do method $BuildListAgendaExtra (ivListLijnen.CPK) Returns listagendaextra
+				Do listagendaextra.$search(listagendaextra.CMEDEWERKER=$ctask.tvFirmaMedewerkerList.M_CMEDEWERKER,kTrue,kFalse,kTrue,kTrue)
+				If totc(listagendaextra,#LSEL)=0
+					Calculate ivListLijnen.CINFO as StringTable.$gettext('STA.PrivéIngepland')
+				End If
+			End If
+		Case 'TCRMVERKOOPKANSBIJLAGEN'
+			Calculate ivListLijnen.CSOORT as con(StringTable.$gettext('STA.Bijlage'),': ',pick(ivListLijnen.CSOORT,'Dave',StringTable.$gettext('STA.Document'),StringTable.$gettext('STA.Pad')))
+			Calculate ivListLijnen.CINFO as trim(ivListLijnen.CINFOTEKST)
+			Calculate ivListLijnen.CDOCUMENTTYPES_FK as ivListLijnen.CFLOW_FK
+			If ivListLijnen.CFLOW_FK>=1&ivListLijnen.CFLOW_FK<=9&ivListLijnen.CDOCUMENT_FK     ;; offerte, factuur,...
+				Do method $BuildRowVerkopen (ivListLijnen.CDOCUMENT_FK) Returns row
+				If row.CVERSIE
+					Calculate ivListLijnen.CINFO as con(ivListLijnen.CINFO,'/',row.CVERSIE)
+				End If
+				Calculate ivListLijnen.CDATUM as row.CCREATIEDATUM
+				Calculate ivListLijnen.CINFO as con(ivListLijnen.CINFO,' (',row.CDATUM,') ')
+				If len(row.CONZEREFERENTIE)
+					Calculate ivListLijnen.CINFO as con(ivListLijnen.CINFO,kCr,row.CONZEREFERENTIE)
+				End If
+				If len(row.CUWREFERENTIE)
+					Calculate ivListLijnen.CINFO as con(ivListLijnen.CINFO,kCr,row.CUWREFERENTIE)
+				End If
+				Calculate ivListLijnen.CAFGESLOTEN as row.CAFGESLOTEN
+				Calculate ivListLijnen.CINFO as con(ivListLijnen.CINFO,kCr,row.CBEDRAGEXCL,' ',row.CMUNT)
+				Calculate ivListLijnen.CBEDRAG as rnd(row.CBEDRAGEXCL/pick(row.CKOERS=0,row.CKOERS,1),2)
+				If row.CDOCUMENTTYPES_FK=6     ;; CreditNota
+					Calculate ivListLijnen.CBEDRAG as ivListLijnen.CBEDRAG*-1
+				End If
+				If ivSqlRow.CCRMVERKOOPKANSPERCENTAGE&(row.CDOCUMENTTYPES_FK=1)
+					Calculate bedrag as rnd(row.CBEDRAGEXCL*ivSqlRow.CCRMVERKOOPKANSPERCENTAGE/100,2)
+					Calculate ivListLijnen.CINFO as con(ivListLijnen.CINFO,' * ',ivSqlRow.CCRMVERKOOPKANSPERCENTAGE,'% = ',bedrag,' ',row.CMUNT)
+				End If
+			End If
+			If ivListLijnen.CFLOW_FK=83     ;; OPLEIDING
+				Do method $BuildRowOpleiding (ivListLijnen.CDOCUMENT_FK) Returns row
+				Calculate ivListLijnen.CDATUM as row.CDATUM
+				Calculate uurvan as row.CUURVAN
+				Calculate uurtot as row.CUURTOT
+				Calculate ivListLijnen.CINFO as con(ivListLijnen.CINFO,kCr,row.COMSCHRIJVING,' @ ',row.CGEMEENTE,kCr,row.CDATUM)
+				If row.CDATUM<>row.CDATUMTOT
+					Calculate ivListLijnen.CINFO as con(ivListLijnen.CINFO,'  - ',row.CDATUMTOT)
+				End If
+				Calculate ivListLijnen.CINFO as con(ivListLijnen.CINFO,'  ',uurvan,'-',uurtot)
+				Calculate uurvan as row.CUURVAN2
+				Calculate uurtot as row.CUURTOT2
+				If len(uurvan)
+					Calculate ivListLijnen.CINFO as con(ivListLijnen.CINFO,'   ',uurvan,'-',uurtot)
+				End If
+			End If
+			If ivListLijnen.CFLOW_FK=97     ;; SUPPORTCALL
+				Do method $BuildRowSupportCall (ivListLijnen.CDOCUMENT_FK) Returns row
+				Calculate ivListLijnen.CDATUM as row.CDATUM
+				Calculate ivListLijnen.CINFO as con(ivListLijnen.CINFO,kCr,row.CONDERWERP,' ',kCr,row.CINFO)
+			End If
+	End Switch
+	Calculate ivListLijnen.CINFO as replaceall(ivListLijnen.CINFO,kTab,'    ')
+End For
+
+Do ivListLijnen.$filter(ivListLijnen.CDOCUMENTTYPES_FK=5|ivListLijnen.CDOCUMENTTYPES_FK=6)
+Calculate ivSqlRow.CBEDRAGGEREALISEERD as ivListLijnen.$cols.CBEDRAG.$total()
+Do ivListLijnen.$unfilter(0)
+
+Do ivListLijnen.$line.$assign(0)
+Do ivListLijnen.$sort(ivListLijnen.CDATUM,kFalse)
+Do ivListLijnen.$search(pos(ivListLijnen.CTABEL,'TAGENDA,TCRMTAKEN')&ivListLijnen.CAFGESLOTEN=kFalse&ivListLijnen.CMEDEWERKER=$ctask.tvFirmaMedewerkerList.M_CMEDEWERKER,kTrue,kFalse,kFalse,kFalse)
+Do ivListLijnen.[ivListLijnen.$line()].$selected.$assign(kTrue)
+
+Calculate lijn as ivListFilter.$line
+Do method $BuildListFilter
+If lijn<=7
+	Do ivListFilter.$line.$assign(lijn)
+	Do method $FilterListLijnen
+End If

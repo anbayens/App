@@ -143,5 +143,68 @@
 				"sublen": 100000000
 			}
 		]
+	},
+	{
+		"name": "naarVVK",
+		"ident": 11,
+		"order": 12,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "BuildListBijlagen",
+		"ident": 12,
+		"order": 13,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "list",
+				"order": 1,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "statement",
+				"order": 4,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "StatObj",
+				"order": 3,
+				"type": "kObject",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "whereclause",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "InterpreteListBijlagen",
+		"ident": 13,
+		"order": 14,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
 	}
 ]

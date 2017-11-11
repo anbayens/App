@@ -1,0 +1,9 @@
+
+Do row.$define()
+If pPK
+	Begin statement
+	Sta: {SELECT CCRMSUPPORTCALLS_PK,CDATUM,CONDERWERP,CINFO FROM TCRMSUPPORTCALLS WHERE CCRMSUPPORTCALLS_PK=@[pPK]}
+	End statement
+	Do $ctask.tvSQLObj.$SelectList(row)
+End If
+Quit method row

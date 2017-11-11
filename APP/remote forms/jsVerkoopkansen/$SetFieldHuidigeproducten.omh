@@ -1,0 +1,6 @@
+
+Do ivoCRM.$BuildListContactHuidigeproducten(ivSqlRow.CCONTACTEN_FK) Returns list
+Calculate ivTextHuidigeproducten as ''
+;  Do list.$sendall(ivTextHuidigeproducten.$assign(con(ivTextHuidigeproducten,list.CHUIDIGPRODUCT,' (',list.CKALENDERJAAR,')',',')))
+Do list.$sendall(ivTextHuidigeproducten.$assign(con(ivTextHuidigeproducten,list.CHUIDIGPRODUCT,pick(len(list.CKALENDERJAAR)>1,'',con('(',list.CKALENDERJAAR,')')),', ')))     ;; ' (',list.CKALENDERJAAR,')'
+Calculate ivTextHuidigeproducten as mid(ivTextHuidigeproducten,1,len(ivTextHuidigeproducten)-2)

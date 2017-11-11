@@ -1,0 +1,6 @@
+Do ivRowContactpersonen.$clear()
+If ivSqlRow.CCONTACTPERSONEN_FK
+	Do ivRowContactpersonen.$sessionobject.$assign($cinst.ivSessieRO) Returns #F
+	Do ivRowContactpersonen.$select(con(" WHERE CCONTACTPERSONEN_PK = ",ivSqlRow.CCONTACTPERSONEN_FK))
+	Do ivRowContactpersonen.$fetch(1)
+End If

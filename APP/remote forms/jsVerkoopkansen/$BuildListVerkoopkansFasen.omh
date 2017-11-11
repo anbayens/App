@@ -1,0 +1,14 @@
+
+Calculate whereclause as con(' WHERE CCRMVERKOOPKANSEN_FK=',ivSqlRow.CCRMVERKOOPKANSEN_PK)
+
+Do ivListVerkoopkansFasen.$sessionobject.$assign($cinst.ivSessieRO)
+Do ivListVerkoopkansFasen.$select(whereclause)
+Do ivListVerkoopkansFasen.$fetch(kFetchAll)
+Do ivListVerkoopkansFasen.$smartlist.$assign(kTrue)
+
+For ivListVerkoopkansFasen.$line from 1 to ivListVerkoopkansFasen.$linecount step 1
+	Do ivListFasen.$search($ref.CCRMVERKOOPFASEN_FK=ivListVerkoopkansFasen.CCRMVERKOOPFASEN_FK,kTrue,kFalse,kFalse,kFalse) Returns lijn
+	If lijn
+		Calculate ivListFasen.CDATUM as ivListVerkoopkansFasen.CDATUM
+	End If
+End For

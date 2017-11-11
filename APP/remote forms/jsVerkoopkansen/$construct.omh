@@ -1,1 +1,8 @@
 ;  Enter your initialization code here
+Do method $DefineLists
+Do method $BuildLists
+Do method fillData
+
+If $ctask.tvRowRecent.CCRMVERKOOPKANSEN_PK
+	Do method getDetails ($ctask.tvRowRecent.CCRMVERKOOPKANSEN_PK)
+End If

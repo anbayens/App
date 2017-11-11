@@ -57,8 +57,8 @@
 	},
 	"layout": {
 		"768": {
-			"left": 352,
-			"top": 146,
+			"left": 332,
+			"top": 313,
 			"width": 192,
 			"height": 25,
 			"align": "kLeftJst",
@@ -68,8 +68,8 @@
 			"visible": true
 		},
 		"1024": {
-			"left": 480,
-			"top": 152,
+			"left": 481,
+			"top": 305,
 			"width": 150,
 			"height": 25,
 			"align": "kLeftJst",
@@ -79,8 +79,8 @@
 			"visible": true
 		},
 		"1300": {
-			"left": 616,
-			"top": 176,
+			"left": 619,
+			"top": 305,
 			"width": 150,
 			"height": 25,
 			"align": "kLeftJst",

@@ -1,0 +1,11 @@
+
+Do ivSqlRow.$cols.$add('C_CNAAM1',kCharacter,kSimplechar,100)     ;; naam contact
+Do ivRowContacten.$definefromsqlclass(CPT.$tables.tTCONTACTEN)
+
+Do ivListFilter.$define()
+Do ivListFilter.$cols.$add('CSOORT',kCharacter,kSimplechar,128)
+Do ivListFilter.$cols.$add('CTABEL',kCharacter,kSimplechar,128)
+
+Do ivRowVerkoopkansbijlagen.$definefromsqlclass(CRM.$tables.tTCRMVERKOOPKANSBIJLAGEN)
+Do ivListVerkoopkansFasen.$definefromsqlclass(CRM.$tables.tTCRMVERKOOPKANSFASEN)
+Do ivListVerkoopkansSoort.$definefromsqlclass(CRM.$tables.tTCRMVERKOOPKANSSOORTEN)

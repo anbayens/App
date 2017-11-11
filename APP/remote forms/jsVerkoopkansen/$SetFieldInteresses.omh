@@ -1,0 +1,5 @@
+
+Do ivoCRM.$BuildListContactInteresses(ivSqlRow.CCONTACTEN_FK) Returns list
+Calculate ivTextInteresses as ''
+Do list.$sendall(ivTextInteresses.$assign(con(ivTextInteresses,list.CINTERESSE,',')))
+Calculate ivTextInteresses as mid(ivTextInteresses,1,len(ivTextInteresses)-1)

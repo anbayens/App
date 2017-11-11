@@ -1,0 +1,3 @@
+On evClick
+	Do $cwind.$objs.subform.$classname.$assign('jsVerkoopkansen')
+	Calculate $ctask.tvRowRecent.CCONTACTEN_PK as ivSqlList.CCONTACTEN_PK

@@ -24,7 +24,7 @@
 		"disablesystemfocus": false,
 		"dropmode": "kAcceptNone",
 		"effect": "kJSborderDefault",
-		"enabled": true,
+		"enabled": false,
 		"events": "",
 		"fieldstyle": "",
 		"font": 6,

@@ -1,0 +1,13 @@
+Calculate ivVerkoopkans_PK as 0
+Do $cinst.$objs.btnNaarVVK.$alpha.$assign(0)
+For ivListBijlagen.$line from 1 to ivListBijlagen.$linecount step 1
+	If ivListBijlagen.CDOCUMENTTYPES_FK
+		Do ivListDocumenttypes.$search(ivListDocumenttypes.CDOCUMENTTYPES_PK=ivListBijlagen.CDOCUMENTTYPES_FK,kTrue,kFalse,kFalse,kFalse)
+		Calculate ivListBijlagen.D_COMSCHRIJVING1 as ivListDocumenttypes.COMSCHRIJVING1
+		If (ivListBijlagen.CDOCUMENTTYPES_FK=82)&not(ivVerkoopkans_PK)     ;; Verkoopkans
+			Calculate ivVerkoopkans_PK as ivListBijlagen.CDOCUMENT_FK
+			Do $cinst.$objs.btnNaarVVK.$alpha.$assign(255)
+		End If
+	End If
+	Calculate ivListBijlagen.CTEXT as con(ivListBijlagen.CDOCUMENTPAD,ivListBijlagen.CDOCUMENTBLOBNAAM,ivListBijlagen.CONDERWERP)
+End For

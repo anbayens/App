@@ -1,0 +1,13 @@
+
+Do ivListBijlagen.$clear()
+Calculate whereclause as con(" WHERE CCRMTAKEN_FK = ",$cinst.ivSqlRow.CCRMTAKEN_PK)
+Do list.$definefromsqlclass(CRM.$tables.tqCRMTaakBijlagen)
+Do con("SELECT ",list.$selectnames(),' FROM ',list.$servertablenames(),' ',whereclause) Returns statement
+Do ivSessieRO.$newstatement('tqCRMTaakBijlagen') Returns StatObj
+Do StatObj.$execdirect(statement)
+Do StatObj.$fetch(ivListBijlagen,kFetchAll)
+Do method InterpreteListBijlagen
+Do ivListBijlagen.$line.$assign(0)
+Set reference ivRefListBijlagen to ivListBijlagen.[ivListBijlagen.$line]
+Do ivRefListBijlagen.$selected.$assign(kTrue)
+Do ivListBijlagen.$smartlist.$assign(kTrue)

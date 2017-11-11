@@ -1,0 +1,27 @@
+Do $cinst.$objs.pagedPaneVerkoopkansen.$currentpage.$assign(2)
+Do $cinst.$objs.tabVerkoopkansen.$currenttab.$assign(2)
+
+Do ivSqlRow.$definefromsqlclass($libs.CRM.$tables.tTCRMVERKOOPKANSEN)
+Do ivSqlRow.$sessionobject.$assign(ivSessieRO) Returns #F
+Calculate where as con('WHERE CCRMVERKOOPKANSEN_PK =  ',pCRMVERKOOPKANSEN_PK)
+Do ivSqlRow.$select(where) Returns #F
+If flag true
+	Do ivSqlRow.$fetch(kFetchAll)
+	Do method $GetContact     ;; tab 1
+	Do method $GetContactpersoon
+	Do method $SetFieldInteresses
+	Do method SetListFields
+	Do method $SetFieldHuidigeproducten
+	Do ivoCRM.$BuildRowVerkoopkansExtra(ivSqlRow.CCRMVERKOOPKANSEN_PK) Returns ivRowVerkoopkansExtra     ;; omschrijvingen
+	Do ivoCRM.$BuildListVerkoopkanssoortfasen(ivSqlRow.CCRMVERKOOPKANSSOORTEN_FK) Returns ivListFasen
+	Do ivListFasen.$cols.$add('CDATUM',kDate,kDate1980)
+	Do method $BuildListVerkoopkansFasen     ;; fasenhistoriek
+	Do method $BuildListVerkoopkansSoort
+	Do ivListFasen.$search(ivListFasen.CCRMVERKOOPFASEN_FK=ivSqlRow.CCRMVERKOOPFASEN_FK,kTrue,kFalse,kFalse,kFalse)
+	Do ivListVerkoopkansSoort.$search(ivListVerkoopkansSoort.CCRMVERKOOPKANSSOORT=ivSqlRow.CCRMVERKOOPKANSSOORT,kTrue,kFalse,kFalse,kFalse)
+	Do method $BuildListLijnen     ;; tab 2
+	Do method $InterpreteListLijnen
+	
+Else
+	Do $cinst.$showmessage(con(ivSqlRow.$statementobject.$nativeerrorcode,' - ',ivSqlRow.$statementobject.$nativeerrortext),'SQL Error')
+End If

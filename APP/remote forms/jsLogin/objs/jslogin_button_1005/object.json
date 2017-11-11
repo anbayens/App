@@ -13,7 +13,7 @@
 		"buttonborderradius": 0,
 		"buttoncolor": "kColorDefault",
 		"contextmenu": "",
-		"cssclassname": "",
+		"cssclassname": "btn-menu",
 		"desgroup": 0,
 		"designactive": true,
 		"deslock": false,
@@ -39,8 +39,8 @@
 	},
 	"layout": {
 		"768": {
-			"left": 328,
-			"top": 224,
+			"left": 308,
+			"top": 391,
 			"width": 116,
 			"height": 26,
 			"align": "kCenterJst",
@@ -50,8 +50,8 @@
 			"visible": true
 		},
 		"1024": {
-			"left": 432,
-			"top": 240,
+			"left": 433,
+			"top": 393,
 			"width": 120,
 			"height": 30,
 			"align": "kCenterJst",
@@ -61,8 +61,8 @@
 			"visible": true
 		},
 		"1300": {
-			"left": 574,
-			"top": 264,
+			"left": 603,
+			"top": 393,
 			"width": 120,
 			"height": 30,
 			"align": "kCenterJst",
